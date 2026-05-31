@@ -8,7 +8,88 @@
   <meta property="og:title" content="Blumbang — We Make. We Find." />
   <meta property="og:description" content="A small workshop in Jeto, Klaten, Java. Hand-printed garments and curated craft with Living Garment QR stories." />
   <meta property="og:url" content="https://blumbang.com" />
+  <meta property="og:image" content="https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://blumbang.com" />
+
+  <!-- GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5NFSBNXZH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G5NFSBNXZH');</script>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://blumbang.com/#business",
+    "name": "Blumbang",
+    "alternateName": "Blumbang ID",
+    "description": "A small workshop in Jeto, Klaten, Java. Hand-printed garments and curated craft with Living Garment QR stories.",
+    "url": "https://blumbang.com",
+    "logo": "https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp",
+    "image": "https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp",
+    "telephone": "+6281234561146",
+    "email": "hello@blumbang.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jeto RT 32 RW 10, Gaden, Trucuk",
+      "addressLocality": "Klaten",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "57467",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.749626,
+      "longitude": 110.670888
+    },
+    "hasMap": "https://maps.app.goo.gl/eZ2dzu6utM5yrK8C7",
+    "foundingDate": "2022",
+    "slogan": "Made slowly. Felt deeply.",
+    "openingHours": "Mo-Sa 08:00-17:00",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Hand Printed Tee — Living Garment",
+          "description": "Hand screen printed garment with unique QR code. Scan anywhere in the world to record your journey on a living map.",
+          "brand": {"@type": "Brand", "name": "Blumbang"},
+          "image": "https://media.blumbang.id/1779804297231-proses-sablon-baju-klaten-blumbang-id.webp",
+          "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "25", "availability": "https://schema.org/InStock"}
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Batik Tulis by Bu Lastri",
+          "description": "Hand-drawn batik tulis from Bayat, Klaten. Natural dyes, slow process, made by Bu Lastri.",
+          "brand": {"@type": "Brand", "name": "Blumbang"},
+          "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "80", "availability": "https://schema.org/PreOrder"}
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Merapi Stone Basin",
+          "description": "Volcanic stone basin from the slopes of Mount Merapi, shaped by craftsmen in Klaten.",
+          "brand": {"@type": "Brand", "name": "Blumbang"},
+          "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "80", "availability": "https://schema.org/InStock"}
+        }
+      }
+    ],
+    "sameAs": [
+      "https://blumbang.id",
+      "https://www.instagram.com/blumbang.id",
+      "https://www.tiktok.com/@blumbang.id",
+      "https://wa.me/6281234561146",
+      "https://maps.app.goo.gl/eZ2dzu6utM5yrK8C7"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,717 +109,157 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 2.5rem;
-      mix-blend-mode: multiply;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 2.5rem; background: rgba(245,240,232,0.95);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--sand-light);
     }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; }
     .nav-logo span { color: var(--rust); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--smoke);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--rust); }
 
+    /* ── MOBILE NAV ── */
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+    .nav-burger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
+    .nav-mob { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99; background: var(--paper); border-bottom: 1px solid var(--sand-light); flex-direction: column; padding: 1rem 1.5rem 1.5rem; }
+    .nav-mob.open { display: flex; }
+    .nav-mob a { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--smoke); text-decoration: none; padding: 0.85rem 0; border-bottom: 1px solid var(--sand-light); transition: color 0.2s; }
+    .nav-mob a:last-child { border-bottom: none; color: var(--rust); }
+    .nav-mob a:hover { color: var(--rust); }
+
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 7rem 3rem 4rem 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.3s;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      line-height: 1.05;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.5s;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--rust);
-    }
-
-    .hero-sub {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--smoke);
-      max-width: 380px;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.7s;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.9s;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--rust);
-      color: var(--white);
-      padding: 0.85rem 2rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--rust-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      border: 1px solid var(--sand);
-      color: var(--ink);
-      padding: 0.85rem 2rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--ink);
-      transform: translateY(-2px);
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-img-main {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0;
-      animation: fadeIn 1.2s ease forwards 0.4s;
-    }
-
-    .hero-tag {
-      position: absolute;
-      bottom: 2rem;
-      left: -1px;
-      background: var(--paper);
-      padding: 0.75rem 1.25rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--smoke);
-      border-left: 3px solid var(--rust);
-    }
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+    .hero-left { display: flex; flex-direction: column; justify-content: flex-end; padding: 7rem 3rem 4rem 3rem; position: relative; z-index: 2; }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 400; color: var(--ink); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s; }
+    .hero-title em { font-style: italic; color: var(--rust); }
+    .hero-sub { font-size: 0.95rem; line-height: 1.75; color: var(--smoke); max-width: 380px; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease forwards 0.9s; }
+    .btn-primary { display: inline-block; background: var(--rust); color: var(--white); padding: 0.85rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .btn-primary:hover { background: var(--rust-light); transform: translateY(-2px); }
+    .btn-secondary { display: inline-block; border: 1px solid var(--sand); color: var(--ink); padding: 0.85rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+    .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-img-main { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; animation: fadeIn 1.2s ease forwards 0.4s; }
+    .hero-tag { position: absolute; bottom: 2rem; left: -1px; background: var(--paper); padding: 0.75rem 1.25rem; font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--smoke); border-left: 3px solid var(--rust); }
 
     /* ── MARQUEE ── */
-    .marquee-wrap {
-      background: var(--ink);
-      padding: 0.85rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .marquee-track {
-      display: inline-block;
-      animation: marquee 28s linear infinite;
-    }
-
-    .marquee-track span {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin: 0 2.5rem;
-    }
-
-    .marquee-track span.dot {
-      color: var(--rust);
-      margin: 0 1rem;
-    }
+    .marquee-wrap { background: var(--ink); padding: 0.85rem 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-block; animation: marquee 28s linear infinite; }
+    .marquee-track span { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand); margin: 0 2.5rem; }
+    .marquee-track span.dot { color: var(--rust); margin: 0 1rem; }
 
     /* ── LIVING GARMENT ── */
-    .section-lg {
-      padding: 7rem 2.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .lg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .lg-img-wrap {
-      position: relative;
-    }
-
-    .lg-img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-    }
-
-    .lg-img-badge {
-      position: absolute;
-      top: 2rem;
-      right: -1.5rem;
-      background: var(--rust);
-      color: var(--white);
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      line-height: 1.4;
-      padding: 0.5rem;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1.25rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      line-height: 1.15;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-
+    .section-lg { padding: 7rem 2.5rem; max-width: 1200px; margin: 0 auto; }
+    .lg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .lg-img-wrap { position: relative; }
+    .lg-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .lg-img-badge { position: absolute; top: 2rem; right: -1.5rem; background: var(--rust); color: var(--white); width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.4; padding: 0.5rem; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 1.25rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; font-weight: 400; margin-bottom: 1.5rem; }
     .section-title em { font-style: italic; color: var(--rust); }
-
-    .section-body {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--smoke);
-      margin-bottom: 1.25rem;
-    }
-
-    .stat-row {
-      display: flex;
-      gap: 2.5rem;
-      margin: 2.5rem 0;
-      padding: 2rem 0;
-      border-top: 1px solid var(--sand-light);
-      border-bottom: 1px solid var(--sand-light);
-    }
-
+    .section-body { font-size: 0.95rem; line-height: 1.8; color: var(--smoke); margin-bottom: 1.25rem; }
+    .stat-row { display: flex; gap: 2.5rem; margin: 2.5rem 0; padding: 2rem 0; border-top: 1px solid var(--sand-light); border-bottom: 1px solid var(--sand-light); }
     .stat-item { text-align: left; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--rust); line-height: 1; margin-bottom: 0.35rem; }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--smoke); }
 
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--rust);
-      line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--smoke);
-    }
-
-    /* ── FROM THE WORKSHOP ── */
-    .workshop-section {
-      background: var(--ink);
-      padding: 6rem 2.5rem;
-    }
-
-    .workshop-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .workshop-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3rem;
-    }
-
-    .workshop-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--paper);
-      font-weight: 400;
-    }
-
+    /* ── WORKSHOP ── */
+    .workshop-section { background: var(--ink); padding: 6rem 2.5rem; }
+    .workshop-inner { max-width: 1200px; margin: 0 auto; }
+    .workshop-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .workshop-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--paper); font-weight: 400; }
     .workshop-title em { font-style: italic; color: var(--rust-light); }
-
-    .workshop-sub {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--sand);
-      text-align: right;
-      line-height: 1.6;
-    }
-
-    .workshop-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 1.5px;
-    }
-
-    .workshop-img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(20%);
-      transition: filter 0.4s;
-    }
-
+    .workshop-sub { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand); text-align: right; line-height: 1.6; }
+    .workshop-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.5px; }
+    .workshop-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; filter: grayscale(20%); transition: filter 0.4s; }
     .workshop-img:hover { filter: grayscale(0%); }
-
     .workshop-img.tall { aspect-ratio: 2/3; }
-
-    .workshop-caption {
-      margin-top: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .workshop-caption-line {
-      flex: 1;
-      height: 1px;
-      background: var(--smoke);
-    }
-
-    .workshop-caption-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sand);
-    }
+    .workshop-caption { margin-top: 3rem; display: flex; align-items: center; gap: 1rem; }
+    .workshop-caption-line { flex: 1; height: 1px; background: var(--smoke); }
+    .workshop-caption-text { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sand); }
 
     /* ── MAKERS ── */
-    .makers-section {
-      padding: 7rem 2.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .makers-section { padding: 7rem 2.5rem; max-width: 1200px; margin: 0 auto; }
+    .makers-header { margin-bottom: 4rem; }
+    .makers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    .maker-card { position: relative; }
+    .maker-num { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--sand-light); line-height: 1; margin-bottom: -1rem; position: relative; z-index: 0; }
+    .maker-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.25rem; position: relative; z-index: 1; }
+    .maker-role { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); margin-bottom: 1rem; }
+    .maker-bio { font-size: 0.9rem; line-height: 1.75; color: var(--smoke); }
+    .maker-divider { width: 2rem; height: 2px; background: var(--rust); margin: 1rem 0; }
 
-    .makers-header {
-      margin-bottom: 4rem;
-    }
-
-    .makers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-    }
-
-    .maker-card {
-      position: relative;
-    }
-
-    .maker-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      color: var(--sand-light);
-      line-height: 1;
-      margin-bottom: -1rem;
-      position: relative;
-      z-index: 0;
-    }
-
-    .maker-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .maker-role {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1rem;
-    }
-
-    .maker-bio {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--smoke);
-    }
-
-    .maker-divider {
-      width: 2rem;
-      height: 2px;
-      background: var(--rust);
-      margin: 1rem 0;
-    }
-
-    /* ── STORE PREVIEW ── */
-    .store-section {
-      background: var(--paper-dark);
-      padding: 6rem 2.5rem;
-    }
-
-    .store-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .store-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3.5rem;
-    }
-
-    .store-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .product-card {
-      background: var(--white);
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: transform 0.3s;
-    }
-
+    /* ── STORE ── */
+    .store-section { background: var(--paper-dark); padding: 6rem 2.5rem; }
+    .store-inner { max-width: 1200px; margin: 0 auto; }
+    .store-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; }
+    .store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .product-card { background: var(--white); text-decoration: none; color: inherit; display: block; transition: transform 0.3s; }
     .product-card:hover { transform: translateY(-4px); }
-
-    .product-img-wrap {
-      aspect-ratio: 4/5;
-      overflow: hidden;
-      background: var(--sand-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
+    .product-img-wrap { aspect-ratio: 4/5; overflow: hidden; background: var(--sand-light); display: flex; align-items: center; justify-content: center; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .product-card:hover .product-img { transform: scale(1.04); }
-
-    .product-placeholder {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      color: var(--sand);
-      text-transform: uppercase;
-    }
-
-    .product-info {
-      padding: 1.25rem;
-    }
-
-    .product-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 0.4rem;
-    }
-
-    .product-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
-    }
-
-    .product-origin {
-      font-size: 0.8rem;
-      color: var(--smoke);
-      margin-bottom: 0.75rem;
-    }
-
-    .product-price {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--ink);
-      letter-spacing: 0.06em;
-    }
-
-    .product-price .status {
-      font-size: 0.6rem;
-      color: var(--smoke);
-      margin-left: 0.5rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    .product-placeholder { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--sand); text-transform: uppercase; }
+    .product-info { padding: 1.25rem; }
+    .product-tag { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.4rem; }
+    .product-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .product-origin { font-size: 0.8rem; color: var(--smoke); margin-bottom: 0.75rem; }
+    .product-price { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--ink); letter-spacing: 0.06em; }
+    .product-price .status { font-size: 0.6rem; color: var(--smoke); margin-left: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ── PHILOSOPHY ── */
-    .philosophy-section {
-      padding: 8rem 2.5rem;
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .philosophy-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.5rem);
-      line-height: 1.4;
-      font-weight: 400;
-      margin-bottom: 2rem;
-    }
-
+    .philosophy-section { padding: 8rem 2.5rem; text-align: center; max-width: 780px; margin: 0 auto; }
+    .philosophy-quote { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.4; font-weight: 400; margin-bottom: 2rem; }
     .philosophy-quote em { font-style: italic; color: var(--rust); }
-
-    .philosophy-origin {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--smoke);
-    }
-
-    .philosophy-divider {
-      width: 3rem;
-      height: 1px;
-      background: var(--sand);
-      margin: 1.5rem auto;
-    }
+    .philosophy-origin { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--smoke); }
+    .philosophy-divider { width: 3rem; height: 1px; background: var(--sand); margin: 1.5rem auto; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      padding: 4rem 2.5rem 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid #2a2520;
-      margin-bottom: 2rem;
-    }
-
-    .footer-brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--paper);
-      margin-bottom: 0.75rem;
-    }
-
+    footer { background: var(--ink); padding: 4rem 2.5rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #2a2520; margin-bottom: 2rem; }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--paper); margin-bottom: 0.75rem; }
     .footer-brand-name span { color: var(--rust-light); }
-
-    .footer-brand-desc {
-      font-size: 0.85rem;
-      color: var(--sand);
-      line-height: 1.7;
-      max-width: 280px;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-location {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--smoke);
-      line-height: 1.8;
-    }
-
-    .footer-col-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin-bottom: 1.25rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-links a {
-      font-size: 0.85rem;
-      color: var(--smoke);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer-brand-desc { font-size: 0.85rem; color: var(--sand); line-height: 1.7; max-width: 280px; margin-bottom: 1.5rem; }
+    .footer-location { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke); line-height: 1.8; }
+    .footer-col-title { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sand); margin-bottom: 1.25rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-links a { font-size: 0.85rem; color: var(--smoke); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--paper); }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--smoke);
-    }
-
-    .footer-id-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--smoke);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke); }
+    .footer-id-link { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke); text-decoration: none; transition: color 0.2s; }
     .footer-id-link:hover { color: var(--rust-light); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-
+      .nav-burger { display: flex; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 6rem 1.5rem 3rem; }
       .hero-right { height: 60vw; }
-
       .lg-grid { grid-template-columns: 1fr; gap: 3rem; }
       .lg-img-badge { right: 1rem; }
-
       .workshop-grid { grid-template-columns: 1fr 1fr; }
       .workshop-grid > *:first-child { grid-column: span 2; }
-
       .makers-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .store-grid { grid-template-columns: 1fr 1fr; }
       .store-grid > *:last-child { display: none; }
-
       .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
-
       .section-lg { padding: 5rem 1.5rem; }
       .store-section { padding: 5rem 1.5rem; }
       .makers-section { padding: 5rem 1.5rem; }
@@ -752,11 +273,23 @@
     <a href="/" class="nav-logo">BLUMB<span>✦</span>NG</a>
     <ul class="nav-links">
       <li><a href="/living-garment">Living Garment</a></li>
-      <li><a href="/store">Store</a></li>
+      <li><a href="https://blumbang.id/karya">Store</a></li>
       <li><a href="/makers">Makers</a></li>
       <li><a href="/about">About</a></li>
     </ul>
+    <button class="nav-burger" id="burger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mob" id="nav-mob">
+    <a href="/living-garment" onclick="closeNav()">Living Garment</a>
+    <a href="https://blumbang.id/karya" onclick="closeNav()">Store</a>
+    <a href="/makers" onclick="closeNav()">Makers</a>
+    <a href="/about" onclick="closeNav()">About</a>
+    <a href="https://blumbang.id/sparks" onclick="closeNav()">✦ World Map</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -772,7 +305,7 @@
       </p>
       <div class="hero-ctas">
         <a href="/living-garment" class="btn-primary">Discover Living Garment</a>
-        <a href="/store" class="btn-secondary">Shop the collection</a>
+        <a href="https://blumbang.id/karya" class="btn-secondary">Shop the collection</a>
       </div>
     </div>
     <div class="hero-right">
@@ -843,7 +376,7 @@
             <div class="stat-label">Stories growing</div>
           </div>
         </div>
-        <a href="/living-garment" class="btn-primary">See the world map →</a>
+        <a href="https://blumbang.id/sparks" class="btn-primary">See the world map →</a>
       </div>
     </div>
   </section>
@@ -923,10 +456,10 @@
           <p class="section-label">From the workshop & beyond</p>
           <h2 class="section-title">The <em>collection</em></h2>
         </div>
-        <a href="/store" class="btn-secondary">View all →</a>
+        <a href="https://blumbang.id/karya" class="btn-secondary">View all →</a>
       </div>
       <div class="store-grid">
-        <a href="/store" class="product-card">
+        <a href="https://blumbang.id/karya" class="product-card">
           <div class="product-img-wrap">
             <img
               src="https://media.blumbang.id/1779804297231-proses-sablon-baju-klaten-blumbang-id.webp"
@@ -941,7 +474,7 @@
             <p class="product-price">from $25 <span class="status">· ready stock</span></p>
           </div>
         </a>
-        <a href="/store" class="product-card">
+        <a href="https://blumbang.id/karya" class="product-card">
           <div class="product-img-wrap">
             <div class="product-placeholder">Photo coming soon</div>
           </div>
@@ -952,7 +485,7 @@
             <p class="product-price">from $80 <span class="status">· pre-order</span></p>
           </div>
         </a>
-        <a href="/store" class="product-card">
+        <a href="https://blumbang.id/karya" class="product-card">
           <div class="product-img-wrap">
             <div class="product-placeholder">Photo coming soon</div>
           </div>
@@ -997,9 +530,9 @@
           <p class="footer-col-title">Explore</p>
           <ul class="footer-links">
             <li><a href="/living-garment">Living Garment</a></li>
-            <li><a href="/store">Store</a></li>
+            <li><a href="https://blumbang.id/karya">Store</a></li>
             <li><a href="/makers">Makers</a></li>
-            <li><a href="/sparks">World Map</a></li>
+            <li><a href="https://blumbang.id/sparks">World Map</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/blog">Journal</a></li>
           </ul>
@@ -1009,7 +542,7 @@
           <ul class="footer-links">
             <li><a href="https://wa.me/6281234561146">WhatsApp us</a></li>
             <li><a href="mailto:hello@blumbang.com">hello@blumbang.com</a></li>
-            <li><a href="https://blumbang.id">blumbang.id (Indonesia)</a></li>
+            <li><a href="https://blumbang.id">blumbang.id — Indonesian studio</a></li>
           </ul>
           <br>
           <p class="footer-col-title">Shipping</p>
@@ -1025,6 +558,23 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('nav-mob').classList.toggle('open');
+    }
+    function closeNav() {
+      document.getElementById('nav-mob').classList.remove('open');
+    }
+    // Tutup nav kalau klik di luar
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('nav-mob');
+      const burger = document.getElementById('burger');
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>
