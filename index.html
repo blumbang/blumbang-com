@@ -136,6 +136,7 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 .map-head h2{font-family:var(--fd);font-weight:400;font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.15;color:var(--text);max-width:24ch;margin:0 auto 18px;}
 .map-head h2 .num{color:var(--gold-soft);font-style:italic;}
 .map-head p{font-size:1rem;font-weight:300;color:var(--muted);max-width:52ch;margin:0 auto;line-height:1.7;}
+.map-head .lg-note span{color:var(--gold-soft);font-weight:500;}
 .map-stage{position:relative;width:100%;}
 .map-stage svg{display:block;width:100%;}
 .map-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
@@ -290,9 +291,9 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
 <!-- ══ BAND 2 — TRUST (LIVING PROOF) ══ -->
 <section class="band-map" id="proof">
   <div class="map-head">
-    <span class="eyebrow">This is already real</span>
-    <h2><span class="num" id="n-pieces">Hundreds</span> of pieces out in the world — carried to <span class="num" id="n-cities">cities</span> across the map, from Klaten to Seychelles and Tokyo.</h2>
-    <p>Every dot is someone carrying a piece a maker in Klaten can finally see reached the world. Watch it move.</p>
+    <span class="eyebrow">Living Garment — a different code</span>
+    <h2>Our shirts carry a code too. But theirs doesn't point <em class="num">back</em> to a maker — it points <em class="num">forward</em>, to wherever you take it.</h2>
+    <p class="lg-note"><span id="n-pieces">Hundreds</span> of pieces are already out in the world, carried to <span id="n-cities">cities</span> across the map — from Klaten to Seychelles and Tokyo. Every dot is one of them. Watch it move.</p>
   </div>
   <div class="map-stage" id="map-stage">
     <div class="map-loading" id="map-loading"><span>Lighting the map…</span></div>
@@ -523,7 +524,7 @@ function drawMap(rows,world){
     rows.forEach(function(r){var c=r.c&&r.c[2]&&r.c[2].v;if(c)citySet[c.split(',')[0].trim().toLowerCase()]=1;});
     var nCities=Object.keys(citySet).length;
     if(pieces>0)countUp('n-pieces',pieces);
-    if(nCities>1)countUp('n-cities',nCities);
+    if(nCities>1)countUp('n-cities',nCities,' cities');
     drawMap(rows,res[2]);
   }).catch(function(e){
     console.error(e);
