@@ -529,7 +529,12 @@ function drawMap(rows,world){
   });
 })();
 
-var _t;window.addEventListener('resize',function(){clearTimeout(_t);_t=setTimeout(function(){location.reload();},400);});
+var _t,_lastW=window.innerWidth;
+window.addEventListener('resize',function(){
+  if(Math.abs(window.innerWidth-_lastW)<60)return;
+  _lastW=window.innerWidth;
+  clearTimeout(_t);_t=setTimeout(function(){location.reload();},400);
+},{passive:true});
 </script>
 </body>
 </html>
