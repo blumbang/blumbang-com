@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Admin Panel — Blumbang.com</title>
+<style>
+:root{
+  --black:#0a0a0a;--charcoal:#141414;--surface:#1a1a1a;--border:#2a2a2a;
+  --dim:#666;--muted:#999;--white:#f0ebe0;--gold:#C9A84C;--gold2:#dbb85a;
+  --green:#86efac;--red:#fca5a5;--blue:#93c5fd;
+  --font:'Inter',system-ui,sans-serif;--font-logo:'Bebas Neue',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);color:var(--white);font-family:var(--font);font-size:14px;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+input,textarea,select{background:var(--charcoal);border:1px solid var(--border);color:var(--white);font-family:var(--font);font-size:13px;padding:9px 12px;width:100%;outline:none;border-radius:0;}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);}
+textarea{min-height:80px;resize:vertical;}
+button{cursor:pointer;font-family:var(--font);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border:none;border-radius:0;}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold2);}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.btn-red{background:transparent;border:1px solid var(--border);color:var(--red);}
+.btn-red:hover{background:var(--red);color:var(--black);}
+
+/* LOGIN */
+#login-screen{position:fixed;inset:0;background:var(--black);z-index:9999;display:flex;align-items:center;justify-content:center;}
+.login-box{background:var(--charcoal);border:1px solid var(--border);padding:48px 40px;width:100%;max-width:360px;text-align:center;}
+.login-logo{font-family:var(--font-logo);font-size:2rem;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;}
+.login-sub{font-size:.68rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:32px;}
+.login-input{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:var(--font);font-size:.95rem;padding:12px 16px;margin-bottom:12px;outline:none;text-align:center;letter-spacing:.1em;}
+.login-input:focus{border-color:var(--gold);}
+.login-btn{width:100%;background:var(--gold);color:var(--black);font-family:var(--font);font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:13px;border:none;cursor:pointer;}
+.login-btn:hover{background:var(--gold2);}
+.login-err{font-size:.72rem;color:#dc2626;margin-top:10px;min-height:18px;}
+
+/* LAYOUT */
+#app{display:none;}
+.topbar{background:var(--charcoal);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:50;}
+.topbar-logo{font-family:var(--font-logo);font-size:1.4rem;letter-spacing:.15em;color:var(--gold);}
+.topbar-sub{font-size:.62rem;letter-spacing:.14em;color:var(--dim);margin-left:10px;}
+.topbar-right{font-size:.7rem;color:var(--dim);}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--charcoal);padding:0 24px;}
+.tab{padding:14px 18px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;}
+.tab:hover{color:var(--white);}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.panel{display:none;padding:24px;max-width:1200px;}
+.panel.active{display:block;}
+
+/* CARDS */
+.card{background:var(--charcoal);border:1px solid var(--border);padding:20px;margin-bottom:12px;}
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.card-title{font-size:.8rem;font-weight:600;letter-spacing:.08em;color:var(--white);}
+.card-sub{font-size:.7rem;color:var(--dim);margin-top:3px;}
+.card-actions{display:flex;gap:8px;}
+.badge{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
+.badge-green{background:rgba(134,239,172,.15);color:var(--green);border:1px solid rgba(134,239,172,.3);}
+.badge-gold{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3);}
+.badge-red{background:rgba(252,165,165,.15);color:var(--red);border:1px solid rgba(252,165,165,.3);}
+
+/* FORM */
+.form-section{background:var(--surface);border:1px solid var(--border);padding:22px;margin-bottom:20px;}
+.form-title{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.form-full{grid-column:span 2;}
+.form-full-3{grid-column:span 3;}
+label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:5px;}
+.form-note{font-size:.68rem;color:var(--dim);margin-top:4px;}
+.form-msg{font-size:.78rem;margin-top:12px;min-height:20px;}
+.form-actions{display:flex;gap:10px;margin-top:16px;}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;}
+.tbl th{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:.82rem;vertical-align:middle;}
+.tbl tr:hover td{background:rgba(255,255,255,.02);}
+.tbl-thumb{width:40px;height:50px;object-fit:cover;display:block;}
+
+/* TOAST */
+#toast{position:fixed;bottom:24px;right:24px;background:var(--charcoal);border:1px solid var(--gold);color:var(--white);padding:12px 20px;font-size:.8rem;font-weight:500;display:none;z-index:9998;max-width:300px;}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">BLUMB✦NG</div>
+    <div class="login-sub">Admin Panel · .com</div>
+    <input type="password" class="login-input" id="pwd-input" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkLogin()"/>
+    <button class="login-btn" onclick="checkLogin()">Masuk →</button>
+    <div class="login-err" id="login-err"></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <div class="topbar">
+    <div style="display:flex;align-items:baseline;gap:0;">
+      <span class="topbar-logo">BLUMB✦NG</span>
+      <span class="topbar-sub">.com Admin</span>
+    </div>
+    <div class="topbar-right" id="topbar-info">—</div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('makers')">✦ Makers</div>
+    <div class="tab" onclick="switchTab('motifs')">Motifs</div>
+    <div class="tab" onclick="switchTab('pieces')">Pieces</div>
+  </div>
+
+  <!-- ══ TAB: MAKERS ══ -->
+  <div class="panel active" id="panel-makers">
+    <div class="form-section">
+      <div class="form-title">Tambah / Edit Maker</div>
+      <div class="form-grid">
+        <div>
+          <label>ID (slug) *</label>
+          <input id="mk-id" placeholder="bu-lastri"/>
+          <div class="form-note">Huruf kecil, tanda hubung saja. Contoh: bu-lastri</div>
+        </div>
+        <div>
+          <label>Nama *</label>
+          <input id="mk-name" placeholder="Bu Lastri"/>
+        </div>
+        <div>
+          <label>Desa / Asal</label>
+          <input id="mk-village" placeholder="Bayat, Klaten"/>
+        </div>
+        <div>
+          <label>Keahlian (Craft)</label>
+          <input id="mk-craft" placeholder="Batik Tulis"/>
+        </div>
+        <div class="form-full">
+          <label>URL Foto (dari media.blumbang.id)</label>
+          <input id="mk-photo" placeholder="https://media.blumbang.id/maker-bu-lastri.webp"/>
+        </div>
+        <div class="form-full">
+          <label>Bio (English)</label>
+          <textarea id="mk-bio" placeholder="She draws batik tulis by hand in Bayat..."></textarea>
+        </div>
+        <div>
+          <label>Quote (bahasa asli)</label>
+          <input id="mk-quote" placeholder="Sabar wae, mengko rak dadi."/>
+        </div>
+        <div>
+          <label>Terjemahan Quote (English)</label>
+          <input id="mk-quote-en" placeholder="Just be patient — it will come together."/>
+        </div>
+        <div>
+          <label>Nomor WA (internal, tidak ditampilkan)</label>
+          <input id="mk-wa" placeholder="08xxx"/>
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="mk-active">
+            <option value="1">Aktif (tampil di galeri)</option>
+            <option value="0">Nonaktif (tersembunyi)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-msg" id="mk-msg"></div>
+      <div class="form-actions">
+        <button class="btn-gold" onclick="saveMaker()">Simpan Maker</button>
+        <button class="btn-ghost" onclick="resetMakerForm()">Reset</button>
+      </div>
+    </div>
+
+    <div id="makers-list"><div style="color:var(--dim);padding:20px;">Memuat...</div></div>
+  </div>
+
+  <!-- ══ TAB: MOTIFS ══ -->
+  <div class="panel" id="panel-motifs">
+    <div class="form-section">
+      <div class="form-title">Tambah / Edit Motif (Pilihan yang Bisa Dipesan)</div>
+      <div class="form-grid">
+        <div>
+          <label>ID (slug) *</label>
+          <input id="mo-id" placeholder="bu-lastri-parang"/>
+        </div>
+        <div>
+          <label>Maker *</label>
+          <select id="mo-maker"></select>
+        </div>
+        <div>
+          <label>Nama Motif *</label>
+          <input id="mo-name" placeholder="Parang"/>
+        </div>
+        <div>
+          <label>URL Foto</label>
+          <input id="mo-photo" placeholder="https://media.blumbang.id/motif-parang.webp"/>
+        </div>
+        <div class="form-full">
+          <label>Deskripsi (English)</label>
+          <textarea id="mo-desc" placeholder="The parang motif — diagonal, unbroken, drawn for generations..."></textarea>
+        </div>
+        <div>
+          <label>Harga (USD)</label>
+          <input id="mo-price" type="number" placeholder="120"/>
+        </div>
+        <div>
+          <label>Upah ke Pembuat (USD)</label>
+          <input id="mo-wage" type="number" placeholder="70"/>
+        </div>
+        <div>
+          <label>Estimasi Hari Pengerjaan</label>
+          <input id="mo-days" type="number" placeholder="11"/>
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="mo-available">
+            <option value="1">Tersedia (bisa dipesan)</option>
+            <option value="0">Tidak tersedia</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-msg" id="mo-msg"></div>
+      <div class="form-actions">
+        <button class="btn-gold" onclick="saveMotif()">Simpan Motif</button>
+        <button class="btn-ghost" onclick="resetMotifForm()">Reset</button>
+      </div>
+    </div>
+
+    <div id="motifs-list"><div style="color:var(--dim);padding:20px;">Memuat...</div></div>
+  </div>
+
+  <!-- ══ TAB: PIECES ══ -->
+  <div class="panel" id="panel-pieces">
+    <div class="form-section">
+      <div class="form-title">Tambah / Edit Piece (Kain Jadi yang Dikirim)</div>
+      <div class="form-grid">
+        <div>
+          <label>ID (slug) *</label>
+          <input id="pc-id" placeholder="lastri-parang-02"/>
+          <div class="form-note">Format: [maker]-[motif]-[nomor]. Ini yang jadi URL QR.</div>
+        </div>
+        <div>
+          <label>Maker *</label>
+          <select id="pc-maker"></select>
+        </div>
+        <div>
+          <label>Nama *</label>
+          <input id="pc-name" placeholder="Parang No. 02"/>
+        </div>
+        <div>
+          <label>Motif ID (opsional, ref ke tabel motifs)</label>
+          <input id="pc-motif" placeholder="bu-lastri-parang"/>
+        </div>
+        <div>
+          <label>URL Foto Kain</label>
+          <input id="pc-photo" placeholder="https://media.blumbang.id/piece-lastri-parang-02.webp"/>
+        </div>
+        <div>
+          <label>Jenis</label>
+          <select id="pc-type">
+            <option value="batik">Batik (menengok ke pembuat)</option>
+            <option value="garment">Garment (Living Garment)</option>
+          </select>
+        </div>
+        <div class="form-full">
+          <label>Deskripsi (English)</label>
+          <textarea id="pc-desc" placeholder="Bu Lastri drew every line of this one by hand..."></textarea>
+        </div>
+        <div class="form-full">
+          <label>Cerita Motif (English) — muncul di bawah halaman piece</label>
+          <textarea id="pc-story" placeholder="The parang — 'broken blade' — is one of the oldest batik motifs in Java..."></textarea>
+        </div>
+        <div>
+          <label>Harga (USD)</label>
+          <input id="pc-price" type="number" placeholder="120"/>
+        </div>
+        <div>
+          <label>Upah ke Pembuat (USD)</label>
+          <input id="pc-wage" type="number" placeholder="70"/>
+        </div>
+        <div>
+          <label>Pewarna</label>
+          <input id="pc-dye" placeholder="Natural indigo"/>
+        </div>
+        <div>
+          <label>Hari Pengerjaan</label>
+          <input id="pc-days" type="number" placeholder="11"/>
+        </div>
+        <div>
+          <label>Dimensi</label>
+          <input id="pc-dim" placeholder="240 × 105 cm"/>
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="pc-status">
+            <option value="available">Available — masih bisa dipesan</option>
+            <option value="found">Found its person — sudah terjual</option>
+            <option value="grow">Grow — pembeli sudah scan, ada catatan</option>
+          </select>
+        </div>
+        <div>
+          <label>Kota Pembeli (saat status=found)</label>
+          <input id="pc-city" placeholder="Amsterdam"/>
+        </div>
+        <div>
+          <label>Tanggal/Bulan Terjual</label>
+          <input id="pc-date" placeholder="March 2024"/>
+        </div>
+        <div class="form-full">
+          <label>Catatan dari Pemilik (status=grow)</label>
+          <textarea id="pc-note" placeholder="I found this batik on a grey afternoon in Amsterdam..."></textarea>
+        </div>
+      </div>
+      <div class="form-msg" id="pc-msg"></div>
+      <div class="form-actions">
+        <button class="btn-gold" onclick="savePiece()">Simpan Piece</button>
+        <button class="btn-ghost" onclick="resetPieceForm()">Reset</button>
+      </div>
+    </div>
+
+    <div id="pieces-list"><div style="color:var(--dim);padding:20px;">Memuat...</div></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const WORKER = 'https://piece-builder.blmbng-id.workers.dev';
+const ADMIN_HASH = 'bef02aa9f22bc42ef1c06c84b3a72ac0d89fe1784e0fb00b9e8b36f1b0e2a3c7';
+let TOKEN = '';
+
+// Simple hash (SHA-256 via SubtleCrypto)
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function checkLogin() {
+  const pwd = document.getElementById('pwd-input').value;
+  const hash = await sha256(pwd);
+  if (hash === ADMIN_HASH) {
+    TOKEN = pwd;
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    document.getElementById('topbar-info').textContent = 'Terhubung ke piece-builder · D1 blumbang-db';
+    loadAll();
+  } else {
+    document.getElementById('login-err').textContent = 'Password salah.';
+  }
+}
+
+function showToast(msg, color) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.borderColor = color || 'var(--gold)';
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 3200);
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+  if (name === 'makers') loadMakers();
+  if (name === 'motifs') { loadMotifs(); loadMakersForSelect('mo-maker'); }
+  if (name === 'pieces') { loadPieces(); loadMakersForSelect('pc-maker'); }
+}
+
+async function api(path, body) {
+  const res = await fetch(WORKER + path, {
+    method: body ? 'POST' : 'GET',
+    headers: { 'Content-Type': 'application/json', 'X-Admin-Token': TOKEN },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  return res.json();
+}
+
+function loadAll() { loadMakers(); }
+
+// ── MAKERS ──
+async function loadMakers() {
+  const list = document.getElementById('makers-list');
+  list.innerHTML = '<div style="color:var(--dim);padding:12px;">Memuat...</div>';
+  const d = await api('/api/makers/list');
+  if (!d.ok) { list.innerHTML = `<div style="color:var(--red)">Error: ${d.error}</div>`; return; }
+  if (!d.data.length) { list.innerHTML = '<div style="color:var(--dim);padding:12px;">Belum ada maker.</div>'; return; }
+  list.innerHTML = `<table class="tbl"><thead><tr><th></th><th>ID</th><th>Nama</th><th>Desa</th><th>Craft</th><th>Status</th><th></th></tr></thead><tbody>
+    ${d.data.map(m=>`<tr>
+      <td><img src="${m.photo||''}" class="tbl-thumb" onerror="this.style.display='none'"/></td>
+      <td style="color:var(--dim);font-size:.7rem;">${m.id}</td>
+      <td style="font-weight:500;">${m.name}</td>
+      <td style="color:var(--dim);">${m.village||'—'}</td>
+      <td style="color:var(--gold);font-size:.72rem;">${m.craft||'—'}</td>
+      <td><span class="badge ${m.active?'badge-green':'badge-red'}">${m.active?'Aktif':'Nonaktif'}</span></td>
+      <td style="display:flex;gap:8px;">
+        <button class="btn-ghost" onclick="editMaker(${JSON.stringify(m).split('"').join('&quot;')})">Edit</button>
+        <button class="btn-red" onclick="deleteMaker('${m.id}','${m.name}')">Hapus</button>
+      </td>
+    </tr>`).join('')}
+  </tbody></table>`;
+}
+
+async function loadMakersForSelect(elId) {
+  const d = await api('/api/makers/list');
+  const sel = document.getElementById(elId);
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">— Pilih maker —</option>' + (d.data||[]).map(m=>`<option value="${m.id}">${m.name}</option>`).join('');
+  if (cur) sel.value = cur;
+}
+
+function editMaker(m) {
+  document.getElementById('mk-id').value = m.id;
+  document.getElementById('mk-id').disabled = true;
+  document.getElementById('mk-name').value = m.name;
+  document.getElementById('mk-village').value = m.village||'';
+  document.getElementById('mk-craft').value = m.craft||'';
+  document.getElementById('mk-photo').value = m.photo||'';
+  document.getElementById('mk-bio').value = m.bio||'';
+  document.getElementById('mk-quote').value = m.quote||'';
+  document.getElementById('mk-quote-en').value = m.quote_en||'';
+  document.getElementById('mk-wa').value = m.wa||'';
+  document.getElementById('mk-active').value = m.active??1;
+  document.getElementById('mk-msg').textContent = 'Mode edit: '+m.name;
+  document.getElementById('mk-msg').style.color = 'var(--gold)';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function resetMakerForm() {
+  ['mk-id','mk-name','mk-village','mk-craft','mk-photo','mk-bio','mk-quote','mk-quote-en','mk-wa'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('mk-id').disabled = false;
+  document.getElementById('mk-active').value = 1;
+  document.getElementById('mk-msg').textContent = '';
+}
+
+async function saveMaker() {
+  const msg = document.getElementById('mk-msg');
+  msg.style.color = 'var(--gold)'; msg.textContent = 'Menyimpan...';
+  const d = {
+    id: document.getElementById('mk-id').value.trim().toLowerCase().replace(/\s+/g,'-'),
+    name: document.getElementById('mk-name').value.trim(),
+    village: document.getElementById('mk-village').value.trim(),
+    craft: document.getElementById('mk-craft').value.trim(),
+    photo: document.getElementById('mk-photo').value.trim(),
+    bio: document.getElementById('mk-bio').value.trim(),
+    quote: document.getElementById('mk-quote').value.trim(),
+    quote_en: document.getElementById('mk-quote-en').value.trim(),
+    wa: document.getElementById('mk-wa').value.trim(),
+    active: parseInt(document.getElementById('mk-active').value)
+  };
+  const res = await api('/api/makers/save', d);
+  if (res.ok) {
+    msg.style.color = 'var(--green)'; msg.textContent = '✓ Tersimpan → blumbang.com/makers/'+d.id;
+    showToast('✓ Maker '+d.name+' tersimpan');
+    resetMakerForm(); loadMakers();
+  } else {
+    msg.style.color = 'var(--red)'; msg.textContent = '✗ '+res.error;
+  }
+}
+
+async function deleteMaker(id, name) {
+  if (!confirm('Hapus maker "'+name+'"? Semua motif-nya tetap ada.')) return;
+  const res = await api('/api/makers/delete', { id });
+  if (res.ok) { showToast('Maker '+name+' dihapus', 'var(--red)'); loadMakers(); }
+}
+
+// ── MOTIFS ──
+async function loadMotifs() {
+  const list = document.getElementById('motifs-list');
+  list.innerHTML = '<div style="color:var(--dim);padding:12px;">Memuat...</div>';
+  const d = await api('/api/motifs/list');
+  if (!d.ok) { list.innerHTML = `<div style="color:var(--red)">Error: ${d.error}</div>`; return; }
+  if (!d.data.length) { list.innerHTML = '<div style="color:var(--dim);padding:12px;">Belum ada motif.</div>'; return; }
+  list.innerHTML = `<table class="tbl"><thead><tr><th></th><th>ID</th><th>Nama</th><th>Maker</th><th>Harga</th><th>Upah</th><th>Status</th><th></th></tr></thead><tbody>
+    ${d.data.map(m=>`<tr>
+      <td><img src="${m.photo||''}" class="tbl-thumb" onerror="this.style.display='none'"/></td>
+      <td style="color:var(--dim);font-size:.7rem;">${m.id}</td>
+      <td style="font-weight:500;">${m.name}</td>
+      <td style="color:var(--gold);font-size:.72rem;">${m.maker_name||m.maker_id}</td>
+      <td>${m.price_usd ? '$'+m.price_usd : '—'}</td>
+      <td style="color:var(--green);">${m.wage_usd ? '$'+m.wage_usd : '—'}</td>
+      <td><span class="badge ${m.available?'badge-green':'badge-red'}">${m.available?'Tersedia':'Habis'}</span></td>
+      <td style="display:flex;gap:8px;">
+        <button class="btn-ghost" onclick="editMotif(${JSON.stringify(m).split('"').join('&quot;')})">Edit</button>
+        <button class="btn-red" onclick="deleteMotif('${m.id}','${m.name}')">Hapus</button>
+      </td>
+    </tr>`).join('')}
+  </tbody></table>`;
+}
+
+function editMotif(m) {
+  document.getElementById('mo-id').value = m.id; document.getElementById('mo-id').disabled = true;
+  document.getElementById('mo-maker').value = m.maker_id;
+  document.getElementById('mo-name').value = m.name;
+  document.getElementById('mo-photo').value = m.photo||'';
+  document.getElementById('mo-desc').value = m.description||'';
+  document.getElementById('mo-price').value = m.price_usd||'';
+  document.getElementById('mo-wage').value = m.wage_usd||'';
+  document.getElementById('mo-days').value = m.days_made||'';
+  document.getElementById('mo-available').value = m.available??1;
+  document.getElementById('mo-msg').style.color = 'var(--gold)';
+  document.getElementById('mo-msg').textContent = 'Mode edit: '+m.name;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function resetMotifForm() {
+  ['mo-id','mo-name','mo-photo','mo-desc','mo-price','mo-wage','mo-days'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('mo-id').disabled = false;
+  document.getElementById('mo-available').value = 1;
+  document.getElementById('mo-msg').textContent = '';
+}
+
+async function saveMotif() {
+  const msg = document.getElementById('mo-msg');
+  msg.style.color = 'var(--gold)'; msg.textContent = 'Menyimpan...';
+  const d = {
+    id: document.getElementById('mo-id').value.trim().toLowerCase().replace(/\s+/g,'-'),
+    maker_id: document.getElementById('mo-maker').value,
+    name: document.getElementById('mo-name').value.trim(),
+    photo: document.getElementById('mo-photo').value.trim(),
+    description: document.getElementById('mo-desc').value.trim(),
+    price_usd: parseFloat(document.getElementById('mo-price').value)||null,
+    wage_usd: parseFloat(document.getElementById('mo-wage').value)||null,
+    days_made: parseInt(document.getElementById('mo-days').value)||null,
+    available: parseInt(document.getElementById('mo-available').value)
+  };
+  const res = await api('/api/motifs/save', d);
+  if (res.ok) {
+    msg.style.color = 'var(--green)'; msg.textContent = '✓ Tersimpan';
+    showToast('✓ Motif '+d.name+' tersimpan');
+    resetMotifForm(); loadMotifs();
+  } else {
+    msg.style.color = 'var(--red)'; msg.textContent = '✗ '+res.error;
+  }
+}
+
+async function deleteMotif(id, name) {
+  if (!confirm('Hapus motif "'+name+'"?')) return;
+  const res = await api('/api/motifs/delete', { id });
+  if (res.ok) { showToast('Motif '+name+' dihapus', 'var(--red)'); loadMotifs(); }
+}
+
+// ── PIECES ──
+async function loadPieces() {
+  const list = document.getElementById('pieces-list');
+  list.innerHTML = '<div style="color:var(--dim);padding:12px;">Memuat...</div>';
+  const d = await api('/api/pieces/list');
+  if (!d.ok) { list.innerHTML = `<div style="color:var(--red)">Error: ${d.error}</div>`; return; }
+  if (!d.data.length) { list.innerHTML = '<div style="color:var(--dim);padding:12px;">Belum ada piece.</div>'; return; }
+  const statusBadge = s => s==='available'?'badge-gold':s==='found'?'badge-green':'badge-red';
+  list.innerHTML = `<table class="tbl"><thead><tr><th></th><th>ID</th><th>Nama</th><th>Maker</th><th>Harga</th><th>Status</th><th>URL QR</th><th></th></tr></thead><tbody>
+    ${d.data.map(p=>`<tr>
+      <td><img src="${p.photo||''}" class="tbl-thumb" onerror="this.style.display='none'"/></td>
+      <td style="color:var(--dim);font-size:.7rem;">${p.id}</td>
+      <td style="font-weight:500;">${p.name}</td>
+      <td style="color:var(--gold);font-size:.72rem;">${p.maker_name||p.maker_id}</td>
+      <td>${p.price_usd ? '$'+p.price_usd : '—'}</td>
+      <td><span class="badge ${statusBadge(p.status)}">${p.status}</span></td>
+      <td style="font-size:.68rem;color:var(--dim);">blumbang.com/piece/${p.id}</td>
+      <td style="display:flex;gap:8px;">
+        <button class="btn-ghost" onclick="editPiece(${JSON.stringify(p).split('"').join('&quot;')})">Edit</button>
+        <button class="btn-red" onclick="deletePiece('${p.id}','${p.name}')">Hapus</button>
+      </td>
+    </tr>`).join('')}
+  </tbody></table>`;
+}
+
+function editPiece(p) {
+  document.getElementById('pc-id').value = p.id; document.getElementById('pc-id').disabled = true;
+  document.getElementById('pc-maker').value = p.maker_id;
+  document.getElementById('pc-name').value = p.name;
+  document.getElementById('pc-motif').value = p.motif_id||'';
+  document.getElementById('pc-photo').value = p.photo||'';
+  document.getElementById('pc-type').value = p.type||'batik';
+  document.getElementById('pc-desc').value = p.description||'';
+  document.getElementById('pc-story').value = p.story||'';
+  document.getElementById('pc-price').value = p.price_usd||'';
+  document.getElementById('pc-wage').value = p.wage_usd||'';
+  document.getElementById('pc-dye').value = p.dye||'';
+  document.getElementById('pc-days').value = p.days_made||'';
+  document.getElementById('pc-dim').value = p.dimensions||'';
+  document.getElementById('pc-status').value = p.status||'available';
+  document.getElementById('pc-city').value = p.found_city||'';
+  document.getElementById('pc-date').value = p.found_date||'';
+  document.getElementById('pc-note').value = p.owner_note||'';
+  document.getElementById('pc-msg').style.color = 'var(--gold)';
+  document.getElementById('pc-msg').textContent = 'Mode edit: '+p.name;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function resetPieceForm() {
+  ['pc-id','pc-name','pc-motif','pc-photo','pc-desc','pc-story','pc-price','pc-wage','pc-dye','pc-days','pc-dim','pc-city','pc-date','pc-note'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('pc-id').disabled = false;
+  document.getElementById('pc-type').value = 'batik';
+  document.getElementById('pc-status').value = 'available';
+  document.getElementById('pc-msg').textContent = '';
+}
+
+async function savePiece() {
+  const msg = document.getElementById('pc-msg');
+  msg.style.color = 'var(--gold)'; msg.textContent = 'Menyimpan...';
+  const d = {
+    id: document.getElementById('pc-id').value.trim().toLowerCase().replace(/\s+/g,'-'),
+    maker_id: document.getElementById('pc-maker').value,
+    name: document.getElementById('pc-name').value.trim(),
+    motif_id: document.getElementById('pc-motif').value.trim()||null,
+    photo: document.getElementById('pc-photo').value.trim(),
+    type: document.getElementById('pc-type').value,
+    description: document.getElementById('pc-desc').value.trim(),
+    story: document.getElementById('pc-story').value.trim(),
+    price_usd: parseFloat(document.getElementById('pc-price').value)||null,
+    wage_usd: parseFloat(document.getElementById('pc-wage').value)||null,
+    dye: document.getElementById('pc-dye').value.trim(),
+    days_made: parseInt(document.getElementById('pc-days').value)||null,
+    dimensions: document.getElementById('pc-dim').value.trim(),
+    status: document.getElementById('pc-status').value,
+    found_city: document.getElementById('pc-city').value.trim(),
+    found_date: document.getElementById('pc-date').value.trim(),
+    owner_note: document.getElementById('pc-note').value.trim()
+  };
+  const res = await api('/api/pieces/save', d);
+  if (res.ok) {
+    const url = 'https://blumbang.com/piece/'+d.id;
+    msg.style.color = 'var(--green)'; msg.textContent = '✓ Tersimpan → '+url+' (ini URL QR-nya)';
+    showToast('✓ Piece '+d.name+' tersimpan');
+    resetPieceForm(); loadPieces();
+  } else {
+    msg.style.color = 'var(--red)'; msg.textContent = '✗ '+res.error;
+  }
+}
+
+async function deletePiece(id, name) {
+  if (!confirm('Hapus piece "'+name+'"? Halaman QR-nya tidak bisa diakses lagi.')) return;
+  const res = await api('/api/pieces/delete', { id });
+  if (res.ok) { showToast('Piece '+name+' dihapus', 'var(--red)'); loadPieces(); }
+}
+</script>
+</body>
+</html>
