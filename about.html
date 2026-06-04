@@ -1,418 +1,373 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tentang Blumbang.id — Made Slowly. Felt Deeply.</title>
-<meta name="description" content="Blumbang.id adalah konveksi kaos dan sablon independen dari Jeto, Klaten, Jawa Tengah. Dibuat perlahan, dirasakan dalam.">
-<link rel="preload" as="image" href="https://blumbang.id/og-image.webp" type="image/webp">
-<link rel="canonical" href="https://blumbang.id/about">
-<!-- SEO-INJECT-START -->
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:locale" content="id_ID">
-<meta property="og:image" content="https://blumbang.id/og-image.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Blumbang ID — Studio Kaos Independen dari Klaten">
-<meta property="og:image:type" content="image/webp">
-<meta name="twitter:title" content="Tentang Blumbang ID · Tim & Filosofi">
-<meta name="twitter:description" content="Berdiri karena terpaksa. Bertahan karena bermanfaat. Kenali tim di balik Blumbang ID.">
-<meta name="twitter:image" content="https://blumbang.id/og-image.webp">
-<link rel="alternate" hreflang="id" href="https://blumbang.id/about">
-<link rel="alternate" hreflang="x-default" href="https://blumbang.id/about">
-<!-- SEO-INJECT-END -->
-<meta property="og:title" content="Tentang Blumbang.id">
-<meta property="og:description" content="Konveksi kaos dan sablon dari Klaten. Made Slowly. Felt Deeply.">
-<meta property="og:url" content="https://blumbang.id/about">
-<meta property="og:image" content="https://blumbang.id/og-image.webp">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --black:#080808;--charcoal:#141414;--grey:#1e1e1e;--border:#2a2a2a;
-  --muted:#666;--dim:#888;--light:#ccc;--white:#F5F0E8;
-  --gold:#C9A84C;--gold-dim:#7a6028;--gold-bg:#140f02;
-  --font-logo:'Bebas Neue',sans-serif;
-  --font-body:'Montserrat',sans-serif;
-  --font-ui:'Inter',sans-serif;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--white);font-family:var(--font-body);min-height:100vh;overflow-x:hidden;}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
-.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(8,8,8,0.97);border-bottom:1px solid var(--border);}
-.nav-brand{font-family:var(--font-logo);font-size:1.6rem;letter-spacing:0.15em;color:var(--gold);text-decoration:none;line-height:1;}
-.spark-spin{display:inline-block;animation:spin 6s linear infinite;font-size:1rem;vertical-align:middle;}
-.nav-links{display:flex;gap:32px;}
-.nav-links a{font-family:var(--font-ui);font-size:0.75rem;font-weight:500;letter-spacing:0.12em;color:var(--light);text-decoration:none;transition:color 0.2s;text-transform:uppercase;}
-.nav-links a:hover,.nav-links a.active{color:var(--gold);}
-.nav-order{font-family:var(--font-ui);font-size:0.72rem;font-weight:700;letter-spacing:0.2em;color:var(--black);background:var(--gold);padding:9px 20px;text-decoration:none;transition:all 0.2s;text-transform:uppercase;}
-.nav-order:hover{background:var(--white);}
-.nav-hamburger{display:none;background:none;border:none;color:var(--gold);font-size:1.4rem;cursor:pointer;}
-.nav-mobile{display:none;position:fixed;top:61px;left:0;right:0;background:var(--charcoal);border-bottom:1px solid var(--border);z-index:99;flex-direction:column;padding:20px;}
-.nav-mobile.open{display:flex;}
-.nav-mobile a{font-family:var(--font-ui);font-size:0.85rem;font-weight:500;letter-spacing:0.12em;color:var(--light);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--border);text-transform:uppercase;}
-.nav-mobile a:last-child{border-bottom:none;}
-.mobile-order{color:var(--gold)!important;font-weight:700!important;}
-.section{padding:100px 40px;position:relative;z-index:1;border-top:1px solid var(--border);}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section-tag{font-family:var(--font-ui);font-size:0.72rem;font-weight:600;letter-spacing:0.4em;color:var(--gold);margin-bottom:20px;display:block;text-transform:uppercase;}
-.section-title{font-family:var(--font-logo);font-size:clamp(2.5rem,6vw,5rem);letter-spacing:0.05em;line-height:1.05;margin-bottom:20px;}
-.section-body{font-family:var(--font-body);font-size:1.05rem;font-weight:300;font-style:italic;line-height:1.9;color:var(--white);max-width:560px;}
-.hero-about{padding:140px 40px 80px;text-align:center;position:relative;z-index:1;}
-.hero-about h1{font-family:var(--font-logo);font-size:clamp(4rem,10vw,8rem);letter-spacing:0.05em;line-height:0.95;margin-bottom:32px;}
-.hero-about .sub{font-family:var(--font-body);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--white);line-height:1.8;max-width:560px;margin:0 auto;}
-.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:64px;}
-.identity-card{background:var(--charcoal);padding:40px;position:relative;overflow:hidden;transition:background 0.3s;}
-.identity-card:hover{background:var(--grey);}
-.identity-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim),transparent);opacity:0;transition:opacity 0.3s;}
-.identity-card:hover::before{opacity:1;}
-.ic-num{font-family:var(--font-logo);font-size:2rem;letter-spacing:0.1em;color:var(--gold-dim);margin-bottom:14px;}
-.ic-title{font-family:var(--font-body);font-size:1.2rem;font-weight:600;margin-bottom:10px;color:var(--white);}
-.ic-body{font-family:var(--font-body);font-size:0.93rem;line-height:1.85;color:var(--light);}
-.ic-spark{position:absolute;bottom:20px;right:20px;font-size:1.1rem;color:var(--gold-dim);opacity:0.4;}
-.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:64px;}
-.ps-item{background:var(--charcoal);padding:40px 32px;}
-.ps-num{font-family:var(--font-logo);font-size:3rem;letter-spacing:0.1em;color:var(--gold-dim);margin-bottom:18px;line-height:1;}
-.ps-title{font-family:var(--font-body);font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--white);}
-.ps-body{font-family:var(--font-body);font-size:0.93rem;line-height:1.9;color:var(--light);}
-.manifesto{padding:120px 40px;text-align:center;position:relative;z-index:1;border-top:1px solid var(--border);}
-.manifesto-inner{max-width:720px;margin:0 auto;}
-.manifesto-quote{font-family:var(--font-body);font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:300;font-style:italic;line-height:1.6;color:var(--white);margin-bottom:32px;}
-.manifesto-quote em{font-style:normal;color:var(--gold);font-weight:600;}
-.manifesto-attr{font-family:var(--font-ui);font-size:0.72rem;font-weight:500;letter-spacing:0.35em;color:var(--dim);text-transform:uppercase;margin-bottom:48px;}
-.btn-primary{padding:16px 36px;background:var(--gold);border:1px solid var(--gold);color:var(--black);font-family:var(--font-ui);font-size:0.78rem;font-weight:700;letter-spacing:0.25em;text-decoration:none;transition:all 0.25s;text-transform:uppercase;display:inline-block;}
-.btn-primary:hover{background:var(--white);border-color:var(--white);}
-footer{padding:36px 40px;border-top:1px solid var(--border);position:relative;z-index:1;}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:var(--font-logo);font-size:1.3rem;letter-spacing:0.15em;color:var(--gold);}
-.footer-links{display:flex;gap:28px;}
-.footer-links a{font-family:var(--font-ui);font-size:0.72rem;font-weight:500;letter-spacing:0.15em;color:var(--light);text-decoration:none;transition:color 0.2s;text-transform:uppercase;}
-.footer-links a:hover{color:var(--gold);}
-.footer-copy{font-family:var(--font-ui);font-size:0.68rem;letter-spacing:0.1em;color:var(--muted);}
-@keyframes spin{0%,100%{transform:rotate(0deg)scale(1);}50%{transform:rotate(180deg)scale(0.8);}}
-@media(max-width:768px){
-  nav{padding:14px 18px;}.nav-links{display:none;}.nav-order{display:none;}.nav-hamburger{display:block;}
-  .hero-about{padding:100px 20px 60px;}
-  .section{padding:72px 20px;}
-  .identity-grid,.process-steps{grid-template-columns:1fr;}
-  .manifesto{padding:72px 20px;}
-  .footer-inner{flex-direction:column;text-align:center;}
-}
-</style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39SRRM5GKK"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag("js",new Date());
-gtag("config","G-39SRRM5GKK");
-</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Blumbang · A screen-printing studio in Klaten, Java</title>
+<meta name="description" content="Blumbang is a small screen-printing studio in Jeto, Klaten. We make shirts by hand and bring you the work of the makers around us. Meet the people behind every piece." />
+<meta property="og:title" content="About Blumbang — the people behind every piece" />
+<meta property="og:description" content="A small screen-printing studio in Jeto, Klaten, Java. Meet the hands behind the work." />
+<meta property="og:url" content="https://blumbang.com/about" />
+<meta property="og:image" content="https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://blumbang.com/about" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5NFSBNXZH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G5NFSBNXZH');</script>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://blumbang.id"},
-    {"@type": "ListItem", "position": 2, "name": "Tentang", "item": "https://blumbang.id/about"}
-  ]
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "name":"About Blumbang",
+  "url":"https://blumbang.com/about",
+  "about":{"@type":"Organization","@id":"https://blumbang.com/#org","name":"Blumbang","foundingDate":"2022","slogan":"Made slowly. Felt deeply.","url":"https://blumbang.com","sameAs":["https://blumbang.id","https://www.instagram.com/blumbang.id","https://wa.me/6281234561146"]}
 }
 </script>
-</head>
-<body>
-<div class="grid-bg"></div>
-<nav>
-  <a href="/" class="nav-brand">BLUMB<span class="spark-spin">✦</span>NG<span style="font-size:0.55rem;letter-spacing:0.3em;vertical-align:super;color:var(--gold-dim)"> ID</span></a>
-  <div class="nav-links">
-    <a href="/karya">Karya</a>
-    <a href="/sparks">Perjalanan</a>
-    <a href="/about" class="active">Tentang</a>
-  </div>
-  <a href="https://wa.me/6281234561146" class="nav-order">✦ ORDER</a>
-  <button class="nav-hamburger" onclick="toggleMenu()" id="hamburger">☰</button>
-</nav>
-<div class="nav-mobile" id="nav-mobile">
-  <a href="/karya" onclick="toggleMenu()">Karya</a>
-  <a href="/sparks" onclick="toggleMenu()">Perjalanan</a>
-  <a href="/about" onclick="toggleMenu()">Tentang</a>
-  <a href="https://wa.me/6281234561146" class="mobile-order" onclick="toggleMenu()">✦ ORDER SEKARANG</a>
-</div>
 
-<div class="hero-about">
-  <h1>MADE<br>SLOWLY.<br><span style="color:transparent;-webkit-text-stroke:2px rgba(245,240,232,0.2);">FELT DEEPLY.</span></h1>
-  <p class="sub">Konveksi kaos dan sablon independen dari Jeto, Klaten, Jawa Tengah. Tempat para pembuat yang tenang, tangan-tangan yang bekerja dengan sabar.</p>
-</div>
-
-<section class="section" style="border-top:1px solid var(--border);">
-  <div class="section-inner">
-    <span class="section-tag">✦ Garment Identity System</span>
-    <h2 class="section-title">PERJALANAN KAOS<br>DIMULAI DI SINI</h2>
-    <p class="section-body">Bukan sekadar kaos. Setiap produk memiliki identitas unik yang hidup bersama pemiliknya.</p>
-    <div class="identity-grid">
-      <div class="identity-card">
-        <div class="ic-num">01</div>
-        <div class="ic-title">Identitas Unik</div>
-        <div class="ic-body">Setiap kaos memiliki nomor seri tersendiri. Scan QR code — kamu terhubung dengan halaman unik yang hidup bersama pemiliknya.</div>
-        <div class="ic-spark">✦</div>
-      </div>
-      <div class="identity-card">
-        <div class="ic-num">02</div>
-        <div class="ic-title">Perjalanan Tercatat</div>
-        <div class="ic-body">Setiap scan meninggalkan jejak di peta dunia. Kaos yang lahir di Klaten dapat mencatat perjalanannya hingga Tokyo, London, atau kota mana pun.</div>
-        <div class="ic-spark">✦</div>
-      </div>
-      <div class="identity-card">
-        <div class="ic-num">03</div>
-        <div class="ic-title">Cerita Owner</div>
-        <div class="ic-body">Pemilik kaos dapat menambahkan cerita, foto, dan kenangan. Halaman kaos menjadi ruang hidup yang terus menemani pemiliknya.</div>
-        <div class="ic-spark">✦</div>
-      </div>
-      <div class="identity-card">
-        <div class="ic-num">04</div>
-        <div class="ic-title">Rebuilding</div>
-        <div class="ic-body">Kaos rusak bukan akhir cerita. Jika sebagian masih layak, cerita dapat dilanjutkan dan identitas tetap hidup.</div>
-        <div class="ic-spark">✦</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <span class="section-tag">✦ Cara Kerja</span>
-    <h2 class="section-title">TIGA LANGKAH<br>MENUJU KAOS BERIDENTITAS</h2>
-    <div class="process-steps">
-      <div class="ps-item">
-        <div class="ps-num">01</div>
-        <div class="ps-title">Order & Desain</div>
-        <div class="ps-body">Chat via WhatsApp. Ceritakan kebutuhanmu — jenis kaos, desain, dan jumlah. Tim Blumbang membantu dari konsep hingga siap produksi.</div>
-      </div>
-      <div class="ps-item">
-        <div class="ps-num">02</div>
-        <div class="ps-title">Produksi di Klaten</div>
-        <div class="ps-body">Dibuat dengan tangan di Klaten, Indonesia. Tempat para pekerja yang tenang. Para pembuat yang sering tidak tercatat. Tangan-tangan yang bekerja dengan sabar.<br><br>Di tempat ini cahaya-cahaya kecil mulai muncul.</div>
-      </div>
-      <div class="ps-item">
-        <div class="ps-num">03</div>
-        <div class="ps-title">Perjalanan Kaos Dimulai</div>
-        <div class="ps-body">Scan QR — halaman garment aktif. Tambahkan cerita. Catat perjalanan.<br><br>Cahaya kecil ini menemanimu ke mana saja.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="border-top:1px solid var(--border);">
-  <div class="section-inner">
-    <span class="section-tag">✦ Orang-Orang di Baliknya</span>
-    <div class="team-list" id="team-list">
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-bumur" src="" alt="Bu Mur"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Bu Mur <span class="tm-title">— The Steady Hands</span></div>
-            <div class="tm-year">(2023—)</div>
-          </div>
-          <div class="tm-quote">"sepuluh resep masakan terenak sudah di tanganku"</div>
-        </div>
-      </div>
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-buhar" src="" alt="Bu Har"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Bu Har <span class="tm-title">— The Easygoing</span></div>
-            <div class="tm-year">(2023—)</div>
-          </div>
-          <div class="tm-quote">"aku duwe tape ketan"</div>
-        </div>
-      </div>
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-ria" src="" alt="Ria"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Ria <span class="tm-title">— The Relentless</span></div>
-            <div class="tm-year">(2025—)</div>
-          </div>
-          <div class="tm-quote">"meskipun nggak fasih Jawa, sing penting wani ngeyel"</div>
-        </div>
-      </div>
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-paijo" src="" alt="Paijo"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Paijo <span class="tm-title">— The Backbone</span></div>
-            <div class="tm-year">(2023—)</div>
-          </div>
-          <div class="tm-quote">"menjahit pakaian untuk merajut dunia"</div>
-          <div class="tm-quote">"kalau tidak di Blumbang, mengulur benang di spot pemancingan"</div>
-        </div>
-      </div>
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-arie" src="" alt="Bang Arie"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Bang Arie <span class="tm-title">— The Fighter</span></div>
-            <div class="tm-year">(2023—2024 · 2025—)</div>
-          </div>
-          <div class="tm-quote">"tinta di tanganku lebih tua dari toko sablonmu"</div>
-        </div>
-      </div>
-
-      <div class="tm-item tm-done">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-chandra" src="" alt="Chandra"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Chandra <span class="tm-title">— The Explorer</span></div>
-            <div class="tm-year">(2024—2025)</div>
-          </div>
-          <div class="tm-quote">"sementara full time TikTok, part time jatuh cinta"</div>
-          <div class="tm-done-label">done, but was here</div>
-        </div>
-      </div>
-
-      <div class="tm-item tm-done">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-danang" src="" alt="Danang"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Danang <span class="tm-title">— The Trigger</span></div>
-            <div class="tm-year">(2022—2025)</div>
-          </div>
-          <div class="tm-quote">"kalau sampai Blumbang gulung, kalian yang aku gulung duluan"</div>
-          <div class="tm-done-label">now in Japan, still stuck here somehow</div>
-        </div>
-      </div>
-
-      <div class="tm-item">
-        <div class="tm-photo-wrap"><img class="tm-photo" id="foto-betchak" src="" alt="Betchak"></div>
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Betchak <span class="tm-title">— The Problem Maker</span></div>
-            <div class="tm-year">(2022—)</div>
-          </div>
-          <div class="tm-quote">"mie ayam enak iki"</div>
-        </div>
-      </div>
-
-      <div class="tm-item tm-soul">
-        <div class="tm-content">
-          <div class="tm-row">
-            <div class="tm-name">Blumbang <span class="tm-title">— The Soul</span></div>
-            <div class="tm-year">Origin</div>
-          </div>
-          <div class="tm-quote">"Kita tidak ke mana-mana. Cukup membuat cahaya kecil yang menyala di seluruh dunia."</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section" style="border-top:1px solid var(--border);padding-top:80px;padding-bottom:0;">
-  <div class="section-inner">
-    <span class="section-tag">✦ Temukan Kami</span>
-    <div class="maps-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.4918727380846!2d110.67088867496859!3d-7.74962679226913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a479c26e97baf%3A0xde2709c79eebf74f!2sKaos%20polos%20dan%20sablon!5e1!3m2!1sid!2ssc!4v1775235860202!5m2!1sid!2ssc" width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
 <style>
-.team-list{margin-top:56px;display:flex;flex-direction:column;gap:0;}
-.tm-item{padding:28px 0;border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:flex-start;}
-.tm-item:last-child{border-bottom:none;}
-.tm-photo-wrap{flex-shrink:0;width:72px;height:72px;}
-.tm-photo{width:72px;height:72px;object-fit:cover;filter:grayscale(30%);}
-.tm-content{flex:1;}
-.tm-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;}
-.tm-name{font-family:var(--font-logo);font-size:1.4rem;letter-spacing:0.08em;color:var(--white);}
-.tm-title{font-family:var(--font-body);font-size:1rem;font-weight:300;letter-spacing:0.02em;color:var(--muted);}
-.tm-year{font-family:var(--font-ui);font-size:0.72rem;letter-spacing:0.15em;color:var(--gold-dim);white-space:nowrap;}
-.tm-quote{font-family:var(--font-body);font-size:0.9rem;font-weight:300;font-style:italic;color:var(--dim);line-height:1.7;}
-.tm-done .tm-name,.tm-done .tm-title,.tm-done .tm-quote{opacity:0.45;}
-.tm-done-label{font-family:var(--font-ui);font-size:0.68rem;letter-spacing:0.2em;color:var(--gold-dim);text-transform:uppercase;margin-top:6px;}
-.tm-soul{border-top:1px solid var(--border);margin-top:16px;padding-top:32px;}
-.tm-soul .tm-name{color:var(--gold);}
-.tm-soul .tm-quote{color:var(--light);font-size:1rem;}
-.maps-wrap{margin-top:32px;}
-@media(max-width:600px){
-  .tm-row{flex-direction:column;gap:2px;}
-  .tm-year{text-align:left;}
+:root{
+  --bg:#15110c;--bg2:#1d1710;--bg-deep:#0c0a07;
+  --paper:#F2EBDC;--ink:#1a140d;
+  --text:#E9DFCB;--muted:#9b9079;--muted2:#6f6657;
+  --gold:#C9A84C;--gold-soft:#DCC074;--line:#2e2619;--line-cream:#d6cab0;
+  --fd:'Fraunces',Georgia,serif;--fb:'Montserrat',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+::selection{background:var(--gold);color:var(--bg);}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:linear-gradient(to bottom,rgba(21,17,12,.9),rgba(21,17,12,0));transition:.3s;border-bottom:1px solid transparent;}
+header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bottom-color:var(--line);padding:14px 40px;}
+.wordmark{font-family:var(--fd);font-weight:600;font-size:1.4rem;letter-spacing:.04em;color:var(--text);}
+.wordmark .spark{color:var(--gold);}
+.nav{display:flex;align-items:center;gap:30px;}
+.nav a{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s;position:relative;}
+.nav a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav a:hover,.nav a.aktif{color:var(--text);}
+.nav a:hover::after,.nav a.aktif::after{width:100%;}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.burger span{display:block;width:24px;height:1.5px;background:var(--text);}
+.mobnav{display:none;position:fixed;inset:60px 0 auto 0;z-index:99;background:var(--bg2);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 40px 28px;}
+.mobnav.open{display:flex;}
+.mobnav a{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);padding:16px 0;border-bottom:1px solid var(--line);}
+.mobnav a:last-child{border-bottom:none;color:var(--gold);}
+
+/* HERO */
+.about-hero{padding:26vh 40px 14vh;max-width:1100px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.64rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;}
+.eyebrow::before{content:'✦';}
+.about-hero h1{font-family:var(--fd);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.05;letter-spacing:-.01em;color:#fff;max-width:18ch;margin-bottom:30px;}
+.about-hero h1 em{font-style:italic;color:var(--gold-soft);}
+.about-hero .lead{font-size:clamp(1.05rem,1.7vw,1.3rem);font-weight:300;line-height:1.75;color:var(--text);max-width:54ch;opacity:.92;}
+
+/* STORY */
+.band{padding:clamp(64px,9vh,120px) 40px;}
+.wrap{max-width:1100px;margin:0 auto;}
+.wrap-narrow{max-width:760px;margin:0 auto;}
+.story p{font-family:var(--fd);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.55;color:var(--text);margin-bottom:30px;}
+.story p:last-child{margin-bottom:0;}
+.story p em{font-style:italic;color:var(--gold-soft);}
+
+/* VALUES */
+.values{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:8px;}
+.value{background:var(--bg2);padding:44px 34px;}
+.value .n{font-family:var(--fd);font-size:2.4rem;color:var(--gold);line-height:1;margin-bottom:18px;}
+.value h3{font-family:var(--fd);font-weight:500;font-size:1.35rem;color:var(--text);margin-bottom:12px;}
+.value p{font-size:.92rem;font-weight:300;line-height:1.7;color:var(--muted);}
+.section-label{font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block;}
+.section-title{font-family:var(--fd);font-weight:400;font-size:clamp(1.8rem,3.6vw,3rem);line-height:1.1;color:var(--text);margin-bottom:14px;}
+.section-title em{font-style:italic;color:var(--gold-soft);}
+.section-intro{font-size:1rem;font-weight:300;line-height:1.7;color:var(--muted);max-width:54ch;}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:54px;}
+.member{background:var(--bg2);border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s;}
+.member:hover{transform:translateY(-4px);border-color:var(--gold);}
+.member .photo{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(140deg,#241b12,#15110c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.member .photo img{width:100%;height:100%;object-fit:cover;}
+.member .photo .ph-mark{font-family:var(--fd);font-size:2rem;color:var(--line);}
+.member .photo .ph-cap{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted2);text-align:center;padding:0 20px;line-height:1.8;}
+.member .info{padding:24px 26px 28px;}
+.member .role{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.member .name{font-family:var(--fd);font-weight:500;font-size:1.5rem;color:var(--text);margin-bottom:4px;}
+.member .since{font-size:.74rem;letter-spacing:.06em;color:var(--muted2);margin-bottom:16px;}
+.member .quote{font-family:var(--fd);font-style:italic;font-size:1.05rem;line-height:1.45;color:var(--gold-soft);margin-bottom:8px;}
+.member .gloss{font-size:.8rem;font-weight:300;line-height:1.6;color:var(--muted);}
+
+/* CLOSER */
+.closer{background:var(--bg-deep);border-top:1px solid var(--line);text-align:center;padding:clamp(80px,14vh,160px) 40px;}
+.closer .lamp{font-size:1.6rem;color:var(--gold);margin-bottom:30px;animation:glow 3s ease-in-out infinite;}
+.closer blockquote{font-family:var(--fd);font-weight:400;font-style:italic;font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.35;color:var(--text);max-width:20ch;margin:0 auto 40px;}
+.closer blockquote em{color:var(--gold-soft);}
+.closer .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--bg);padding:16px 32px;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;transition:transform .25s,background .25s;}
+.cta:hover{background:var(--gold-soft);transform:translateY(-3px);}
+.cta.ghost{background:transparent;border:1px solid var(--line);color:var(--text);}
+.cta.ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent;}
+
+/* FOOTER */
+footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:70px 40px 36px;}
+.foot-wrap{max-width:1100px;margin:0 auto;}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;padding-bottom:42px;border-bottom:1px solid var(--line);}
+.foot-mark{font-family:var(--fd);font-weight:600;font-size:1.4rem;color:var(--text);margin-bottom:14px;}
+.foot-mark .spark{color:var(--gold);}
+.foot-desc{font-size:.88rem;font-weight:300;line-height:1.7;color:var(--muted);max-width:32ch;margin-bottom:18px;}
+.foot-addr{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);line-height:2;}
+.foot-col h4{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.foot-col a{font-size:.88rem;font-weight:300;color:var(--muted);transition:color .25s;}
+.foot-col a:hover{color:var(--text);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.foot-copy{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);}
+.foot-id{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s;}
+.foot-id:hover{color:var(--gold);}
+
+@keyframes glow{0%,100%{opacity:1;text-shadow:0 0 18px rgba(201,168,76,.5);}50%{opacity:.7;text-shadow:0 0 6px rgba(201,168,76,.2);}}
+
+@media(max-width:880px){
+  header{padding:16px 22px;}header.solid{padding:12px 22px;}
+  .nav{display:none;}.burger{display:flex;}
+  .mobnav{padding-left:22px;padding-right:22px;}
+  .about-hero{padding:20vh 22px 12vh;}
+  .band{padding:56px 22px;}
+  .values-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;gap:20px;}
+  .foot-top{grid-template-columns:1fr;gap:36px;}
+  footer{padding:54px 22px 32px;}
 }
 </style>
+</head>
+<body>
 
+<header id="hdr">
+  <a href="/" class="wordmark">BLUMB<span class="spark">✦</span>NG</a>
+  <nav class="nav">
+    <a href="/#batik">Makers</a>
+    <a href="/#batik">Batik</a>
+    <a href="/living-garment">Living Garment</a>
+    <a href="/about" class="aktif">About</a>
+  </nav>
+  <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobnav" id="mobnav">
+  <a href="/#batik" onclick="toggleNav()">Makers</a>
+  <a href="/#batik" onclick="toggleNav()">Batik</a>
+  <a href="/living-garment" onclick="toggleNav()">Living Garment</a>
+  <a href="/about" onclick="toggleNav()">About</a>
+  <a href="https://wa.me/6281234561146" onclick="toggleNav()">✦ Message us</a>
+</div>
 
-  <div class="manifesto-inner">
-    <div class="manifesto-quote">"Cahaya kecil ini menemanimu <em>sampai mana saja.</em>"</div>
-    <div class="manifesto-attr">Blumbang · Made Slowly · Felt Deeply</div>
-    <a href="https://wa.me/6281234561146" class="btn-primary">✦ &nbsp; MULAI ORDER</a>
+<!-- HERO -->
+<section class="about-hero">
+  <span class="eyebrow">About Blumbang</span>
+  <h1>A small workshop that turned into a <em>window.</em></h1>
+  <p class="lead">We started by printing shirts by hand in a small studio in Jeto, Klaten. We're still doing exactly that — only now, the people who make the other beautiful things around us come with us into the world.</p>
+</section>
+
+<!-- STORY -->
+<section class="band">
+  <div class="wrap-narrow story">
+    <p>Blumbang is a screen-printing studio. That's where it began, and that's still what we do every day — ink, mesh, cloth, by hand.</p>
+    <p>But Klaten is full of people making extraordinary things quietly: women drawing batik line by line, families shaping stone from the slopes of Merapi, hands weaving things machines will never match.</p>
+    <p>We grew up beside them. So when the world started asking where to find work like this — <em>real work, made by real hands</em> — we already knew exactly who to call.</p>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">BLUMB<span style="font-size:0.8rem;">✦</span>NG</div>
-    <div class="footer-links">
-      <a href="/karya">Karya</a>
-      <a href="/sparks">Perjalanan</a>
-      <a href="/about">Tentang</a>
-      <a href="https://wa.me/6281234561146">WhatsApp</a>
+<!-- VALUES -->
+<section class="band values">
+  <div class="wrap">
+    <span class="section-label">What we hold to</span>
+    <h2 class="section-title">Three things we <em>won't</em> bend on.</h2>
+    <div class="values-grid">
+      <div class="value">
+        <div class="n">01</div>
+        <h3>We pay properly</h3>
+        <p>Eleven days of work should be paid like eleven days of work. On every maker's page, the wage is shown in the open — right under the price. We built the company around that number.</p>
+      </div>
+      <div class="value">
+        <div class="n">02</div>
+        <h3>Quality, never rushed</h3>
+        <p>We turn down work that would force a corner to be cut. Slow is not a weakness here. It's the whole point — and it's why each piece holds up.</p>
+      </div>
+      <div class="value">
+        <div class="n">03</div>
+        <h3>Neighbors, not brokers</h3>
+        <p>We don't scrape a marketplace for the cheapest supplier. We know these people. We sit in their homes. After you buy, we hand you their number — directly.</p>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 Blumbang · Jeto, Klaten, Jawa Tengah</div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="band">
+  <div class="wrap">
+    <span class="section-label">The hands behind Blumbang</span>
+    <h2 class="section-title">The people who are usually <em>uncredited.</em></h2>
+    <p class="section-intro">Most workshops never name the people at the bench. We start with them. Each one speaks for themselves below — in their own words, in their own language. We left it exactly as they said it.</p>
+    <div class="team-grid">
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-bumur.webp" alt="Bu Mur at the Blumbang workshop"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Bu Mur</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Steady Hands</div>
+          <div class="name">Bu Mur</div>
+          <div class="since">2023 —</div>
+          <p class="quote">"Sepuluh resep masakan terenak sudah di tanganku."</p>
+          <p class="gloss">"Ten of the tastiest recipes already live in these hands." The same hands that finish the garments.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-buhar.webp" alt="Bu Har at the Blumbang workshop"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Bu Har</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Easygoing</div>
+          <div class="name">Bu Har</div>
+          <div class="since">2023 —</div>
+          <p class="quote">"Aku duwe tape ketan."</p>
+          <p class="gloss">"I've got some tape ketan." A quiet offer of homemade sweet rice — the way you're welcomed in a Javanese home.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-ria.webp" alt="Ria, operations at Blumbang"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Ria</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Relentless</div>
+          <div class="name">Ria</div>
+          <div class="since">2025 —</div>
+          <p class="quote">"Meskipun nggak fasih Jawa, sing penting wani ngeyel."</p>
+          <p class="gloss">"My Javanese isn't fluent — what matters is I dare to keep at it." The one who answers when you message.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-paijo.webp" alt="Paijo, tailor at Blumbang"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Paijo</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Backbone</div>
+          <div class="name">Paijo</div>
+          <div class="since">2023 —</div>
+          <p class="quote">"Menjahit pakaian untuk merajut dunia."</p>
+          <p class="gloss">"Sewing clothes to stitch the world together." When he's not at Blumbang, he's letting out fishing line somewhere quiet.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-arie.webp" alt="Bang Arie, screen-printer at Blumbang"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Bang Arie</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Fighter</div>
+          <div class="name">Bang Arie</div>
+          <div class="since">2023 — 2024 · 2025 —</div>
+          <p class="quote">"Tinta di tanganku lebih tua dari toko sablonmu."</p>
+          <p class="gloss">"The ink on my hands is older than your print shop." Screen-printing since 1998. Every shirt passes through him.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-yoshi.webp" alt="Yoshi, newest member at Blumbang"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Yoshi</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Almost Graduate</div>
+          <div class="name">Yoshi</div>
+          <div class="since">2026 —</div>
+          <p class="quote">"Kenapa hidup harus ada skripsi?"</p>
+          <p class="gloss">"Why does life have to come with a thesis?" The youngest at the bench, learning the digital side fast.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="photo">
+          <img src="https://media.blumbang.id/team-betchak.webp" alt="Betchak, founder of Blumbang"
+               onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Betchak</div>';" />
+        </div>
+        <div class="info">
+          <div class="role">The Problem Maker</div>
+          <div class="name">Betchak</div>
+          <div class="since">2022 — &nbsp;·&nbsp; founder</div>
+          <p class="quote">"Mie ayam enak iki."</p>
+          <p class="gloss">"Now this is good chicken noodle." Started the whole thing. Still happiest over a good bowl of mie ayam.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLOSER -->
+<section class="closer">
+  <div class="lamp">✦</div>
+  <blockquote>We just want to light a small lamp from Klaten — and watch it <em>glow</em> somewhere in your part of the world.</blockquote>
+  <div class="ctas">
+    <a href="/#batik" class="cta">Meet the makers →</a>
+    <a href="https://blumbang.id" class="cta ghost">Visit blumbang.id →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-mark">BLUMB<span class="spark">✦</span>NG</div>
+        <p class="foot-desc">A screen-printing studio in Jeto, Klaten, Java. We make shirts by hand — and bring you the work of the makers around us.</p>
+        <div class="foot-addr">Jeto RT 32 RW 10, Gaden<br>Trucuk, Klaten · Jawa Tengah<br>Indonesia</div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#batik">Meet the makers</a></li>
+          <li><a href="/living-garment">Living Garment</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="https://blumbang.id">blumbang.id — studio site</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Stay close</h4>
+        <ul>
+          <li><a href="https://wa.me/6281234561146">WhatsApp us</a></li>
+          <li><a href="https://www.tiktok.com/@blumbang.id" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="mailto:hello@blumbang.com">hello@blumbang.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 Blumbang · Made slowly in Klaten, Java</span>
+      <a href="https://blumbang.id" class="foot-id">Also at blumbang.id →</a>
+    </div>
   </div>
 </footer>
+
 <script>
-function toggleMenu(){
-  const m=document.getElementById('nav-mobile');
-  const h=document.getElementById('hamburger');
-  m.classList.toggle('open');
-  h.textContent=m.classList.contains('open')?'✕':'☰';
-}
-
-// Load foto tim dari Apps Script HOMEPAGE
-const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbx3aQma_SB1gMiSUuPPr6Ol6BwKlN1QtIV5EUJa1UM6Fli0H88Jg0aIxxTnlR1bRNY/exec';
-const fotoMap = {
-  'foto_bumur'  : 'foto-bumur',
-  'foto_buhar'  : 'foto-buhar',
-  'foto_ria'    : 'foto-ria',
-  'foto_paijo'  : 'foto-paijo',
-  'foto_arie'   : 'foto-arie',
-  'foto_chandra': 'foto-chandra',
-  'foto_danang' : 'foto-danang',
-  'foto_betchak': 'foto-betchak',
-};
-
-fetch(APPS_SCRIPT + '?action=get_homepage')
-  .then(r => r.json())
-  .then(data => {
-    if (!data || !data.data) return;
-    data.data.forEach(row => {
-      const key = row[0];
-      const url = row[1];
-      if (!key || !url) return;
-      const imgId = fotoMap[key];
-      if (!imgId) return;
-      const img = document.getElementById(imgId);
-      if (img) {
-        const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-        const src = match
-          ? 'https://drive.google.com/thumbnail?id=' + match[1] + '&sz=w400'
-          : url;
-        img.onerror = () => { img.parentElement.style.display = 'none'; };
-        img.src = src;
-      }
-    });
-    // Sembunyikan semua wrap yang tidak dapat foto
-    document.querySelectorAll('.tm-photo-wrap').forEach(wrap => {
-      const img = wrap.querySelector('img');
-      if (img && !img.src) wrap.style.display = 'none';
-    });
-  })
-  .catch(() => {});
-
+function toggleNav(){document.getElementById('mobnav').classList.toggle('open');}
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){if(window.scrollY>40)hdr.classList.add('solid');else hdr.classList.remove('solid');},{passive:true});
 </script>
 </body>
 </html>
