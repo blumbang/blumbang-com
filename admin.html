@@ -325,7 +325,15 @@ label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:upperc
 
 <script>
 const WORKER = 'https://piece-builder.blmbng-id.workers.dev';
-let TOKEN = '';
+let TOKEN = sessionStorage.getItem('blb_com_token') || '';
+if (TOKEN) {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    document.getElementById('topbar-info').textContent = 'Terhubung ke piece-builder · D1 blumbang-db';
+    loadAll();
+  });
+}
 
 function simpleHash(str){
   let h = 0;
@@ -338,6 +346,7 @@ function checkLogin() {
   const pwd = document.getElementById('pwd-input').value;
   if (simpleHash(pwd) === ADMIN_HASH) {
     TOKEN = pwd;
+    sessionStorage.setItem('blb_com_token', pwd);
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     document.getElementById('topbar-info').textContent = 'Terhubung ke piece-builder · D1 blumbang-db';
