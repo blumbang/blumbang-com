@@ -99,6 +99,8 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 .nav a:hover::after{width:100%;}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 .burger span{display:block;width:24px;height:1.5px;background:var(--text);transition:.3s;}
+.lang-toggle{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--muted2,#6f6657);padding:5px 11px;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-left:14px;}
+.lang-toggle:hover{color:var(--gold);border-color:var(--gold);}
 .mobnav{display:none;position:fixed;inset:60px 0 auto 0;z-index:99;background:var(--bg2);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 40px 28px;}
 .mobnav.open{display:flex;}
 .mobnav a{font-size:.85rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--text);padding:16px 0;border-bottom:1px solid var(--line);}
@@ -251,19 +253,24 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
 <header id="hdr">
   <a href="/" class="wordmark">BLUMB<span class="spark">✦</span>NG</a>
   <nav class="nav">
-    <a href="/makers">Makers</a>
+    <a href="/makers"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
     <a href="/makers">Batik</a>
     <a href="/living-garment">Living Garment</a>
-    <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
   </nav>
-  <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div style="display:flex;align-items:center;">
+    <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">ID</button>
+    <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </header>
 <div class="mobnav" id="mobnav">
-  <a href="/makers" onclick="toggleNav()">Makers</a>
+  <a href="/makers" onclick="toggleNav()"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
   <a href="/makers" onclick="toggleNav()">Batik</a>
   <a href="/living-garment" onclick="toggleNav()">Living Garment</a>
-  <a href="/about" onclick="toggleNav()">About</a>
-  <a href="https://wa.me/6281234561146" onclick="toggleNav()">✦ Message us</a>
+  <a href="/faq" onclick="toggleNav()">FAQ</a>
+  <a href="/about" onclick="toggleNav()"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
+  <a href="https://wa.me/6281234561146" onclick="toggleNav()"><span class="lang-en">✦ Message us</span><span class="lang-id" hidden>✦ Hubungi kami</span></a>
 </div>
 
 <div class="map-tip" id="map-tip"></div>
@@ -277,9 +284,9 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <span class="eyebrow reveal d1">Blumbang · Jeto, Klaten · Java</span>
-    <h1 class="reveal d2">You'll know whose <em>hands</em> made this.</h1>
-    <p class="sub reveal d3">We're a screen-printing workshop in Klaten. We make shirts by hand — and we bring you the work of the makers around us: batik, stone, weaving. Either way, you'll know exactly who made yours.</p>
-    <a href="/makers" class="cta reveal d4">Meet the makers <span class="arr">→</span></a>
+    <h1 class="reveal d2"><span class="lang-en">You'll know whose <em>hands</em> made this.</span><span class="lang-id" hidden>Kamu akan tahu <em>tangan siapa</em> yang membuatnya.</span></h1>
+    <p class="sub reveal d3"><span class="lang-en">We're a screen-printing workshop in Klaten. We make shirts by hand — and we bring you the work of the makers around us: batik, stone, weaving. Either way, you'll know exactly who made yours.</span><span class="lang-id" hidden>Kami workshop sablon di Klaten. Kaos kami buat sendiri dengan tangan — dan kami bawakan karya para pembuat di sekitar kami: batik, batu, tenun. Apapun pilihanmu, kamu tahu persis siapa yang membuatnya.</span></p>
+    <a href="/makers" class="cta reveal d4"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span> <span class="arr">→</span></a>
   </div>
   <div class="scroll-hint">Scroll</div>
 </section>
@@ -287,17 +294,17 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
 <!-- ══ BAND 2 — TRUST (LIVING PROOF) ══ -->
 <section class="band-map" id="proof">
   <div class="map-head">
-    <span class="eyebrow">Living Garment — a different code</span>
-    <h2>Our shirts carry a code too. But theirs doesn't point <em class="num">back</em> to a maker — it points <em class="num">forward</em>, to wherever you take it.</h2>
-    <p class="lg-note"><span id="n-pieces">Hundreds</span> of pieces are already out in the world, carried to <span id="n-cities">cities</span> across the map — from Klaten to Seychelles and Tokyo. Every dot is one of them. Watch it move.</p>
+    <span class="eyebrow"><span class="lang-en">Living Garment — a different code</span><span class="lang-id" hidden>Living Garment — kode yang berbeda</span></span>
+    <h2><span class="lang-en">Our shirts carry a code too. But theirs doesn't point <em class="num">back</em> to a maker — it points <em class="num">forward</em>, to wherever you take it.</span><span class="lang-id" hidden>Kaos kami juga membawa kode. Tapi kodenya tidak menunjuk <em class="num">ke belakang</em> ke pembuat — ia menunjuk <em class="num">ke depan</em>, ke mana pun kamu membawanya.</span></h2>
+    <p class="lg-note"><span class="lang-en"><span id="n-pieces">Hundreds</span> of pieces are already out in the world, carried to <span id="n-cities">cities</span> across the map — from Klaten to Seychelles and Tokyo. Every dot is one of them. Watch it move.</span><span class="lang-id" hidden>Ratusan kaos sudah tersebar di dunia, terbawa ke berbagai kota di peta — dari Klaten sampai Seychelles dan Tokyo. Setiap titik adalah salah satunya. Lihat ia bergerak.</span></p>
   </div>
   <div class="map-stage" id="map-stage">
     <div class="map-loading" id="map-loading"><span>Lighting the map…</span></div>
     <svg id="world-map"></svg>
   </div>
   <div class="map-foot">
-    <span class="note">Updated live from real scans</span>
-    <a href="/living-garment" class="link-gold">See the full journey map <span>→</span></a>
+    <span class="note"><span class="lang-en">Updated live from real scans</span><span class="lang-id" hidden>Diperbarui langsung dari scan nyata</span></span>
+    <a href="/living-garment" class="link-gold"><span class="lang-en">See the full journey map</span><span class="lang-id" hidden>Lihat peta perjalanan lengkap</span> <span>→</span></a>
   </div>
 </section>
 
@@ -320,20 +327,20 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
     </div>
     <div class="batik-grid">
       <div>
-        <span class="eyebrow-d">✦ &nbsp;What the price is really for</span>
-        <h2 class="h-big">Eleven days. One pair of hands. No machine touched it.</h2>
-        <p class="body-lg">We don't draw batik — our neighbors do. A hand-drawn batik tulis like this sells for <strong>€180–250</strong> in a European boutique. Through us it costs a fraction of that — and on the maker's page you'll see exactly how much reaches the woman who drew it, line by line. <strong>We don't hide that number. We built the company around it.</strong></p>
+        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">What the price is really for</span><span class="lang-id" hidden>Untuk apa harga itu sebenarnya</span></span>
+        <h2 class="h-big"><span class="lang-en">Eleven days. One pair of hands. No machine touched it.</span><span class="lang-id" hidden>Sebelas hari. Sepasang tangan. Tak tersentuh mesin.</span></h2>
+        <p class="body-lg"><span class="lang-en">We don't draw batik — our neighbors do. A hand-drawn batik tulis like this sells for <strong>€180–250</strong> in a European boutique. Through us it costs a fraction of that — and on the maker's page you'll see exactly how much reaches the woman who drew it, line by line. <strong>We don't hide that number. We built the company around it.</strong></span><span class="lang-id" hidden>Kami tidak menggambar batik — tetangga kami yang menggambar. Batik tulis seperti ini dijual <strong>€180–250</strong> di butik Eropa. Lewat kami harganya jauh di bawah itu — dan di halaman pembuat kamu bisa lihat persis berapa yang sampai ke tangan perempuan yang menggambarnya, garis demi garis. <strong>Kami tidak menyembunyikan angka itu. Kami membangun usaha ini di atasnya.</strong></span></p>
         <div class="scarcity">
-          <div class="q">"She finishes about four pieces a month."</div>
-          <div class="a">That's not a marketing tactic. That's how long it takes.</div>
+          <div class="q"><span class="lang-en">"She finishes about four pieces a month."</span><span class="lang-id" hidden>"Beliau menyelesaikan sekitar empat kain sebulan."</span></div>
+          <div class="a"><span class="lang-en">That's not a marketing tactic. That's how long it takes.</span><span class="lang-id" hidden>Itu bukan taktik pemasaran. Memang selama itu prosesnya.</span></div>
         </div>
       </div>
       <aside class="anchor-card">
-        <div class="lbl">In a European boutique</div>
+        <div class="lbl"><span class="lang-en">In a European boutique</span><span class="lang-id" hidden>Di butik Eropa</span></div>
         <div class="eur">€180–250</div>
-        <div class="eur-sub">for one hand-drawn batik tulis</div>
-        <div class="ours">Through us it costs <em>a fraction</em> of that — with the maker's wage shown in the open.</div>
-        <div class="wage">Open the maker's page and the number is right under the price: what eleven days of her work is actually worth.</div>
+        <div class="eur-sub"><span class="lang-en">for one hand-drawn batik tulis</span><span class="lang-id" hidden>untuk satu batik tulis</span></div>
+        <div class="ours"><span class="lang-en">Through us it costs <em>a fraction</em> of that — with the maker's wage shown in the open.</span><span class="lang-id" hidden>Lewat kami harganya <em>jauh di bawah</em> itu — dengan upah pembuat ditampilkan terbuka.</span></div>
+        <div class="wage"><span class="lang-en">Open the maker's page and the number is right under the price: what eleven days of her work is actually worth.</span><span class="lang-id" hidden>Buka halaman pembuat dan angkanya ada tepat di bawah harga: nilai sebenarnya dari sebelas hari kerjanya.</span></div>
       </aside>
     </div>
   </div>
@@ -348,11 +355,11 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
              onerror="this.parentElement.innerHTML='<div class=&quot;ph ph-dark&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Band 4 · A maker holding a simple phone, a small smile — the face at the end of the number we hand you</div></div>';" />
       </div>
       <div>
-        <span class="eyebrow-d">✦ &nbsp;After you buy</span>
-        <h2 class="h-big">Once it's yours, you can talk to her <em style="font-style:italic;color:var(--gold-soft)">directly.</em></h2>
-        <p class="body-lg">Buy a piece and we hand you the maker's own number. Want another — or something made only for you? Go straight to her. No middleman after that.</p>
-        <p class="body-lg">Most shops would never hand that over. That's exactly why we do — you'll find that button on every maker's page.</p>
-        <a href="#batik" class="link-gold" style="margin-top:8px;">See how it works <span>→</span></a>
+        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">After you buy</span><span class="lang-id" hidden>Setelah kamu membeli</span></span>
+        <h2 class="h-big"><span class="lang-en">Once it's yours, you can sit down with her — <em style="font-style:italic;color:var(--gold-soft)">we set it up.</em></span><span class="lang-id" hidden>Setelah jadi milikmu, kamu bisa bertemu beliau — <em style="font-style:italic;color:var(--gold-soft)">kami yang mengaturnya.</em></span></h2>
+        <p class="body-lg"><span class="lang-en">Want another piece — or something made only for you? Ask us, and we arrange a meeting with the maker herself. We bridge the language, set the time, and step back. The conversation is yours.</span><span class="lang-id" hidden>Ingin karya lain — atau sesuatu yang dibuat khusus untukmu? Hubungi kami, dan kami atur pertemuan dengan pembuatnya langsung. Kami jembatani bahasanya, atur waktunya, lalu mundur. Percakapan itu milikmu.</span></p>
+        <p class="body-lg"><span class="lang-en">Most shops keep the maker invisible. We do the opposite — while making sure she's never overwhelmed by strangers. You'll find that button on every maker's page.</span><span class="lang-id" hidden>Kebanyakan toko menyembunyikan pembuatnya. Kami sebaliknya — sambil memastikan beliau tidak pernah kewalahan oleh orang asing. Tombolnya ada di setiap halaman pembuat.</span></p>
+        <a href="#batik" class="link-gold" style="margin-top:8px;"><span class="lang-en">See how it works</span><span class="lang-id" hidden>Lihat cara kerjanya</span> <span>→</span></a>
       </div>
     </div>
   </div>
@@ -363,11 +370,11 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
   <div class="wrap">
     <div class="split">
       <div>
-        <span class="eyebrow-d">✦ &nbsp;Why us, not a marketplace</span>
-        <h2 class="h-big">We're not curators.<br>We're <em style="font-style:italic;color:var(--gold-soft)">neighbors.</em></h2>
-        <p class="body-lg">Blumbang is a screen-printing studio in Jeto, Klaten. The shirts, we make ourselves — our printer has been at it since 1998. Everything else comes from people who live minutes from us: the women who draw the batik, the family that carves the stone.</p>
-        <p class="body-lg">We didn't discover anyone. We grew up beside them — and we pay them what the work is actually worth.</p>
-        <div class="tagline">Made slowly. Felt deeply.</div>
+        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">Why us, not a marketplace</span><span class="lang-id" hidden>Kenapa kami, bukan marketplace</span></span>
+        <h2 class="h-big"><span class="lang-en">We're not curators.<br>We're <em style="font-style:italic;color:var(--gold-soft)">neighbors.</em></span><span class="lang-id" hidden>Kami bukan kurator.<br>Kami <em style="font-style:italic;color:var(--gold-soft)">tetangga.</em></span></h2>
+        <p class="body-lg"><span class="lang-en">Blumbang is a screen-printing studio in Jeto, Klaten. The shirts, we make ourselves — our printer has been at it since 1998. Everything else comes from people who live minutes from us: the women who draw the batik, the family that carves the stone.</span><span class="lang-id" hidden>Blumbang adalah studio sablon di Jeto, Klaten. Kaosnya kami buat sendiri — tukang sablon kami sudah menekuninya sejak 1998. Selebihnya datang dari orang-orang yang tinggal hanya beberapa menit dari kami: para perempuan yang menggambar batik, keluarga yang memahat batu.</span></p>
+        <p class="body-lg"><span class="lang-en">We didn't discover anyone. We grew up beside them — and we pay them what the work is actually worth.</span><span class="lang-id" hidden>Kami tidak menemukan siapa pun. Kami tumbuh di samping mereka — dan kami membayar sesuai nilai sebenarnya dari pekerjaan itu.</span></p>
+        <div class="tagline"><span class="lang-en">Made slowly. Felt deeply.</span><span class="lang-id" hidden>Dibuat perlahan. Terasa dalam.</span></div>
       </div>
       <div class="frame">
         <img src="https://media.blumbang.id/home-band5.webp" alt="The Blumbang team at the workshop in Jeto, Klaten"
@@ -383,28 +390,29 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
     <div class="foot-top">
       <div>
         <div class="foot-mark">BLUMB<span class="spark">✦</span>NG</div>
-        <p class="foot-desc">A studio in Jeto, Klaten, Java. We work beside the people who make our pieces — and we pay them what the work is worth.</p>
+        <p class="foot-desc"><span class="lang-en">A studio in Jeto, Klaten, Java. We work beside the people who make our pieces — and we pay them what the work is worth.</span><span class="lang-id" hidden>Studio di Jeto, Klaten, Jawa. Kami bekerja di samping orang-orang yang membuat karya kami — dan membayar sesuai nilai pekerjaannya.</span></p>
         <div class="foot-addr">Jeto RT 32 RW 10, Gaden<br>Trucuk, Klaten · Jawa Tengah<br>Indonesia</div>
       </div>
       <div class="foot-col">
-        <h4>Explore</h4>
+        <h4><span class="lang-en">Explore</span><span class="lang-id" hidden>Jelajahi</span></h4>
         <ul>
-          <li><a href="/makers">Meet the makers</a></li>
+          <li><a href="/makers"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span></a></li>
           <li><a href="/makers">Batik</a></li>
           <li><a href="/living-garment">Living Garment</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="https://blumbang.id">blumbang.id — studio site</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a></li>
+          <li><a href="https://blumbang.id"><span class="lang-en">blumbang.id — studio site</span><span class="lang-id" hidden>blumbang.id — situs studio</span></a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Stay close</h4>
+        <h4><span class="lang-en">Stay close</span><span class="lang-id" hidden>Tetap dekat</span></h4>
         <ul>
-          <li><a href="https://wa.me/6281234561146">WhatsApp us</a></li>
+          <li><a href="https://wa.me/6281234561146"><span class="lang-en">WhatsApp us</span><span class="lang-id" hidden>WhatsApp kami</span></a></li>
           <li><a href="https://www.tiktok.com/@blumbang.id" target="_blank" rel="noopener">TikTok</a></li>
           <li><a href="mailto:hello@blumbang.com">hello@blumbang.com</a></li>
         </ul>
         <div class="news">
-          <p>One quiet letter when a new maker joins. Nothing else.</p>
+          <p><span class="lang-en">One quiet letter when a new maker joins. Nothing else.</span><span class="lang-id" hidden>Satu surat singkat saat pembuat baru bergabung. Tidak ada yang lain.</span></p>
           <div class="news-form">
             <input type="email" id="news-email" placeholder="your email" aria-label="Email" />
             <button onclick="joinNews()">Join</button>
@@ -413,7 +421,7 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="foot-copy">© 2026 Blumbang · Made slowly in Klaten, Java</span>
+      <span class="foot-copy">© 2026 Blumbang · <span class="lang-en">Made slowly in Klaten, Java</span><span class="lang-id" hidden>Dibuat perlahan di Klaten, Jawa</span></span>
       <a href="https://blumbang.id" class="foot-id">Also at blumbang.id →</a>
     </div>
   </div>
@@ -535,6 +543,25 @@ window.addEventListener('resize',function(){
   _lastW=window.innerWidth;
   clearTimeout(_t);_t=setTimeout(function(){location.reload();},400);
 },{passive:true});
+</script>
+<script>
+(function(){
+  function applyLang(lang){
+    document.querySelectorAll('.lang-en').forEach(function(el){ el.hidden = (lang === 'id'); });
+    document.querySelectorAll('.lang-id').forEach(function(el){ el.hidden = (lang === 'en'); });
+    var btn = document.getElementById('lang-toggle');
+    if(btn) btn.textContent = lang === 'en' ? 'ID' : 'EN';
+    try{ localStorage.setItem('blmb_lang', lang); }catch(e){}
+  }
+  window.toggleLang = function(){
+    var cur;
+    try{ cur = localStorage.getItem('blmb_lang') || 'en'; }catch(e){ cur = 'en'; }
+    applyLang(cur === 'en' ? 'id' : 'en');
+  };
+  var saved;
+  try{ saved = localStorage.getItem('blmb_lang'); }catch(e){}
+  if(saved === 'id') applyLang('id');
+})();
 </script>
 </body>
 </html>
