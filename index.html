@@ -110,6 +110,14 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-photo{position:absolute;inset:0;z-index:0;}
 .hero-photo img{width:100%;height:100%;object-fit:cover;}
+.hero-xfade{position:absolute;inset:0;z-index:0;}
+.hero-xfade .xf{position:absolute;inset:0;opacity:0;animation:heroFade 14s ease-in-out infinite;}
+.hero-xfade .xf img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-xfade .xf:nth-child(2){animation-delay:7s;}
+@keyframes heroFade{0%{opacity:0;}10%{opacity:1;}50%{opacity:1;}60%{opacity:0;}100%{opacity:0;}}
+.xf-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(120% 90% at 70% 30%,#241b12 0%,#15110c 70%);}
+.xf-ph .mark{font-family:var(--fd);font-size:3rem;color:var(--line);}
+.xf-ph .cap{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);max-width:280px;text-align:center;line-height:1.9;}
 .hero-ph{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(120% 90% at 70% 30%,#241b12 0%,#15110c 70%);}
 .hero-ph .mark{font-family:var(--fd);font-size:3rem;color:var(--line);}
 .hero-ph .cap{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);max-width:280px;text-align:center;line-height:1.9;}
@@ -254,7 +262,6 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
   <a href="/" class="wordmark">BLUMB<span class="spark">✦</span>NG</a>
   <nav class="nav">
     <a href="/makers"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
-    <a href="/makers">Batik</a>
     <a href="/living-garment">Living Garment</a>
     <a href="/faq">FAQ</a>
     <a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
@@ -266,7 +273,6 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
 </header>
 <div class="mobnav" id="mobnav">
   <a href="/makers" onclick="toggleNav()"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
-  <a href="/makers" onclick="toggleNav()">Batik</a>
   <a href="/living-garment" onclick="toggleNav()">Living Garment</a>
   <a href="/faq" onclick="toggleNav()">FAQ</a>
   <a href="/about" onclick="toggleNav()"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
@@ -277,15 +283,21 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
 
 <!-- ══ BAND 1 — CATEGORY REFRAME ══ -->
 <section class="hero">
-  <div class="hero-photo">
-    <img src="https://media.blumbang.id/home-band1.webp" alt="Hands screen-printing a shirt by hand at the Blumbang workshop in Klaten"
-         onerror="this.onerror=null;this.src='https://media.blumbang.id/1779804297231-proses-sablon-baju-klaten-blumbang-id.webp';" />
+  <div class="hero-xfade">
+    <div class="xf">
+      <img src="https://media.blumbang.id/hero-bu-lastri.webp" alt="Bu Lastri drawing batik with a canting at her home in Klaten"
+           onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;xf-ph&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Frame A · Bu Lastri with her canting — eyes down on the work, natural light</div></div>';" />
+    </div>
+    <div class="xf">
+      <img src="https://media.blumbang.id/hero-mbah-uti.webp" alt="Mbah Uti weaving lurik on a traditional ATBM loom at her home in Klaten"
+           onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;xf-ph&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Frame B · Mbah Uti at the ATBM loom — weaving lurik since 1974</div></div>';" />
+    </div>
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
-    <span class="eyebrow reveal d1">Blumbang · Jeto, Klaten · Java</span>
-    <h1 class="reveal d2"><span class="lang-en">You'll know whose <em>hands</em> made this.</span><span class="lang-id" hidden>Kamu akan tahu <em>tangan siapa</em> yang membuatnya.</span></h1>
-    <p class="sub reveal d3"><span class="lang-en">We're a screen-printing workshop in Klaten. We make shirts by hand — and we bring you the work of the makers around us: batik, stone, weaving. Either way, you'll know exactly who made yours.</span><span class="lang-id" hidden>Kami workshop sablon di Klaten. Kaos kami buat sendiri dengan tangan — dan kami bawakan karya para pembuat di sekitar kami: batik, batu, tenun. Apapun pilihanmu, kamu tahu persis siapa yang membuatnya.</span></p>
+    <span class="eyebrow reveal d1">Jeto, Klaten — Java</span>
+    <h1 class="reveal d2"><span class="lang-en">Yogyakarta sells the batik. Solo sells the lurik.<br>Much of it is drawn and woven <em>here</em> — by our neighbors.</span><span class="lang-id" hidden>Yogyakarta menjual batiknya. Solo menjual luriknya.<br>Sebagian besar digambar dan ditenun <em>di sini</em> — oleh tetangga kami.</span></h1>
+    <p class="sub reveal d3"><span class="lang-en">Every piece carries a code. Scan it, and you meet the one who made yours.</span><span class="lang-id" hidden>Setiap karya membawa kode. Pindai, dan kamu bertemu orang yang membuatnya.</span></p>
     <a href="/makers" class="cta reveal d4"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span> <span class="arr">→</span></a>
   </div>
   <div class="scroll-hint">Scroll</div>
@@ -359,7 +371,7 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
         <h2 class="h-big"><span class="lang-en">Once it's yours, you can sit down with her — <em style="font-style:italic;color:var(--gold-soft)">we set it up.</em></span><span class="lang-id" hidden>Setelah jadi milikmu, kamu bisa bertemu beliau — <em style="font-style:italic;color:var(--gold-soft)">kami yang mengaturnya.</em></span></h2>
         <p class="body-lg"><span class="lang-en">Want another piece — or something made only for you? Ask us, and we arrange a meeting with the maker herself. We bridge the language, set the time, and step back. The conversation is yours.</span><span class="lang-id" hidden>Ingin karya lain — atau sesuatu yang dibuat khusus untukmu? Hubungi kami, dan kami atur pertemuan dengan pembuatnya langsung. Kami jembatani bahasanya, atur waktunya, lalu mundur. Percakapan itu milikmu.</span></p>
         <p class="body-lg"><span class="lang-en">Most shops keep the maker invisible. We do the opposite — while making sure she's never overwhelmed by strangers. You'll find that button on every maker's page.</span><span class="lang-id" hidden>Kebanyakan toko menyembunyikan pembuatnya. Kami sebaliknya — sambil memastikan beliau tidak pernah kewalahan oleh orang asing. Tombolnya ada di setiap halaman pembuat.</span></p>
-        <a href="#batik" class="link-gold" style="margin-top:8px;"><span class="lang-en">See how it works</span><span class="lang-id" hidden>Lihat cara kerjanya</span> <span>→</span></a>
+        <a href="/makers" class="link-gold" style="margin-top:8px;"><span class="lang-en">See how it works</span><span class="lang-id" hidden>Lihat cara kerjanya</span> <span>→</span></a>
       </div>
     </div>
   </div>
@@ -397,7 +409,6 @@ footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40
         <h4><span class="lang-en">Explore</span><span class="lang-id" hidden>Jelajahi</span></h4>
         <ul>
           <li><a href="/makers"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span></a></li>
-          <li><a href="/makers">Batik</a></li>
           <li><a href="/living-garment">Living Garment</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a></li>
