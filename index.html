@@ -173,8 +173,16 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   header,header.solid{padding:16px 22px;}
   .nav{display:none;}
   .burger{display:flex;}
-  .hero{min-height:unset;aspect-ratio:1/1;}
-  .hero-inner{padding:0 22px 12vh;}
+  .hero{min-height:unset;display:block;}
+  .hero-bg{position:relative;inset:auto;height:auto;padding:0;background:none;}
+  .hero-bg img{width:100%;height:auto !important;object-fit:contain !important;}
+  .hero-scrim{display:none;}
+  .hero-inner{position:relative;z-index:2;padding:34px 22px 44px;background:var(--cream);max-width:none;}
+  .hero .loc{color:var(--muted);}
+  .hero h1{color:var(--ink);}
+  .hero h1 em{color:var(--gold);}
+  .hero .sub{color:#5A4E42;}
+  .hero .cta-btn{background:var(--ink);color:var(--cream);}
   .triptych{grid-template-columns:1fr;}
   .trip .ph{aspect-ratio:3/2;}
   .story{grid-template-columns:1fr;}
@@ -223,7 +231,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="https://media.blumbang.id/1781446318009-hero.webp" alt="Penenun lurik Jeto, Klaten" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+    <img src="https://media.blumbang.id/1781437777510-tenun-lurik.webp" alt="Penenun lurik Jeto, Klaten" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
