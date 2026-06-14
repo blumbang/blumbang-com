@@ -20,36 +20,10 @@
 
 <!-- Schema -->
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "@id":"https://blumbang.com/#org",
-  "name":"Blumbang",
-  "alternateName":"Blumbang ID",
-  "url":"https://blumbang.com",
-  "logo":"https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp",
-  "slogan":"Made slowly. Felt deeply.",
-  "description":"A studio in Jeto, Klaten, Java. We work beside the people who draw our batik and pay them what eleven days of work is actually worth. Every piece carries a code that connects buyer to maker.",
-  "foundingDate":"2022",
-  "email":"hello@blumbang.com",
-  "address":{"@type":"PostalAddress","streetAddress":"Jeto RT 32 RW 10, Gaden, Trucuk","addressLocality":"Klaten","addressRegion":"Jawa Tengah","postalCode":"57467","addressCountry":"ID"},
-  "sameAs":["https://blumbang.id","https://www.instagram.com/blumbang.id","https://www.tiktok.com/@blumbang.id","https://wa.me/6281234561146"]
-}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://blumbang.com/#org","name":"Blumbang","alternateName":"Blumbang ID","url":"https://blumbang.com","logo":"https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp","slogan":"Made slowly. Felt deeply.","description":"A studio in Jeto, Klaten, Java. We work beside the people who draw our batik and pay them what eleven days of work is actually worth. Every piece carries a code that connects buyer to maker.","foundingDate":"2022","email":"hello@blumbang.com","address":{"@type":"PostalAddress","streetAddress":"Jeto RT 32 RW 10, Gaden, Trucuk","addressLocality":"Klaten","addressRegion":"Jawa Tengah","postalCode":"57467","addressCountry":"ID"},"sameAs":["https://blumbang.id","https://www.instagram.com/blumbang.id","https://www.tiktok.com/@blumbang.id","https://wa.me/6281234561146"]}
 </script>
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://blumbang.com/#business",
-  "name":"Blumbang",
-  "image":"https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp",
-  "url":"https://blumbang.com",
-  "telephone":"+6281234561146",
-  "priceRange":"$$",
-  "address":{"@type":"PostalAddress","streetAddress":"Jeto RT 32 RW 10, Gaden, Trucuk","addressLocality":"Klaten","addressRegion":"Jawa Tengah","postalCode":"57467","addressCountry":"ID"},
-  "geo":{"@type":"GeoCoordinates","latitude":-7.749626,"longitude":110.670888},
-  "hasMap":"https://maps.app.goo.gl/eZ2dzu6utM5yrK8C7"
-}
+{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://blumbang.com/#business","name":"Blumbang","image":"https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp","url":"https://blumbang.com","telephone":"+6281234561146","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Jeto RT 32 RW 10, Gaden, Trucuk","addressLocality":"Klaten","addressRegion":"Jawa Tengah","postalCode":"57467","addressCountry":"ID"},"geo":{"@type":"GeoCoordinates","latitude":-7.749626,"longitude":110.670888},"hasMap":"https://maps.app.goo.gl/eZ2dzu6utM5yrK8C7"}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,387 +33,363 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 
 <style>
-:root{
-  --bg:#15110c;          /* warm espresso near-black */
-  --bg2:#1d1710;         /* warm charcoal */
-  --bg-map:#0c0a07;      /* deepest, map band */
-  --ocean:#0b1620;       /* map ocean */
-  --paper:#F2EBDC;       /* warm cream (light band) */
-  --paper2:#E9E0CC;
-  --ink:#1a140d;         /* dark text on cream */
-  --text:#E9DFCB;        /* warm off-white */
-  --muted:#9b9079;       /* warm grey-tan */
-  --muted2:#6f6657;
-  --gold:#C9A84C;
-  --gold-soft:#DCC074;
-  --line:#2e2619;        /* warm border (dark) */
-  --line-cream:#d6cab0;
-  --fd:'Fraunces',Georgia,serif;
-  --fb:'Montserrat',sans-serif;
-}
+/* === RESET === */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-body{background:var(--bg);color:var(--text);font-family:var(--fb);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body{background:#F2EDE4;color:#1C1712;font-family:'Montserrat',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
-::selection{background:var(--gold);color:var(--bg);}
+::selection{background:#B8862C;color:#F2EDE4;}
 
-/* grain overlay */
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* === VARIABLES === */
+:root{
+  --cream:#F2EDE4;--cream2:#EAE3D6;
+  --ink:#1C1712;--muted:#7A6E62;--muted2:#A89E90;
+  --gold:#B8862C;--border:#D4C9B5;--frame:#DDD5C8;
+  --dk:#15110c;--dk2:#1d1710;--dk-text:#E9DFCB;
+  --dk-muted:#9b9079;--dk-gold:#C9A84C;--dk-line:#2e2619;
+  --fd:'Fraunces',Georgia,serif;--fb:'Montserrat',sans-serif;
+}
 
-/* ── HEADER ── */
-header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:linear-gradient(to bottom,rgba(21,17,12,.9),rgba(21,17,12,0));transition:background .3s,padding .3s,border-color .3s;border-bottom:1px solid transparent;}
-header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bottom-color:var(--line);padding:14px 40px;}
-.wordmark{font-family:var(--fd);font-weight:600;font-size:1.4rem;letter-spacing:.04em;color:var(--text);}
-.wordmark .spark{color:var(--gold);}
-.nav{display:flex;align-items:center;gap:30px;}
-.nav a{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s;position:relative;}
-.nav a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--gold);transition:width .3s;}
-.nav a:hover{color:var(--text);}
+/* === PHOTO PLACEHOLDER FRAME === */
+.ph{background:var(--frame);border:2px dashed #B8AA98;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 22px;}
+.ph-ico{font-size:1.8rem;margin-bottom:10px;opacity:.38;}
+.ph-lbl{font-size:.52rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#8A7A68;margin-bottom:7px;}
+.ph-txt{font-size:.72rem;color:#A89E90;line-height:1.65;max-width:28ch;}
+
+/* === HEADER === */
+header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(242,237,228,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,padding .3s;}
+header.solid{border-bottom-color:var(--border);padding:14px 48px;}
+.wordmark{font-family:var(--fd);font-weight:600;font-size:1.1rem;letter-spacing:.06em;color:var(--ink);}
+.nav{display:flex;gap:32px;}
+.nav a{font-size:.63rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative;}
+.nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav a:hover{color:var(--ink);}
 .nav a:hover::after{width:100%;}
+.lang{font-size:.6rem;font-weight:600;letter-spacing:.12em;color:var(--muted);}
+.lang strong{color:var(--ink);}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
-.burger span{display:block;width:24px;height:1.5px;background:var(--text);transition:.3s;}
-.lang-toggle{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--muted2,#6f6657);padding:5px 11px;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-left:14px;}
-.lang-toggle:hover{color:var(--gold);border-color:var(--gold);}
-.mobnav{display:none;position:fixed;inset:60px 0 auto 0;z-index:99;background:var(--bg2);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 40px 28px;}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:.3s;}
+.burger.x span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.x span:nth-child(2){opacity:0;}
+.burger.x span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobnav{display:none;position:fixed;top:57px;left:0;right:0;z-index:199;background:var(--cream);border-bottom:1px solid var(--border);flex-direction:column;padding:8px 24px 24px;}
 .mobnav.open{display:flex;}
-.mobnav a{font-size:.85rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--text);padding:16px 0;border-bottom:1px solid var(--line);}
+.mobnav a{font-size:.82rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--border);}
 .mobnav a:last-child{border-bottom:none;color:var(--gold);}
 
-/* ── BAND 1 — HERO ── */
+/* === HERO === */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;}
-.hero-photo{position:absolute;inset:0;z-index:0;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;}
-.hero-xfade{position:absolute;inset:0;z-index:0;}
-.hero-xfade .xf{position:absolute;inset:0;opacity:0;animation:heroFade 14s ease-in-out infinite;}
-.hero-xfade .xf img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-xfade .xf:nth-child(2){animation-delay:7s;}
-@keyframes heroFade{0%{opacity:0;}10%{opacity:1;}50%{opacity:1;}60%{opacity:0;}100%{opacity:0;}}
-.xf-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(120% 90% at 70% 30%,#241b12 0%,#15110c 70%);}
-.xf-ph .mark{font-family:var(--fd);font-size:3rem;color:var(--line);}
-.xf-ph .cap{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);max-width:280px;text-align:center;line-height:1.9;}
-.hero-ph{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(120% 90% at 70% 30%,#241b12 0%,#15110c 70%);}
-.hero-ph .mark{font-family:var(--fd);font-size:3rem;color:var(--line);}
-.hero-ph .cap{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);max-width:280px;text-align:center;line-height:1.9;}
-.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(12,9,6,.96) 0%,rgba(12,9,6,.55) 38%,rgba(12,9,6,.15) 70%,rgba(12,9,6,.35) 100%);}
-.hero-inner{position:relative;z-index:2;padding:0 40px 9vh;max-width:1000px;}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.64rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;}
-.eyebrow::before{content:'✦';font-size:.7rem;}
-.hero h1{font-family:var(--fd);font-weight:400;font-size:clamp(2.7rem,6.4vw,6rem);line-height:1.02;letter-spacing:-.01em;color:#fff;max-width:14ch;margin-bottom:30px;}
-.hero h1 em{font-style:italic;color:var(--gold-soft);}
-.hero p.sub{font-size:clamp(1rem,1.6vw,1.18rem);font-weight:300;line-height:1.75;color:var(--text);max-width:46ch;margin-bottom:42px;opacity:.92;}
-.cta{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--bg);padding:17px 34px;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;transition:transform .25s,background .25s;}
-.cta:hover{background:var(--gold-soft);transform:translateY(-3px);}
-.cta .arr{transition:transform .25s;}
-.cta:hover .arr{transform:translateX(5px);}
-.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:floaty 2.4s ease-in-out infinite;}
-.scroll-hint::after{content:'';width:1px;height:34px;background:linear-gradient(var(--gold),transparent);}
+.hero-bg{position:absolute;inset:0;z-index:0;background:#C4BAA6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;}
+.hero-bg .ph-ico{font-size:3rem;opacity:.2;}
+.hero-bg .ph-lbl{color:rgba(255,255,255,.3);}
+.hero-bg .ph-txt{color:rgba(255,255,255,.22);max-width:44ch;}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(18,12,6,.92) 0%,rgba(18,12,6,.44) 42%,rgba(18,12,6,.1) 70%,rgba(18,12,6,.28) 100%);}
+.hero-inner{position:relative;z-index:2;padding:0 48px 9vh;max-width:980px;}
+.loc{display:inline-flex;align-items:center;gap:8px;font-size:.56rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:22px;}
+.hero h1{font-family:var(--fd);font-weight:400;font-size:clamp(3rem,6.2vw,6rem);line-height:1.02;letter-spacing:-.01em;color:#fff;max-width:13ch;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:#E8C97A;}
+.hero .sub{font-size:clamp(.9rem,1.4vw,1.05rem);font-weight:300;color:rgba(255,255,255,.78);max-width:44ch;line-height:1.8;margin-bottom:36px;}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--ink);padding:16px 32px;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;transition:background .2s,gap .2s;border:none;cursor:pointer;font-family:var(--fb);}
+.cta-btn:hover{background:var(--cream);}
+.cta-btn .arr{transition:transform .2s;}
+.cta-btn:hover .arr{transform:translateX(5px);}
 
-/* anim load */
-.reveal{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
-.d1{animation-delay:.15s;}.d2{animation-delay:.32s;}.d3{animation-delay:.5s;}.d4{animation-delay:.68s;}
+/* === TRIPTYCH === */
+.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--border);}
+.trip{position:relative;overflow:hidden;cursor:pointer;}
+.trip .ph{aspect-ratio:4/5;border:none;transition:filter .25s;}
+.trip:hover .ph{filter:brightness(.86);}
+.trip-ov{position:absolute;bottom:0;left:0;right:0;padding:28px 22px;background:linear-gradient(to top,rgba(18,12,6,.8) 0%,transparent 100%);}
+.trip-lbl{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#fff;margin-bottom:6px;}
+.trip-desc{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.5;max-width:22ch;}
+.trip-arr{display:inline-block;margin-top:8px;font-size:.7rem;color:rgba(255,255,255,.42);}
 
-/* ── BAND 2 — MAP / TRUST ── */
-.band-map{background:var(--bg-map);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
-.map-head{max-width:1100px;margin:0 auto;padding:88px 40px 30px;text-align:center;}
-.map-head .eyebrow{justify-content:center;}
-.map-head h2{font-family:var(--fd);font-weight:400;font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.15;color:var(--text);max-width:24ch;margin:0 auto 18px;}
-.map-head h2 .num{color:var(--gold-soft);font-style:italic;}
-.map-head p{font-size:1rem;font-weight:300;color:var(--muted);max-width:52ch;margin:0 auto;line-height:1.7;}
-.map-head .lg-note span{color:var(--gold-soft);font-weight:500;}
-.map-stage{position:relative;width:100%;}
-.map-stage svg{display:block;width:100%;}
-.map-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-.map-loading span{font-size:.66rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);animation:pulse 2s ease-in-out infinite;}
-.map-foot{max-width:1100px;margin:0 auto;padding:24px 40px 80px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
-.map-foot .note{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);}
-.link-gold{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .25s,gap .25s;}
-.link-gold:hover{border-color:var(--gold);gap:14px;}
-.map-tip{position:fixed;z-index:200;background:rgba(12,9,6,.95);border:1px solid var(--gold);color:var(--text);font-size:.68rem;font-weight:500;letter-spacing:.08em;padding:5px 12px;pointer-events:none;display:none;white-space:nowrap;transform:translate(-50%,-135%);}
-.map-tip.on{display:block;}
+/* === STORY BAND === */
+.story{display:grid;grid-template-columns:1fr 1.45fr;min-height:540px;}
+.story-txt{padding:clamp(56px,8vw,96px) clamp(32px,5vw,68px);display:flex;flex-direction:column;justify-content:center;background:var(--cream);}
+.eyebrow{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.h2{font-family:var(--fd);font-weight:400;font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.1;color:var(--ink);margin-bottom:18px;letter-spacing:-.01em;}
+.body-p{font-size:.94rem;font-weight:300;color:#5A4E42;line-height:1.82;max-width:42ch;margin-bottom:28px;}
+.lnk{display:inline-flex;align-items:center;gap:10px;font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:gap .2s,color .2s,border-color .2s;}
+.lnk:hover{gap:14px;color:var(--gold);border-color:var(--gold);}
+.story-ph{overflow:hidden;}
+.story-ph .ph{height:100%;min-height:480px;border:none;}
 
-/* ── SECTION SHELL ── */
-.band{padding:clamp(72px,11vh,140px) 40px;}
-.wrap{max-width:1180px;margin:0 auto;}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:center;}
-.eyebrow-d{display:inline-flex;align-items:center;gap:10px;font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px;}
-.h-big{font-family:var(--fd);font-weight:400;font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:26px;}
-.body-lg{font-size:1.06rem;font-weight:300;line-height:1.8;margin-bottom:18px;}
-.body-lg:last-child{margin-bottom:0;}
+/* === MAKERS BAND === */
+.makers{display:grid;grid-template-columns:1fr 1.5fr;align-items:center;padding:clamp(60px,9vw,108px) clamp(32px,5vw,68px);background:var(--cream2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.makers-txt{padding-right:clamp(24px,4vw,60px);}
+.makers-grid{display:flex;flex-wrap:wrap;gap:20px;}
+.mk{display:flex;flex-direction:column;align-items:center;gap:10px;width:calc(33.33% - 14px);}
+.mk-av{width:90px;height:90px;border-radius:50%;background:var(--frame);border:2px dashed #B8AA98;display:flex;align-items:center;justify-content:center;font-size:1.5rem;opacity:.65;}
+.mk-name{font-family:var(--fd);font-size:.84rem;color:var(--ink);text-align:center;}
+.mk-role{font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);text-align:center;line-height:1.55;}
 
-/* photo frames */
-.frame{position:relative;overflow:hidden;}
-.frame img{width:100%;height:100%;object-fit:cover;display:block;}
-.frame .ph{aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:30px;text-align:center;}
-.ph-dark{background:linear-gradient(140deg,#241b12,#15110c);border:1px solid var(--line);}
-.ph .mark{font-family:var(--fd);font-size:2.4rem;color:var(--line);}
-.ph .cap{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted2);line-height:1.9;max-width:30ch;}
+/* === MAP BAND (dark) === */
+.map-band{background:var(--dk);padding:clamp(56px,8vh,88px) 48px;text-align:center;border-top:1px solid var(--dk-line);}
+.eyebrow-dk{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--dk-gold);margin-bottom:16px;}
+.h2-dk{font-family:var(--fd);font-weight:400;font-size:clamp(1.5rem,2.8vw,2.4rem);color:var(--dk-text);max-width:32ch;margin:0 auto 14px;line-height:1.15;}
+.p-dk{font-size:.88rem;color:#6A5E52;max-width:48ch;margin:0 auto 28px;line-height:1.72;}
+.map-stats{display:flex;gap:48px;justify-content:center;margin-bottom:32px;}
+.map-stat span{font-family:var(--fd);font-size:2.4rem;font-weight:400;color:var(--dk-gold);display:block;line-height:1;}
+.map-stat p{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dk-muted);margin-top:6px;}
+#map-stage{position:relative;overflow:hidden;max-width:1200px;margin:0 auto;}
+#world-map{display:block;width:100%;}
+#map-tip{position:fixed;pointer-events:none;background:rgba(22,16,10,.94);color:var(--dk-text);font-size:.7rem;font-weight:400;padding:7px 14px;white-space:nowrap;z-index:999;opacity:0;transition:opacity .18s;transform:translate(-50%,-130%);}
+#map-tip.on{opacity:1;}
+#map-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dk-muted);}
+.map-lnk{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--dk-gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:3px;transition:gap .2s,border-color .2s;}
+.map-lnk:hover{gap:14px;border-color:var(--dk-gold);}
 
-/* ── BAND 3 — BATIK VALUE (CREAM) ── */
-.band-cream{background:var(--paper);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.band-cream .eyebrow-d{color:#9c7a1e;}
-.band-cream .h-big{color:var(--ink);}
-.band-cream .body-lg{color:#473b2a;}
-.band-cream .body-lg strong{color:var(--ink);font-weight:600;}
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:50px;}
-.triptych .frame .ph{aspect-ratio:3/4;}
-.ph-cream{background:linear-gradient(140deg,#e7ddc6,#dccfb2);border:1px solid var(--line-cream);}
-.ph-cream .mark{color:#cdbf9f;}
-.ph-cream .cap{color:#9c8e72;}
-.batik-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:start;}
-.scarcity{margin-top:30px;padding:24px 28px;background:#ece3cd;border-left:3px solid var(--gold);}
-.scarcity .q{font-family:var(--fd);font-style:italic;font-size:1.3rem;line-height:1.4;color:var(--ink);margin-bottom:8px;}
-.scarcity .a{font-size:.82rem;letter-spacing:.04em;color:#6f6248;}
-.anchor-card{background:#fff;border:1px solid var(--line-cream);padding:34px 30px;}
-.anchor-card .lbl{font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#9c8e72;margin-bottom:14px;}
-.anchor-card .eur{font-family:var(--fd);font-size:2.6rem;color:#b8b0a0;line-height:1;text-decoration:line-through;text-decoration-thickness:1px;}
-.anchor-card .eur-sub{font-size:.8rem;color:#8a7d64;margin-top:6px;margin-bottom:26px;}
-.anchor-card .ours{font-family:var(--fd);font-size:1.5rem;color:var(--ink);line-height:1.3;}
-.anchor-card .ours em{font-style:italic;color:#9c7a1e;}
-.anchor-card .wage{margin-top:18px;padding-top:18px;border-top:1px solid var(--line-cream);font-size:.82rem;line-height:1.7;color:#6f6248;}
+/* === NEWSLETTER === */
+.news-band{background:var(--dk2);padding:clamp(48px,7vh,72px) 48px;text-align:center;border-top:1px solid var(--dk-line);}
+.news-band h3{font-family:var(--fd);font-weight:400;font-size:clamp(1.3rem,2.4vw,2rem);color:var(--dk-text);margin-bottom:10px;}
+.news-band p{font-size:.84rem;color:#6A5E52;margin-bottom:28px;max-width:42ch;margin-left:auto;margin-right:auto;line-height:1.7;}
+.news-form{display:flex;max-width:400px;margin:0 auto;border:1px solid var(--dk-line);}
+.news-form input{flex:1;background:transparent;border:none;padding:13px 18px;font-size:.82rem;font-family:var(--fb);color:var(--dk-text);outline:none;min-width:0;}
+.news-form input::placeholder{color:#4a4030;}
+.news-form button{background:var(--dk-gold);color:var(--dk);border:none;padding:13px 20px;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .2s;}
+.news-form button:hover{background:#C9A84C;}
 
-/* ── BAND 4 — TALK DIRECTLY ── */
-.band-4 .eyebrow-d{color:var(--gold);}
+/* === FOOTER === */
+footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-line);}
+.ft{max-width:1100px;margin:0 auto;}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid var(--dk-line);margin-bottom:24px;}
+.ft-mark{font-family:var(--fd);font-size:1.1rem;color:var(--dk-text);margin-bottom:12px;}
+.ft-desc{font-size:.79rem;color:#6A5E52;line-height:1.72;max-width:30ch;margin-bottom:14px;}
+.ft-addr{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#3a3028;line-height:2.1;}
+.ft-col h4{font-size:.52rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dk-gold);margin-bottom:16px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.ft-col a{font-size:.81rem;color:#6A5E52;transition:color .2s;}
+.ft-col a:hover{color:var(--dk-text);}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#3a3028;}
+.ft-lnk{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#6A5E52;transition:color .2s;}
+.ft-lnk:hover{color:var(--dk-gold);}
 
-/* ── BAND 5 — NEIGHBORS ── */
-.band-5{background:var(--bg2);border-top:1px solid var(--line);}
-.band-5 .eyebrow-d{color:var(--gold);}
-.band-5 .tagline{margin-top:36px;font-family:var(--fd);font-style:italic;font-size:clamp(1.4rem,2.6vw,2rem);color:var(--gold-soft);}
-
-/* ── FOOTER ── */
-footer{background:var(--bg-map);border-top:1px solid var(--line);padding:80px 40px 40px;}
-.foot-wrap{max-width:1180px;margin:0 auto;}
-.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1.3fr;gap:56px;padding-bottom:48px;border-bottom:1px solid var(--line);}
-.foot-mark{font-family:var(--fd);font-weight:600;font-size:1.5rem;color:var(--text);margin-bottom:16px;}
-.foot-mark .spark{color:var(--gold);}
-.foot-desc{font-size:.9rem;font-weight:300;line-height:1.75;color:var(--muted);max-width:34ch;margin-bottom:22px;}
-.foot-addr{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);line-height:2;}
-.foot-col h4{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
-.foot-col a{font-size:.9rem;font-weight:300;color:var(--muted);transition:color .25s;}
-.foot-col a:hover{color:var(--text);}
-.news{margin-top:8px;}
-.news p{font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:14px;}
-.news-form{display:flex;border:1px solid var(--line);}
-.news-form input{flex:1;background:transparent;border:none;padding:13px 16px;color:var(--text);font-family:var(--fb);font-size:.85rem;outline:none;}
-.news-form input::placeholder{color:var(--muted2);}
-.news-form button{background:var(--gold);border:none;color:var(--bg);padding:0 20px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s;}
-.news-form button:hover{background:var(--gold-soft);}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:30px;flex-wrap:wrap;gap:14px;}
-.foot-copy{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);}
-.foot-id{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s;}
-.foot-id:hover{color:var(--gold);}
-
-@keyframes rise{to{opacity:1;transform:translateY(0);}}
-@keyframes floaty{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-
-/* ── RESPONSIVE ── */
-@media(max-width:880px){
-  header{padding:16px 22px;}
-  header.solid{padding:12px 22px;}
+/* === RESPONSIVE === */
+@media(max-width:820px){
+  header,header.solid{padding:16px 22px;}
   .nav{display:none;}
   .burger{display:flex;}
-  .mobnav{padding-left:22px;padding-right:22px;}
-  .hero-inner{padding:0 22px 11vh;}
-  .band{padding:64px 22px;}
-  .split{grid-template-columns:1fr;gap:38px;}
-  .band-4 .split{display:flex;flex-direction:column-reverse;}
-  .batik-grid{grid-template-columns:1fr;gap:34px;}
-  .triptych{gap:4px;}
-  .map-head{padding:64px 22px 24px;}
-  .map-foot{padding:22px 22px 60px;}
-  .foot-top{grid-template-columns:1fr;gap:40px;}
-  .foot-bottom{padding-top:26px;}
-  footer{padding:60px 22px 36px;}
+  .hero-inner{padding:0 22px 12vh;}
+  .triptych{grid-template-columns:1fr;}
+  .trip .ph{aspect-ratio:3/2;}
+  .story{grid-template-columns:1fr;}
+  .story-ph{order:-1;}
+  .story-ph .ph{min-height:260px;}
+  .makers{grid-template-columns:1fr;padding:48px 22px;}
+  .makers-txt{padding-right:0;margin-bottom:32px;}
+  .mk{width:calc(50% - 10px);}
+  .map-band,.news-band{padding:48px 22px;}
+  .map-stats{gap:28px;}
+  footer{padding:48px 22px 28px;}
+  .ft-top{grid-template-columns:1fr;gap:28px;}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:8px;}
 }
+
+/* === ANIMATIONS === */
+@keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.loc{animation:rise .7s .1s ease both;}
+.hero h1{animation:rise .8s .25s ease both;}
+.hero .sub{animation:rise .8s .4s ease both;}
+.cta-btn{animation:rise .8s .55s ease both;}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ══ HEADER ══ -->
 <header id="hdr">
-  <a href="/" class="wordmark">BLUMB<span class="spark">✦</span>NG</a>
+  <a href="/" class="wordmark">BLUMBANG</a>
   <nav class="nav">
-    <a href="/makers"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
-    <a href="/living-garment">Living Garment</a>
-    <a href="/faq">FAQ</a>
-    <a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
+    <a href="/makers">Makers</a>
+    <a href="#story">Cerita</a>
+    <a href="#tentang">Tentang</a>
   </nav>
-  <div style="display:flex;align-items:center;">
-    <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">ID</button>
-    <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
+  <div class="lang"><strong>EN</strong> &nbsp;|&nbsp; ID</div>
+  <button class="burger" id="burger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 <div class="mobnav" id="mobnav">
-  <a href="/makers" onclick="toggleNav()"><span class="lang-en">Makers</span><span class="lang-id" hidden>Pengrajin</span></a>
-  <a href="/living-garment" onclick="toggleNav()">Living Garment</a>
-  <a href="/faq" onclick="toggleNav()">FAQ</a>
-  <a href="/about" onclick="toggleNav()"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a>
-  <a href="https://wa.me/6281234561146" onclick="toggleNav()"><span class="lang-en">✦ Message us</span><span class="lang-id" hidden>✦ Hubungi kami</span></a>
+  <a href="/makers">Makers</a>
+  <a href="#story">Cerita</a>
+  <a href="#tentang">Tentang</a>
+  <a href="https://wa.me/6281234561146">WhatsApp →</a>
 </div>
 
-<div class="map-tip" id="map-tip"></div>
-
-<!-- ══ BAND 1 — CATEGORY REFRAME ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="hero-xfade">
-    <div class="xf">
-      <img src="https://media.blumbang.id/hero-bu-lastri.webp" alt="Bu Lastri drawing batik with a canting at her home in Klaten"
-           onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;xf-ph&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Frame A · Bu Lastri with her canting — eyes down on the work, natural light</div></div>';" />
-    </div>
-    <div class="xf">
-      <img src="https://media.blumbang.id/hero-mbah-uti.webp" alt="Mbah Uti weaving lurik on a traditional ATBM loom at her home in Klaten"
-           onerror="this.onerror=null;this.parentElement.innerHTML='<div class=&quot;xf-ph&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Frame B · Mbah Uti at the ATBM loom — weaving lurik since 1974</div></div>';" />
-    </div>
+  <div class="hero-bg">
+    <div class="ph-ico">📷</div>
+    <div class="ph-lbl">Foto Hero — Latar Penuh Layar</div>
+    <div class="ph-txt">Wajah pengrajin sedang bekerja. Medium-close shot. Cahaya natural dari samping. Ekspresi fokus, tidak menatap kamera. Latar: ATBM atau meja batik. Ini foto terpenting di website.</div>
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
-    <span class="eyebrow reveal d1">Jeto, Klaten — Java</span>
-    <h1 class="reveal d2"><span class="lang-en">Yogyakarta sells the batik. Solo sells the lurik.<br>Much of it is drawn and woven <em>here</em> — by our neighbors.</span><span class="lang-id" hidden>Yogyakarta menjual batiknya. Solo menjual luriknya.<br>Sebagian besar digambar dan ditenun <em>di sini</em> — oleh tetangga kami.</span></h1>
-    <p class="sub reveal d3"><span class="lang-en">Every piece carries a code. Scan it, and you meet the one who made yours.</span><span class="lang-id" hidden>Setiap karya membawa kode. Pindai, dan kamu bertemu orang yang membuatnya.</span></p>
-    <a href="/makers" class="cta reveal d4"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span> <span class="arr">→</span></a>
+    <div class="loc">Jeto, Klaten — Jawa Tengah</div>
+    <h1>Shop by <em>person</em>,<br>not product.</h1>
+    <p class="sub">Every piece on Blumbang comes from one named maker. Browse them. Pick one. Know exactly whose hands made yours.</p>
+    <a href="/makers" class="cta-btn">Meet the makers <span class="arr">→</span></a>
   </div>
-  <div class="scroll-hint">Scroll</div>
 </section>
 
-<!-- ══ BAND 2 — TRUST (LIVING PROOF) ══ -->
-<section class="band-map" id="proof">
-  <div class="map-head">
-    <span class="eyebrow"><span class="lang-en">Living Garment — a different code</span><span class="lang-id" hidden>Living Garment — kode yang berbeda</span></span>
-    <h2><span class="lang-en">Our shirts carry a code too. But theirs doesn't point <em class="num">back</em> to a maker — it points <em class="num">forward</em>, to wherever you take it.</span><span class="lang-id" hidden>Kaos kami juga membawa kode. Tapi kodenya tidak menunjuk <em class="num">ke belakang</em> ke pembuat — ia menunjuk <em class="num">ke depan</em>, ke mana pun kamu membawanya.</span></h2>
-    <p class="lg-note"><span class="lang-en"><span id="n-pieces">Hundreds</span> of pieces are already out in the world, carried to <span id="n-cities">cities</span> across the map — from Klaten to Seychelles and Tokyo. Every dot is one of them. Watch it move.</span><span class="lang-id" hidden>Ratusan kaos sudah tersebar di dunia, terbawa ke berbagai kota di peta — dari Klaten sampai Seychelles dan Tokyo. Setiap titik adalah salah satunya. Lihat ia bergerak.</span></p>
+<!-- ══ TRIPTYCH ══ -->
+<div class="triptych">
+  <div class="trip">
+    <div class="ph">
+      <div class="ph-ico">📷</div>
+      <div class="ph-lbl">Foto 1 dari 3</div>
+      <div class="ph-txt">Full body pengrajin di depan ATBM. Medium-wide, vertical. Tangan aktif menenun.</div>
+    </div>
+    <div class="trip-ov">
+      <div class="trip-lbl">Handcrafted</div>
+      <div class="trip-desc">Dibuat perlahan, dengan keahlian turun-temurun.</div>
+      <div class="trip-arr">→</div>
+    </div>
   </div>
-  <div class="map-stage" id="map-stage">
-    <div class="map-loading" id="map-loading"><span>Lighting the map…</span></div>
+  <div class="trip">
+    <div class="ph">
+      <div class="ph-ico">📷</div>
+      <div class="ph-lbl">Foto 2 dari 3</div>
+      <div class="ph-txt">Extreme close-up tangan memegang canting, atau jari menyentuh benang di ATBM. Tekstur sangat tajam.</div>
+    </div>
+    <div class="trip-ov">
+      <div class="trip-lbl">Authentic</div>
+      <div class="trip-desc">Teknik tradisional, bahan alami, tanpa mesin.</div>
+      <div class="trip-arr">→</div>
+    </div>
+  </div>
+  <div class="trip">
+    <div class="ph">
+      <div class="ph-ico">📷</div>
+      <div class="ph-lbl">Foto 3 dari 3</div>
+      <div class="ph-txt">Close-up kain lurik atau batik terlipat rapi. Motif dan tekstur terlihat jelas. Cahaya hangat.</div>
+    </div>
+    <div class="trip-ov">
+      <div class="trip-lbl">Timeless</div>
+      <div class="trip-desc">Motif yang menghubungkan warisan dan kehidupan kini.</div>
+      <div class="trip-arr">→</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ STORY BAND ══ -->
+<section class="story" id="story">
+  <div class="story-txt">
+    <div class="eyebrow">Cerita dari Jeto</div>
+    <h2 class="h2">Sebuah Desa yang<br>Tertenun di Setiap<br>Helai Kain</h2>
+    <p class="body-p">Di Jeto, batik dan lurik bukan sekadar tekstil. Ia adalah bagian dari kehidupan sehari-hari — diwariskan dari satu generasi ke generasi berikutnya.</p>
+    <a href="#tentang" class="lnk">Baca cerita kami &nbsp;→</a>
+  </div>
+  <div class="story-ph">
+    <div class="ph" style="height:100%;min-height:480px;">
+      <div class="ph-ico">📷</div>
+      <div class="ph-lbl">Foto Desa Jeto</div>
+      <div class="ph-txt">Pemandangan desa: sawah hijau, rumah tradisional, suasana pagi atau sore. Wide landscape / horizontal. Nuansa tenang pedesaan Jawa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAKERS BAND ══ -->
+<section class="makers" id="makers">
+  <div class="makers-txt">
+    <div class="eyebrow">Meet the Makers</div>
+    <h2 class="h2">Tangan-Tangan<br>di Balik<br>Setiap Karya</h2>
+    <p class="body-p">Orang nyata. Cerita nyata.<br>Keahlian nyata.</p>
+    <a href="/makers" class="lnk">Lihat semua pengrajin &nbsp;→</a>
+  </div>
+  <div class="makers-grid">
+    <div class="mk">
+      <div class="mk-av">👤</div>
+      <div class="mk-name">Pengrajin 1</div>
+      <div class="mk-role">Foto potret<br>natural</div>
+    </div>
+    <div class="mk">
+      <div class="mk-av">👤</div>
+      <div class="mk-name">Pengrajin 2</div>
+      <div class="mk-role">Foto potret<br>natural</div>
+    </div>
+    <div class="mk">
+      <div class="mk-av">👤</div>
+      <div class="mk-name">Pengrajin 3</div>
+      <div class="mk-role">Foto potret<br>natural</div>
+    </div>
+    <div class="mk">
+      <div class="mk-av">👤</div>
+      <div class="mk-name">Pengrajin 4</div>
+      <div class="mk-role">Foto potret<br>natural</div>
+    </div>
+    <div class="mk">
+      <div class="mk-av">👤</div>
+      <div class="mk-name">Pengrajin 5</div>
+      <div class="mk-role">Foto potret<br>natural</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAP BAND (dark — peta sudah berjalan otomatis) ══ -->
+<section class="map-band">
+  <div class="eyebrow-dk">Living Garment</div>
+  <h2 class="h2-dk">Setiap kaos punya cerita. Kodenya menunjuk ke depan — ke mana pun kamu membawanya.</h2>
+  <p class="p-dk">Dari Klaten ke seluruh dunia. Setiap titik di peta adalah kaos yang sudah pernah di-scan.</p>
+  <div class="map-stats">
+    <div class="map-stat"><span id="n-pieces">—</span><p>pieces</p></div>
+    <div class="map-stat"><span id="n-cities">—</span><p>cities</p></div>
+  </div>
+  <div id="map-stage">
     <svg id="world-map"></svg>
+    <div id="map-tip"></div>
+    <div id="map-loading">Memuat peta…</div>
   </div>
-  <div class="map-foot">
-    <span class="note"><span class="lang-en">Updated live from real scans</span><span class="lang-id" hidden>Diperbarui langsung dari scan nyata</span></span>
-    <a href="/living-garment" class="link-gold"><span class="lang-en">See the full journey map</span><span class="lang-id" hidden>Lihat peta perjalanan lengkap</span> <span>→</span></a>
+  <a href="https://blumbang.id/sparks" class="map-lnk">Lihat semua titik &nbsp;→</a>
+</section>
+
+<!-- ══ NEWSLETTER ══ -->
+<section class="news-band" id="tentang">
+  <h3>Ikut dalam lingkaran kecil ini.</h3>
+  <p>Kabar sesekali dari studio — pengrajin baru, karya baru, cerita dari lapangan.</p>
+  <div class="news-form">
+    <input type="email" id="news-email" placeholder="email kamu" />
+    <button onclick="joinNews()">Ikut</button>
   </div>
 </section>
 
-<!-- ══ BAND 3 — VALUE 1: VISIBLE WORK + PRICE (CREAM) ══ -->
-<section class="band band-cream" id="batik">
-  <div class="wrap">
-    <div class="triptych">
-      <div class="frame">
-        <img src="https://media.blumbang.id/home-band3a.webp" alt="Wax heated over a small stove for batik"
-             onerror="this.parentElement.innerHTML='<div class=&quot;ph ph-cream&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Wax heated in a small pan over the stove</div></div>';" />
-      </div>
-      <div class="frame">
-        <img src="https://media.blumbang.id/home-band3b.webp" alt="The tip of the canting touching the cloth"
-             onerror="this.parentElement.innerHTML='<div class=&quot;ph ph-cream&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>The canting touches the cloth — the moment of contact</div></div>';" />
-      </div>
-      <div class="frame">
-        <img src="https://media.blumbang.id/home-band3c.webp" alt="A line of wax growing slowly across the cloth"
-             onerror="this.parentElement.innerHTML='<div class=&quot;ph ph-cream&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>A wax line growing slowly across the surface</div></div>';" />
-      </div>
-    </div>
-    <div class="batik-grid">
-      <div>
-        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">What the price is really for</span><span class="lang-id" hidden>Untuk apa harga itu sebenarnya</span></span>
-        <h2 class="h-big"><span class="lang-en">Eleven days. One pair of hands. No machine touched it.</span><span class="lang-id" hidden>Sebelas hari. Sepasang tangan. Tak tersentuh mesin.</span></h2>
-        <p class="body-lg"><span class="lang-en">We don't draw batik — our neighbors do. A hand-drawn batik tulis like this sells for <strong>€180–250</strong> in a European boutique. Through us it costs a fraction of that — and on the maker's page you'll see exactly how much reaches the woman who drew it, line by line. <strong>We don't hide that number. We built the company around it.</strong></span><span class="lang-id" hidden>Kami tidak menggambar batik — tetangga kami yang menggambar. Batik tulis seperti ini dijual <strong>€180–250</strong> di butik Eropa. Lewat kami harganya jauh di bawah itu — dan di halaman pembuat kamu bisa lihat persis berapa yang sampai ke tangan perempuan yang menggambarnya, garis demi garis. <strong>Kami tidak menyembunyikan angka itu. Kami membangun usaha ini di atasnya.</strong></span></p>
-        <div class="scarcity">
-          <div class="q"><span class="lang-en">"She finishes about four pieces a month."</span><span class="lang-id" hidden>"Beliau menyelesaikan sekitar empat kain sebulan."</span></div>
-          <div class="a"><span class="lang-en">That's not a marketing tactic. That's how long it takes.</span><span class="lang-id" hidden>Itu bukan taktik pemasaran. Memang selama itu prosesnya.</span></div>
-        </div>
-      </div>
-      <aside class="anchor-card">
-        <div class="lbl"><span class="lang-en">In a European boutique</span><span class="lang-id" hidden>Di butik Eropa</span></div>
-        <div class="eur">€180–250</div>
-        <div class="eur-sub"><span class="lang-en">for one hand-drawn batik tulis</span><span class="lang-id" hidden>untuk satu batik tulis</span></div>
-        <div class="ours"><span class="lang-en">Through us it costs <em>a fraction</em> of that — with the maker's wage shown in the open.</span><span class="lang-id" hidden>Lewat kami harganya <em>jauh di bawah</em> itu — dengan upah pembuat ditampilkan terbuka.</span></div>
-        <div class="wage"><span class="lang-en">Open the maker's page and the number is right under the price: what eleven days of her work is actually worth.</span><span class="lang-id" hidden>Buka halaman pembuat dan angkanya ada tepat di bawah harga: nilai sebenarnya dari sebelas hari kerjanya.</span></div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BAND 4 — VALUE 2: THE MOAT ══ -->
-<section class="band band-4">
-  <div class="wrap">
-    <div class="split">
-      <div class="frame">
-        <img src="https://media.blumbang.id/home-band4.webp" alt="A maker holding her phone, a small smile"
-             onerror="this.parentElement.innerHTML='<div class=&quot;ph ph-dark&quot;><div class=&quot;mark&quot;>✦</div><div class=&quot;cap&quot;>Band 4 · A maker holding a simple phone, a small smile — the face at the end of the number we hand you</div></div>';" />
-      </div>
-      <div>
-        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">After you buy</span><span class="lang-id" hidden>Setelah kamu membeli</span></span>
-        <h2 class="h-big"><span class="lang-en">Once it's yours, you can sit down with her — <em style="font-style:italic;color:var(--gold-soft)">we set it up.</em></span><span class="lang-id" hidden>Setelah jadi milikmu, kamu bisa bertemu beliau — <em style="font-style:italic;color:var(--gold-soft)">kami yang mengaturnya.</em></span></h2>
-        <p class="body-lg"><span class="lang-en">Want another piece — or something made only for you? Ask us, and we arrange a meeting with the maker herself. We bridge the language, set the time, and step back. The conversation is yours.</span><span class="lang-id" hidden>Ingin karya lain — atau sesuatu yang dibuat khusus untukmu? Hubungi kami, dan kami atur pertemuan dengan pembuatnya langsung. Kami jembatani bahasanya, atur waktunya, lalu mundur. Percakapan itu milikmu.</span></p>
-        <p class="body-lg"><span class="lang-en">Most shops keep the maker invisible. We do the opposite — while making sure she's never overwhelmed by strangers. You'll find that button on every maker's page.</span><span class="lang-id" hidden>Kebanyakan toko menyembunyikan pembuatnya. Kami sebaliknya — sambil memastikan beliau tidak pernah kewalahan oleh orang asing. Tombolnya ada di setiap halaman pembuat.</span></p>
-        <a href="/makers" class="link-gold" style="margin-top:8px;"><span class="lang-en">See how it works</span><span class="lang-id" hidden>Lihat cara kerjanya</span> <span>→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BAND 5 — ORIGIN ══ -->
-<section class="band band-5" id="neighbors">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <span class="eyebrow-d">✦ &nbsp;<span class="lang-en">Why us, not a marketplace</span><span class="lang-id" hidden>Kenapa kami, bukan marketplace</span></span>
-        <h2 class="h-big"><span class="lang-en">We're not curators.<br>We're <em style="font-style:italic;color:var(--gold-soft)">neighbors.</em></span><span class="lang-id" hidden>Kami bukan kurator.<br>Kami <em style="font-style:italic;color:var(--gold-soft)">tetangga.</em></span></h2>
-        <p class="body-lg"><span class="lang-en">Blumbang is a screen-printing studio in Jeto, Klaten. The shirts, we make ourselves — our printer has been at it since 1998. Everything else comes from people who live minutes from us: the women who draw the batik, the family that carves the stone.</span><span class="lang-id" hidden>Blumbang adalah studio sablon di Jeto, Klaten. Kaosnya kami buat sendiri — tukang sablon kami sudah menekuninya sejak 1998. Selebihnya datang dari orang-orang yang tinggal hanya beberapa menit dari kami: para perempuan yang menggambar batik, keluarga yang memahat batu.</span></p>
-        <p class="body-lg"><span class="lang-en">We didn't discover anyone. We grew up beside them — and we pay them what the work is actually worth.</span><span class="lang-id" hidden>Kami tidak menemukan siapa pun. Kami tumbuh di samping mereka — dan kami membayar sesuai nilai sebenarnya dari pekerjaan itu.</span></p>
-        <div class="tagline"><span class="lang-en">Made slowly. Felt deeply.</span><span class="lang-id" hidden>Dibuat perlahan. Terasa dalam.</span></div>
-      </div>
-      <div class="frame">
-        <img src="https://media.blumbang.id/home-band5.webp" alt="The Blumbang team at the workshop in Jeto, Klaten"
-             onerror="this.onerror=null;this.src='https://media.blumbang.id/1779804570743-tempat-sablon-kaos-klaten-blumbang-id.webp';" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="foot-wrap">
-    <div class="foot-top">
+  <div class="ft">
+    <div class="ft-top">
       <div>
-        <div class="foot-mark">BLUMB<span class="spark">✦</span>NG</div>
-        <p class="foot-desc"><span class="lang-en">A studio in Jeto, Klaten, Java. We work beside the people who make our pieces — and we pay them what the work is worth.</span><span class="lang-id" hidden>Studio di Jeto, Klaten, Jawa. Kami bekerja di samping orang-orang yang membuat karya kami — dan membayar sesuai nilai pekerjaannya.</span></p>
-        <div class="foot-addr">Jeto RT 32 RW 10, Gaden<br>Trucuk, Klaten · Jawa Tengah<br>Indonesia</div>
+        <div class="ft-mark">BLUMBANG</div>
+        <p class="ft-desc">Studio di Jeto, Klaten, Jawa. Kami bekerja bersama pengrajin di sekitar kami — dan kami bayar mereka sesuai nilai kerja sesungguhnya.</p>
+        <div class="ft-addr">Jeto RT 32 RW 10, Gaden<br>Trucuk, Klaten · Jawa Tengah 57467<br>Indonesia</div>
       </div>
-      <div class="foot-col">
-        <h4><span class="lang-en">Explore</span><span class="lang-id" hidden>Jelajahi</span></h4>
+      <div class="ft-col">
+        <h4>Jelajahi</h4>
         <ul>
-          <li><a href="/makers"><span class="lang-en">Meet the makers</span><span class="lang-id" hidden>Temui para pembuat</span></a></li>
-          <li><a href="/living-garment">Living Garment</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/about"><span class="lang-en">About</span><span class="lang-id" hidden>Tentang</span></a></li>
-          <li><a href="https://blumbang.id"><span class="lang-en">blumbang.id — studio site</span><span class="lang-id" hidden>blumbang.id — situs studio</span></a></li>
+          <li><a href="/makers">Meet the makers</a></li>
+          <li><a href="#story">Cerita Jeto</a></li>
+          <li><a href="https://blumbang.id/sparks">Living Garment</a></li>
+          <li><a href="https://blumbang.id">blumbang.id</a></li>
         </ul>
       </div>
-      <div class="foot-col">
-        <h4><span class="lang-en">Stay close</span><span class="lang-id" hidden>Tetap dekat</span></h4>
+      <div class="ft-col">
+        <h4>Hubungi</h4>
         <ul>
-          <li><a href="https://wa.me/6281234561146"><span class="lang-en">WhatsApp us</span><span class="lang-id" hidden>WhatsApp kami</span></a></li>
-          <li><a href="https://www.tiktok.com/@blumbang.id" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://wa.me/6281234561146">WhatsApp</a></li>
+          <li><a href="https://www.tiktok.com/@blumbang.id">TikTok</a></li>
           <li><a href="mailto:hello@blumbang.com">hello@blumbang.com</a></li>
         </ul>
-        <div class="news">
-          <p><span class="lang-en">One quiet letter when a new maker joins. Nothing else.</span><span class="lang-id" hidden>Satu surat singkat saat pembuat baru bergabung. Tidak ada yang lain.</span></p>
-          <div class="news-form">
-            <input type="email" id="news-email" placeholder="your email" aria-label="Email" />
-            <button onclick="joinNews()">Join</button>
-          </div>
-        </div>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span class="foot-copy">© 2026 Blumbang · <span class="lang-en">Made slowly in Klaten, Java</span><span class="lang-id" hidden>Dibuat perlahan di Klaten, Jawa</span></span>
-      <a href="https://blumbang.id" class="foot-id">Also at blumbang.id →</a>
+    <div class="ft-bot">
+      <span class="ft-copy">© 2026 Blumbang · Made slowly in Klaten, Java</span>
+      <a href="https://blumbang.id" class="ft-lnk">blumbang.id →</a>
     </div>
   </div>
 </footer>
 
 <script>
-/* nav */
 function toggleNav(){
   var m=document.getElementById('mobnav');var b=document.getElementById('burger');
   m.classList.toggle('open');b.classList.toggle('x');
@@ -454,7 +404,7 @@ function joinNews(){
   window.location.href='https://wa.me/6281234561146?text='+encodeURIComponent('Hi Blumbang — please add me to your letter: '+e);
 }
 
-/* ── BAND 2 LIVE MAP ── */
+/* ── LIVE MAP ── */
 var SHEET_ID='1J9SVJGQb7msPTEOpUgsJ2TWWvQ4TntIjrkHZ9nbKgbw';
 var CITY={'klaten':[110.6,-7.7],'solo':[110.831,-7.576],'surakarta':[110.831,-7.576],'jogja':[110.364,-7.803],'yogyakarta':[110.364,-7.803],'sleman':[110.354,-7.716],'bantul':[110.328,-7.888],'semarang':[110.438,-6.967],'magelang':[110.217,-7.47],'boyolali':[110.593,-7.53],'sukoharjo':[110.838,-7.686],'wonogiri':[110.923,-7.813],'jakarta':[106.845,-6.208],'bandung':[107.608,-6.917],'surabaya':[112.752,-7.257],'malang':[112.616,-7.983],'bekasi':[107.017,-6.234],'depok':[106.776,-6.385],'tangerang':[106.64,-6.178],'bogor':[106.8,-6.6],'semarang ':[110.438,-6.967],'medan':[98.679,3.595],'makassar':[119.419,-5.147],'denpasar':[115.217,-8.65],'bali':[115.092,-8.34],'balikpapan':[116.854,-1.268],'samarinda':[117.136,-0.502],'banjarmasin':[114.592,-3.317],'banjarbaru':[114.831,-3.442],'pontianak':[109.332,-0.022],'palembang':[104.745,-2.916],'batam':[104.03,1.136],'tokyo':[139.692,35.689],'osaka':[135.502,34.694],'kyoto':[135.768,35.012],'yokohama':[139.638,35.444],'seoul':[126.978,37.566],'busan':[129.075,35.18],'singapore':[103.82,1.352],'singapura':[103.82,1.352],'kuala lumpur':[101.687,3.147],'bangkok':[100.501,13.756],'manila':[120.984,14.599],'hong kong':[114.109,22.397],'taipei':[121.565,25.033],'dubai':[55.296,25.276],'abu dhabi':[54.367,24.453],'london':[-0.128,51.507],'paris':[2.349,48.864],'amsterdam':[4.905,52.37],'berlin':[13.405,52.52],'barcelona':[2.154,41.389],'vienna':[16.373,48.209],'zurich':[8.541,47.376],'new york':[-74.006,40.713],'los angeles':[-118.244,34.052],'toronto':[-79.383,43.653],'sydney':[151.209,-33.869],'melbourne':[144.963,-37.814],'victoria':[55.455,-4.62],'mahe':[55.455,-4.62],'seychelles':[55.455,-4.62],'cairo':[31.235,30.045]};
 var KLATEN=[110.6,-7.7];
@@ -467,11 +417,10 @@ function findCoord(s){
 }
 function countUp(id,target,suffix){
   var el=document.getElementById(id);if(!el)return;
-  if(!target||target<1){return;}
+  if(!target||target<1)return;
   var cur=0,step=Math.max(1,Math.ceil(target/34));
   var t=setInterval(function(){cur=Math.min(cur+step,target);el.textContent=cur+(suffix||'');if(cur>=target)clearInterval(t);},38);
 }
-
 function drawMap(rows,world){
   var stage=document.getElementById('map-stage');
   var tip=document.getElementById('map-tip');
@@ -502,14 +451,11 @@ function drawMap(rows,world){
     .attr('fill',function(d){return d.id===360?'rgba(201,168,76,.42)':'rgba(44,60,80,.32)';})
     .attr('stroke','rgba(233,223,203,.13)').attr('stroke-width',.3);
   var kp=proj(KLATEN);if(!kp)return;
-  // arcs
   Object.values(cityCount).forEach(function(d){
     var p=proj(d.co);if(!p)return;
     var mx=(kp[0]+p[0])/2,my=(kp[1]+p[1])/2-Math.abs(p[0]-kp[0])*0.18;
-    svg.append('path').attr('d','M'+kp[0]+','+kp[1]+' Q'+mx+','+my+' '+p[0]+','+p[1])
-      .attr('fill','none').attr('stroke','rgba(220,192,116,.22)').attr('stroke-width',.7);
+    svg.append('path').attr('d','M'+kp[0]+','+kp[1]+' Q'+mx+','+my+' '+p[0]+','+p[1]).attr('fill','none').attr('stroke','rgba(220,192,116,.22)').attr('stroke-width',.7);
   });
-  // city dots
   Object.values(cityCount).forEach(function(d){
     var p=proj(d.co);if(!p)return;
     var ring=svg.append('circle').attr('cx',p[0]).attr('cy',p[1]).attr('r',2).attr('fill','none').attr('stroke','rgba(220,192,116,.7)').attr('stroke-width',.9);
@@ -517,14 +463,12 @@ function drawMap(rows,world){
     svg.append('circle').attr('cx',p[0]).attr('cy',p[1]).attr('r',2.6).attr('fill','#DCC074').attr('stroke','rgba(255,255,255,.55)').attr('stroke-width',.5).style('cursor','pointer')
       .on('touchstart mouseover',function(e){e.preventDefault();tipOn(e,d.label+' · '+d.n+(d.n>1?' scans':' scan'));}).on('touchend mouseout',tipOff);
   });
-  // klaten origin
   var kr=svg.append('circle').attr('cx',kp[0]).attr('cy',kp[1]).attr('r',3).attr('fill','none').attr('stroke','rgba(201,168,76,.85)').attr('stroke-width',1.1);
   (function blinkK(){kr.attr('r',3).attr('stroke-opacity',.85).transition().duration(2300).ease(d3.easeLinear).attr('r',20).attr('stroke-opacity',0).on('end',blinkK);})();
   svg.append('circle').attr('cx',kp[0]).attr('cy',kp[1]).attr('r',4.2).attr('fill','#C9A84C').attr('stroke','#fff').attr('stroke-width',1).style('cursor','pointer')
     .on('touchstart mouseover',function(e){e.preventDefault();tipOn(e,'Klaten · where it all begins');}).on('touchend mouseout',tipOff);
   document.getElementById('map-loading').style.display='none';
 }
-
 (function initMap(){
   Promise.all([
     fetch('https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:json&sheet=SPARKS').then(function(r){return r.text();}),
@@ -544,35 +488,15 @@ function drawMap(rows,world){
     drawMap(rows,res[2]);
   }).catch(function(e){
     console.error(e);
-    document.getElementById('map-loading').innerHTML='<span style="color:var(--muted2)">Map is resting — see the full journey map below</span>';
+    document.getElementById('map-loading').innerHTML='<span style="color:#6A5E52">Map sedang istirahat — coba lagi sebentar</span>';
   });
 })();
-
 var _t,_lastW=window.innerWidth;
 window.addEventListener('resize',function(){
   if(Math.abs(window.innerWidth-_lastW)<60)return;
   _lastW=window.innerWidth;
   clearTimeout(_t);_t=setTimeout(function(){location.reload();},400);
 },{passive:true});
-</script>
-<script>
-(function(){
-  function applyLang(lang){
-    document.querySelectorAll('.lang-en').forEach(function(el){ el.hidden = (lang === 'id'); });
-    document.querySelectorAll('.lang-id').forEach(function(el){ el.hidden = (lang === 'en'); });
-    var btn = document.getElementById('lang-toggle');
-    if(btn) btn.textContent = lang === 'en' ? 'ID' : 'EN';
-    try{ localStorage.setItem('blmb_lang', lang); }catch(e){}
-  }
-  window.toggleLang = function(){
-    var cur;
-    try{ cur = localStorage.getItem('blmb_lang') || 'en'; }catch(e){ cur = 'en'; }
-    applyLang(cur === 'en' ? 'id' : 'en');
-  };
-  var saved;
-  try{ saved = localStorage.getItem('blmb_lang'); }catch(e){}
-  if(saved === 'id') applyLang('id');
-})();
 </script>
 </body>
 </html>
