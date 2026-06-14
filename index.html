@@ -66,8 +66,11 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 .nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:width .3s;}
 .nav a:hover{color:var(--ink);}
 .nav a:hover::after{width:100%;}
-.lang{font-size:.6rem;font-weight:600;letter-spacing:.12em;color:var(--muted);}
-.lang strong{color:var(--ink);}
+.lang{font-size:.6rem;font-weight:600;letter-spacing:.12em;color:var(--muted);display:flex;align-items:center;gap:8px;}
+.lang-btn{background:none;border:none;font-family:var(--fb);font-size:.6rem;font-weight:600;letter-spacing:.12em;color:var(--muted2);cursor:pointer;padding:2px 0;transition:color .2s;}
+.lang-btn.active{color:var(--ink);}
+.lang-btn:hover{color:var(--ink);}
+.lang-sep{color:var(--muted2);}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
 .burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:.3s;}
 .burger.x span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
@@ -212,19 +215,19 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <header id="hdr">
   <a href="/" class="wordmark">BLUMBANG</a>
   <nav class="nav">
-    <a href="/makers">Makers</a>
-    <a href="#story">Story</a>
-    <a href="#tentang">Tentang</a>
+    <a href="/makers" data-en="Makers" data-id="Perajin">Makers</a>
+    <a href="#story" data-en="Story" data-id="Cerita">Story</a>
+    <a href="#tentang" data-en="About" data-id="Tentang">About</a>
   </nav>
-  <div class="lang"><strong>EN</strong> &nbsp;|&nbsp; ID</div>
+  <div class="lang"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><span class="lang-sep">|</span><button class="lang-btn" data-lang="id" onclick="setLang('id')">ID</button></div>
   <button class="burger" id="burger" onclick="toggleNav()">
     <span></span><span></span><span></span>
   </button>
 </header>
 <div class="mobnav" id="mobnav">
-  <a href="/makers">Makers</a>
-  <a href="#story">Story</a>
-  <a href="#tentang">Tentang</a>
+  <a href="/makers" data-en="Makers" data-id="Perajin">Makers</a>
+  <a href="#story" data-en="Story" data-id="Cerita">Story</a>
+  <a href="#tentang" data-en="About" data-id="Tentang">About</a>
   <a href="https://wa.me/6281234561146">WhatsApp →</a>
 </div>
 
@@ -236,9 +239,9 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="loc">Jeto, Klaten — Jawa Tengah</div>
-    <h1>Every Piece Has<br>a <em>Maker</em>.</h1>
-    <p class="sub">Not a factory. Not a brand. A person.<br>Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours.</p>
-    <a href="/makers" class="cta-btn">Meet the makers <span class="arr">→</span></a>
+    <h1 id="hero-h1"><span class="t1">Every Piece Has</span><br>a <em>Maker</em>.</h1>
+    <p class="sub" data-en="Not a factory. Not a brand. A person. Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours." data-id="Kami mengenal para perajin yang membuat setiap batik dan lurik yang Anda temukan di Blumbang. Bukan produk tanpa asal-usul, melainkan karya dengan nama, cerita, dan tradisi di baliknya.">Not a factory. Not a brand. A person. Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours.</p>
+    <a href="/makers" class="cta-btn"><span data-en="Meet the makers" data-id="Kenali para perajin">Meet the makers</span> <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -247,24 +250,24 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   <div class="trip">
     <img src="https://media.blumbang.id/1781437800410-mesin-tenun-lurik.webp" alt="Mesin tenun lurik ATBM" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl">Handcrafted</div>
-      <div class="trip-desc">Dibuat perlahan, dengan keahlian turun-temurun.</div>
+      <div class="trip-lbl" data-en="Handcrafted" data-id="Buatan Tangan">Handcrafted</div>
+      <div class="trip-desc" data-en="Made slowly, with skill passed down for generations." data-id="Dibuat perlahan, dengan keahlian turun-temurun.">Made slowly, with skill passed down for generations.</div>
       <div class="trip-arr">→</div>
     </div>
   </div>
   <div class="trip">
     <img src="https://media.blumbang.id/1781437468858-mbatik.jpeg" alt="Pengrajin membatik" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl">Authentic</div>
-      <div class="trip-desc">Teknik tradisional, bahan alami, tanpa mesin.</div>
+      <div class="trip-lbl" data-en="Authentic" data-id="Otentik">Authentic</div>
+      <div class="trip-desc" data-en="Traditional techniques, natural materials, no machines." data-id="Teknik tradisional, bahan alami, tanpa mesin.">Traditional techniques, natural materials, no machines.</div>
       <div class="trip-arr">→</div>
     </div>
   </div>
   <div class="trip">
     <img src="https://media.blumbang.id/1781439822759-foto-batik-dan-lurik.webp" alt="Batik dan lurik Blumbang" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl">Timeless</div>
-      <div class="trip-desc">Motif yang menghubungkan warisan dan kehidupan kini.</div>
+      <div class="trip-lbl" data-en="Timeless" data-id="Abadi">Timeless</div>
+      <div class="trip-desc" data-en="Designs that connect heritage and modern life." data-id="Motif yang menghubungkan warisan dan kehidupan kini.">Designs that connect heritage and modern life.</div>
       <div class="trip-arr">→</div>
     </div>
   </div>
@@ -273,10 +276,10 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ STORY BAND ══ -->
 <section class="story" id="story">
   <div class="story-txt">
-    <div class="eyebrow">From the Villages of Klaten</div>
-    <h2 class="h2">Every Piece<br>Has a Story</h2>
-    <p class="body-p">Batik and lurik are more than products. They carry the knowledge, traditions, and craftsmanship of generations of artisans from across Klaten.</p>
-    <a href="#tentang" class="lnk">Read our story &nbsp;→</a>
+    <div class="eyebrow" data-en="From the Villages of Klaten" data-id="Dari Desa-Desa di Klaten">From the Villages of Klaten</div>
+    <h2 class="h2" data-en="Every Piece|Has a Story" data-id="Setiap Karya|Punya Cerita"><span>Every Piece</span><br><span>Has a Story</span></h2>
+    <p class="body-p" data-en="Batik and lurik are more than products. They carry the knowledge, traditions, and craftsmanship of generations of artisans from across Klaten." data-id="Batik dan lurik lebih dari sekadar produk. Keduanya membawa pengetahuan, tradisi, dan keahlian dari generasi perajin di seluruh Klaten.">Batik and lurik are more than products. They carry the knowledge, traditions, and craftsmanship of generations of artisans from across Klaten.</p>
+    <a href="#tentang" class="lnk"><span data-en="Read our story" data-id="Baca cerita kami">Read our story</span> &nbsp;→</a>
   </div>
   <div class="story-ph">
     <div class="ph" style="height:100%;min-height:480px;">
@@ -290,10 +293,10 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ MAKERS BAND ══ -->
 <section class="makers" id="makers">
   <div class="makers-txt">
-    <div class="eyebrow">Meet the Makers</div>
-    <h2 class="h2">The Hands Behind<br>Every Piece</h2>
-    <p class="body-p">Real people. Real stories.<br>Real craft.</p>
-    <a href="/makers" class="lnk">Meet all the makers &nbsp;→</a>
+    <div class="eyebrow" data-en="Meet the Makers" data-id="Kenali Para Perajin">Meet the Makers</div>
+    <h2 class="h2" data-en="The Hands Behind|Every Piece" data-id="Tangan-Tangan di Balik|Setiap Karya"><span>The Hands Behind</span><br><span>Every Piece</span></h2>
+    <p class="body-p" data-en="Real people. Real stories.|Real craft." data-id="Orang nyata. Cerita nyata.|Keahlian nyata."><span>Real people. Real stories.</span><br><span>Real craft.</span></p>
+    <a href="/makers" class="lnk"><span data-en="Meet all the makers" data-id="Lihat semua perajin">Meet all the makers</span> &nbsp;→</a>
   </div>
   <div class="makers-grid">
     <div class="mk">
@@ -327,27 +330,27 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ MAP BAND (dark — peta sudah berjalan otomatis) ══ -->
 <section class="map-band">
   <div class="eyebrow-dk">Living Garment</div>
-  <h2 class="h2-dk">Every garment carries a story. Its code points forward — wherever you take it.</h2>
-  <p class="p-dk">From Klaten to the world. Each point on the map is a garment that's been scanned.</p>
+  <h2 class="h2-dk" data-en="Every garment carries a story. Its code points forward — wherever you take it." data-id="Setiap kaos punya cerita. Kodenya menunjuk ke depan — ke mana pun kamu membawanya.">Every garment carries a story. Its code points forward — wherever you take it.</h2>
+  <p class="p-dk" data-en="From Klaten to the world. Each point on the map is a garment that's been scanned." data-id="Dari Klaten ke seluruh dunia. Setiap titik di peta adalah kaos yang sudah pernah di-scan.">From Klaten to the world. Each point on the map is a garment that's been scanned.</p>
   <div class="map-stats">
-    <div class="map-stat"><span id="n-pieces">—</span><p>pieces</p></div>
-    <div class="map-stat"><span id="n-cities">—</span><p>cities</p></div>
+    <div class="map-stat"><span id="n-pieces">—</span><p data-en="pieces" data-id="karya">pieces</p></div>
+    <div class="map-stat"><span id="n-cities">—</span><p data-en="cities" data-id="kota">cities</p></div>
   </div>
   <div id="map-stage">
     <svg id="world-map"></svg>
     <div id="map-tip"></div>
     <div id="map-loading">Loading map…</div>
   </div>
-  <a href="https://blumbang.id/sparks" class="map-lnk">See all points &nbsp;→</a>
+  <a href="https://blumbang.id/sparks" class="map-lnk"><span data-en="See all points" data-id="Lihat semua titik">See all points</span> &nbsp;→</a>
 </section>
 
 <!-- ══ NEWSLETTER ══ -->
 <section class="news-band" id="tentang">
-  <h3>Join our small circle.</h3>
-  <p>Occasional notes from the studio — new makers, new pieces, stories from the field.</p>
+  <h3 data-en="Join our small circle." data-id="Ikut dalam lingkaran kecil ini.">Join our small circle.</h3>
+  <p data-en="Occasional notes from the studio — new makers, new pieces, stories from the field." data-id="Kabar sesekali dari studio — perajin baru, karya baru, cerita dari lapangan.">Occasional notes from the studio — new makers, new pieces, stories from the field.</p>
   <div class="news-form">
-    <input type="email" id="news-email" placeholder="your email" />
-    <button onclick="joinNews()">Join</button>
+    <input type="email" id="news-email" data-en-ph="your email" data-id-ph="email kamu" placeholder="your email" />
+    <button onclick="joinNews()" data-en="Join" data-id="Ikut">Join</button>
   </div>
 </section>
 
@@ -357,20 +360,20 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
     <div class="ft-top">
       <div>
         <div class="ft-mark">BLUMBANG</div>
-        <p class="ft-desc">A studio in Jeto, Klaten, Java. We work beside the makers around us — and pay them what their work is truly worth.</p>
+        <p class="ft-desc" data-en="A studio in Jeto, Klaten, Java. We work beside the makers around us — and pay them what their work is truly worth." data-id="Studio di Jeto, Klaten, Jawa. Kami bekerja bersama perajin di sekitar kami — dan kami bayar mereka sesuai nilai kerja sesungguhnya.">A studio in Jeto, Klaten, Java. We work beside the makers around us — and pay them what their work is truly worth.</p>
         <div class="ft-addr">Jeto RT 32 RW 10, Gaden<br>Trucuk, Klaten · Jawa Tengah 57467<br>Indonesia</div>
       </div>
       <div class="ft-col">
-        <h4>Explore</h4>
+        <h4 data-en="Explore" data-id="Jelajahi">Explore</h4>
         <ul>
-          <li><a href="/makers">Meet the makers</a></li>
-          <li><a href="#story">Our Story</a></li>
+          <li><a href="/makers" data-en="Meet the makers" data-id="Kenali perajin">Meet the makers</a></li>
+          <li><a href="#story" data-en="Our Story" data-id="Cerita Kami">Our Story</a></li>
           <li><a href="https://blumbang.id/sparks">Living Garment</a></li>
           <li><a href="https://blumbang.id">blumbang.id</a></li>
         </ul>
       </div>
       <div class="ft-col">
-        <h4>Contact</h4>
+        <h4 data-en="Contact" data-id="Kontak">Contact</h4>
         <ul>
           <li><a href="https://wa.me/6281234561146">WhatsApp</a></li>
           <li><a href="https://www.tiktok.com/@blumbang.id">TikTok</a></li>
@@ -399,6 +402,49 @@ function joinNews(){
   if(!e||e.indexOf('@')<0){return;}
   window.location.href='https://wa.me/6281234561146?text='+encodeURIComponent('Hi Blumbang — please add me to your letter: '+e);
 }
+
+/* ── LANGUAGE TOGGLE ── */
+function setLang(lang){
+  try{localStorage.setItem('blmb_lang',lang);}catch(e){}
+  document.documentElement.lang=lang;
+  // teks biasa
+  document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+    var v=el.getAttribute('data-'+lang);
+    if(v===null)return;
+    if(v.indexOf('|')>=0){
+      // multi-baris: tiap segmen masuk ke <span> berurutan
+      var parts=v.split('|');
+      var spans=el.querySelectorAll(':scope > span');
+      if(spans.length===parts.length){
+        for(var i=0;i<parts.length;i++)spans[i].textContent=parts[i];
+        return;
+      }
+    }
+    el.textContent=v;
+  });
+  // placeholder input
+  document.querySelectorAll('[data-'+lang+'-ph]').forEach(function(el){
+    el.setAttribute('placeholder',el.getAttribute('data-'+lang+'-ph'));
+  });
+  // hero h1 (kasus khusus: ada kata gold di tengah)
+  var h1=document.getElementById('hero-h1');
+  if(h1){
+    if(lang==='id'){
+      h1.innerHTML='<span class="t1">Setiap Karya Memiliki</span><br><em>Nama</em> di Baliknya';
+    }else{
+      h1.innerHTML='<span class="t1">Every Piece Has</span><br>a <em>Maker</em>.';
+    }
+  }
+  // tombol aktif
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active',b.getAttribute('data-lang')===lang);
+  });
+}
+(function initLang(){
+  var saved='en';
+  try{saved=localStorage.getItem('blmb_lang')||'en';}catch(e){}
+  setLang(saved);
+})();
 
 /* ── LIVE MAP ── */
 var SHEET_ID='1J9SVJGQb7msPTEOpUgsJ2TWWvQ4TntIjrkHZ9nbKgbw';
