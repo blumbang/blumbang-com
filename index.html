@@ -99,7 +99,8 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--border);}
 .trip{position:relative;overflow:hidden;cursor:pointer;}
 .trip .ph{aspect-ratio:4/5;border:none;transition:filter .25s;}
-.trip:hover .ph{filter:brightness(.86);}
+.trip img{transition:filter .25s;}
+.trip:hover .ph,.trip:hover img{filter:brightness(.86);}
 .trip-ov{position:absolute;bottom:0;left:0;right:0;padding:28px 22px;background:linear-gradient(to top,rgba(18,12,6,.8) 0%,transparent 100%);}
 .trip-lbl{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#fff;margin-bottom:6px;}
 .trip-desc{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.5;max-width:22ch;}
@@ -221,13 +222,11 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg">
-    <div class="ph-ico">📷</div>
-    <div class="ph-lbl">Foto Hero — Latar Penuh Layar</div>
-    <div class="ph-txt">Wajah pengrajin sedang bekerja. Medium-close shot. Cahaya natural dari samping. Ekspresi fokus, tidak menatap kamera. Latar: ATBM atau meja batik. Ini foto terpenting di website.</div>
+    <img src="https://media.blumbang.id/1781437777510-tenun-lurik.webp" alt="Penenun lurik Jeto, Klaten" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
- <div class="loc">Jeto, Klaten — Jawa Tengah</div>
+    <div class="loc">Jeto, Klaten — Jawa Tengah</div>
     <h1>Every Piece Has<br>a <em>Maker</em>.</h1>
     <p class="sub">Not a factory. Not a brand. A person.<br>Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours.</p>
     <a href="/makers" class="cta-btn">Meet the makers <span class="arr">→</span></a>
@@ -237,11 +236,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ TRIPTYCH ══ -->
 <div class="triptych">
   <div class="trip">
-    <div class="ph">
-      <div class="ph-ico">📷</div>
-      <div class="ph-lbl">Foto 1 dari 3</div>
-      <div class="ph-txt">Full body pengrajin di depan ATBM. Medium-wide, vertical. Tangan aktif menenun.</div>
-    </div>
+    <img src="https://media.blumbang.id/1781437800410-mesin-tenun-lurik.webp" alt="Mesin tenun lurik ATBM" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
       <div class="trip-lbl">Handcrafted</div>
       <div class="trip-desc">Dibuat perlahan, dengan keahlian turun-temurun.</div>
@@ -249,11 +244,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
     </div>
   </div>
   <div class="trip">
-    <div class="ph">
-      <div class="ph-ico">📷</div>
-      <div class="ph-lbl">Foto 2 dari 3</div>
-      <div class="ph-txt">Extreme close-up tangan memegang canting, atau jari menyentuh benang di ATBM. Tekstur sangat tajam.</div>
-    </div>
+    <img src="https://media.blumbang.id/1781437468858-mbatik.jpeg" alt="Pengrajin membatik" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
       <div class="trip-lbl">Authentic</div>
       <div class="trip-desc">Teknik tradisional, bahan alami, tanpa mesin.</div>
@@ -261,11 +252,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
     </div>
   </div>
   <div class="trip">
-    <div class="ph">
-      <div class="ph-ico">📷</div>
-      <div class="ph-lbl">Foto 3 dari 3</div>
-      <div class="ph-txt">Close-up kain lurik atau batik terlipat rapi. Motif dan tekstur terlihat jelas. Cahaya hangat.</div>
-    </div>
+    <img src="https://media.blumbang.id/1781439822759-foto-batik-dan-lurik.webp" alt="Batik dan lurik Blumbang" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
       <div class="trip-lbl">Timeless</div>
       <div class="trip-desc">Motif yang menghubungkan warisan dan kehidupan kini.</div>
@@ -279,7 +266,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   <div class="story-txt">
     <div class="eyebrow">Cerita dari Jeto</div>
     <h2 class="h2">Sebuah Desa yang<br>Tertenun di Setiap<br>Helai Kain</h2>
-    <p class="body-p">In our villages, batik and lurik are more than textiles. They are part of everyday life—passed down from one generation to the next.</p>
+    <p class="body-p">Di Jeto, batik dan lurik bukan sekadar tekstil. Ia adalah bagian dari kehidupan sehari-hari — diwariskan dari satu generasi ke generasi berikutnya.</p>
     <a href="#tentang" class="lnk">Baca cerita kami &nbsp;→</a>
   </div>
   <div class="story-ph">
