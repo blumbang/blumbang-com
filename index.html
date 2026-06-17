@@ -28,7 +28,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 
@@ -129,12 +129,17 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 
 /* === MAP BAND (dark) === */
 .map-band{background:var(--dk);padding:0;text-align:center;border-top:1px solid var(--dk-line);}
-.qr-sub{padding:clamp(56px,8vh,88px) 48px clamp(48px,6vh,72px);border-bottom:1px solid var(--dk-line);}
-.qr-sub .h2-dk{font-size:clamp(1.8rem,3.6vw,3.2rem);max-width:22ch;margin:0 auto 18px;}
-.qr-sub .p-dk{margin:0 auto 24px;max-width:44ch;}
-.qr-punch{font-family:var(--fd);font-size:clamp(1.2rem,2.4vw,2rem);color:var(--dk-gold);font-style:italic;font-weight:400;}
-.lg-sub{padding:clamp(48px,6vh,72px) 48px clamp(56px,8vh,88px);}
-.cta-band{background:var(--cream);padding:clamp(56px,9vh,96px) 48px;text-align:center;border-top:1px solid var(--border);}
+.qr-sub{background:var(--cream);padding:clamp(56px,8vh,88px) 48px clamp(48px,6vh,72px);border-bottom:1px solid var(--border);}
+.qr-sub .h2-s{font-size:clamp(1.8rem,3.6vw,3.2rem);max-width:22ch;margin:0 auto 18px;}
+.qr-sub .p-s{margin:0 auto 24px;max-width:44ch;color:#5A4E42;}
+.qr-punch{font-family:var(--fd);font-size:clamp(1.2rem,2.4vw,2rem);color:var(--gold);font-style:italic;font-weight:400;}
+.lg-sub{padding:clamp(48px,6vh,72px) 48px clamp(56px,8vh,88px);background:#0a0806;border-top:1px solid #1a1410;}
+.lg-sub .eyebrow-dk{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.4em;color:#C9A84C;}
+.lg-sub .h2-dk{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4.5vw,4rem);letter-spacing:.04em;font-weight:400;line-height:1.05;}
+.lg-sub .p-dk{color:#5a4e42;}
+.id-badge{display:inline-flex;align-items:center;gap:6px;font-size:.52rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#3a3028;margin-bottom:20px;}
+.id-badge span{color:#C9A84C;}
+.cta-dk{background:var(--cream2);padding:clamp(40px,5vh,56px) 48px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .cta-stmt{font-family:var(--fd);font-weight:400;font-size:clamp(1.4rem,2.8vw,2.4rem);color:var(--ink);margin-bottom:24px;line-height:1.2;}
 .cta-lnk{display:inline-flex;align-items:center;gap:10px;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:gap .2s,color .2s,border-color .2s;}
 .cta-lnk:hover{gap:14px;color:var(--gold);border-color:var(--gold);}
@@ -196,7 +201,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   .mk{width:calc(50% - 10px);}
   .map-band{padding:0;}
   .qr-sub,.lg-sub{padding:48px 22px;}
-  .cta-band{padding:48px 22px;}
+  .cta-dk{padding:36px 22px;}
   .map-stats{gap:28px;}
   footer{padding:48px 22px 28px;}
   .ft-top{grid-template-columns:1fr;gap:28px;}
@@ -250,13 +255,13 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ TRIPTYCH ══ -->
 <div class="triptych">
   <div class="trip">
-    <img src="https://media.blumbang.id/1781437800410-mesin-tenun-lurik.webp" alt="Mesin tenun lurik ATBM" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
+    <img src="https://media.blumbang.id/1781437468858-mbatik.jpeg" alt="Mesin tenun lurik ATBM" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
       <div class="trip-stmt" data-en="You will know her name." data-id="Kamu akan tahu namanya.">You will know her name.</div>
     </div>
   </div>
   <div class="trip">
-    <img src="https://media.blumbang.id/1781437468858-mbatik.jpeg" alt="Pengrajin membatik" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
+    <img src="https://media.blumbang.id/1781437800410-mesin-tenun-lurik.webp" alt="Pengrajin membatik" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
       <div class="trip-stmt" data-en="You will know which village." data-id="Kamu akan tahu dari desa mana.">You will know which village.</div>
     </div>
@@ -328,16 +333,22 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 
   <!-- SUB 1: QR BATIK — pembuat selalu di atas, tidak boleh dibalik -->
   <div class="qr-sub">
-    <h2 class="h2-dk" data-en="Sewn into every piece is a code." data-id="Di setiap karya ada kode.">Sewn into every piece is a code.</h2>
-    <p class="p-dk" data-en="Scan it, and you'll meet her — her name, her village, the week her hands made this." data-id="Scan, dan kamu akan bertemu dengannya — namanya, desanya, minggu tangannya membuat ini.">Scan it, and you'll meet her — her name, her village, the week her hands made this.</p>
+    <h2 class="h2" data-en="Sewn into every piece is a code." data-id="Di setiap karya ada kode.">Sewn into every piece is a code.</h2>
+    <p class="body-p" data-en="Scan it, and you'll meet her — her name, her village, the week her hands made this." data-id="Scan, dan kamu akan bertemu dengannya — namanya, desanya, minggu tangannya membuat ini.">Scan it, and you'll meet her — her name, her village, the week her hands made this.</p>
     <p class="qr-punch" data-en="Not a label. A door." data-id="Bukan label. Sebuah pintu.">Not a label. A door.</p>
   </div>
 
-  <!-- SUB 2: LIVING GARMENT — bukti studio nyata, bukan produk utama -->
+  <!-- CTA — di atas Living Garment, dalam band gelap -->
+  <div class="cta-dk">
+    <p class="cta-stmt" data-en="Each piece is made once, by one person." data-id="Setiap karya dibuat sekali, oleh satu orang.">Each piece is made once, by one person.</p>
+    <a href="/makers" class="cta-lnk"><span data-en="See who's making right now" data-id="Lihat siapa yang sedang membuat sekarang">See who's making right now</span> &nbsp;→</a>
+  </div>
+
+  <!-- SUB 2: LIVING GARMENT — tema blumbang.id, bukti studio nyata -->
   <div class="lg-sub">
     <div class="eyebrow-dk">Living Garment</div>
-    <h2 class="h2-dk" data-en="Every garment has been somewhere. This is where they've been." data-id="Setiap kaos sudah pernah ke suatu tempat. Inilah jejaknya.">Every garment has been somewhere. This is where they've been.</h2>
-    <p class="p-dk" data-en="From Klaten to the world. Each point on the map is a garment that's been scanned." data-id="Dari Klaten ke seluruh dunia. Setiap titik di peta adalah kaos yang sudah pernah di-scan.">From Klaten to the world. Each point on the map is a garment that's been scanned.</p>
+    <h2 class="h2-dk" data-en="This is us." data-id="Ini kami.">This is us.</h2>
+    <p class="p-dk" data-en="Blumbang started as a screen-printing studio in Klaten. Living Garment is one of the things we made. Every dot on this map is a garment that left our hands." data-id="Blumbang bermula sebagai studio sablon di Klaten. Living Garment adalah salah satu yang kami buat. Setiap titik di peta ini adalah kaos yang pernah meninggalkan tangan kami.">Blumbang started as a screen-printing studio in Klaten. Living Garment is one of the things we made. Every dot on this map is a garment that left our hands.</p>
     <div class="map-stats">
       <div class="map-stat"><span id="n-pieces">—</span><p data-en="pieces" data-id="karya">pieces</p></div>
       <div class="map-stat"><span id="n-cities">—</span><p data-en="cities" data-id="kota">cities</p></div>
@@ -352,11 +363,6 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 
 </section>
 
-<!-- ══ CTA BAND ══ -->
-<section class="cta-band">
-  <p class="cta-stmt" data-en="Each piece is made once, by one person." data-id="Setiap karya dibuat sekali, oleh satu orang.">Each piece is made once, by one person.</p>
-  <a href="/makers" class="cta-lnk"><span data-en="See who's making right now" data-id="Lihat siapa yang sedang membuat sekarang">See who's making right now</span> &nbsp;→</a>
-</section>
 
 <!-- ══ FOOTER ══ -->
 <footer>
