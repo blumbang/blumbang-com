@@ -105,9 +105,7 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 .trip img{transition:filter .25s;}
 .trip:hover .ph,.trip:hover img{filter:brightness(.86);}
 .trip-ov{position:absolute;bottom:0;left:0;right:0;padding:28px 22px;background:linear-gradient(to top,rgba(18,12,6,.8) 0%,transparent 100%);}
-.trip-lbl{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#fff;margin-bottom:6px;}
-.trip-desc{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.5;max-width:22ch;}
-.trip-arr{display:inline-block;margin-top:8px;font-size:.7rem;color:rgba(255,255,255,.42);}
+.trip-stmt{font-family:var(--fd);font-size:clamp(1.1rem,2.2vw,1.7rem);font-weight:400;font-style:italic;color:#fff;line-height:1.2;}
 
 /* === STORY BAND === */
 .story{display:grid;grid-template-columns:1fr 1.45fr;min-height:540px;}
@@ -130,7 +128,16 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 .mk-role{font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);text-align:center;line-height:1.55;}
 
 /* === MAP BAND (dark) === */
-.map-band{background:var(--dk);padding:clamp(56px,8vh,88px) 48px;text-align:center;border-top:1px solid var(--dk-line);}
+.map-band{background:var(--dk);padding:0;text-align:center;border-top:1px solid var(--dk-line);}
+.qr-sub{padding:clamp(56px,8vh,88px) 48px clamp(48px,6vh,72px);border-bottom:1px solid var(--dk-line);}
+.qr-sub .h2-dk{font-size:clamp(1.8rem,3.6vw,3.2rem);max-width:22ch;margin:0 auto 18px;}
+.qr-sub .p-dk{margin:0 auto 24px;max-width:44ch;}
+.qr-punch{font-family:var(--fd);font-size:clamp(1.2rem,2.4vw,2rem);color:var(--dk-gold);font-style:italic;font-weight:400;}
+.lg-sub{padding:clamp(48px,6vh,72px) 48px clamp(56px,8vh,88px);}
+.cta-band{background:var(--cream);padding:clamp(56px,9vh,96px) 48px;text-align:center;border-top:1px solid var(--border);}
+.cta-stmt{font-family:var(--fd);font-weight:400;font-size:clamp(1.4rem,2.8vw,2.4rem);color:var(--ink);margin-bottom:24px;line-height:1.2;}
+.cta-lnk{display:inline-flex;align-items:center;gap:10px;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:gap .2s,color .2s,border-color .2s;}
+.cta-lnk:hover{gap:14px;color:var(--gold);border-color:var(--gold);}
 .eyebrow-dk{font-size:.54rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--dk-gold);margin-bottom:16px;}
 .h2-dk{font-family:var(--fd);font-weight:400;font-size:clamp(1.5rem,2.8vw,2.4rem);color:var(--dk-text);max-width:32ch;margin:0 auto 14px;line-height:1.15;}
 .p-dk{font-size:.88rem;color:#6A5E52;max-width:48ch;margin:0 auto 28px;line-height:1.72;}
@@ -145,15 +152,8 @@ header.solid{border-bottom-color:var(--border);padding:14px 48px;}
 .map-lnk{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--dk-gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:3px;transition:gap .2s,border-color .2s;}
 .map-lnk:hover{gap:14px;border-color:var(--dk-gold);}
 
-/* === NEWSLETTER === */
-.news-band{background:var(--dk2);padding:clamp(48px,7vh,72px) 48px;text-align:center;border-top:1px solid var(--dk-line);}
-.news-band h3{font-family:var(--fd);font-weight:400;font-size:clamp(1.3rem,2.4vw,2rem);color:var(--dk-text);margin-bottom:10px;}
-.news-band p{font-size:.84rem;color:#6A5E52;margin-bottom:28px;max-width:42ch;margin-left:auto;margin-right:auto;line-height:1.7;}
-.news-form{display:flex;max-width:400px;margin:0 auto;border:1px solid var(--dk-line);}
-.news-form input{flex:1;background:transparent;border:none;padding:13px 18px;font-size:.82rem;font-family:var(--fb);color:var(--dk-text);outline:none;min-width:0;}
-.news-form input::placeholder{color:#4a4030;}
-.news-form button{background:var(--dk-gold);color:var(--dk);border:none;padding:13px 20px;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:background .2s;}
-.news-form button:hover{background:#C9A84C;}
+
+
 
 /* === FOOTER === */
 footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-line);}
@@ -194,7 +194,9 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   .makers{grid-template-columns:1fr;padding:48px 22px;}
   .makers-txt{padding-right:0;margin-bottom:32px;}
   .mk{width:calc(50% - 10px);}
-  .map-band,.news-band{padding:48px 22px;}
+  .map-band{padding:0;}
+  .qr-sub,.lg-sub{padding:48px 22px;}
+  .cta-band{padding:48px 22px;}
   .map-stats{gap:28px;}
   footer{padding:48px 22px 28px;}
   .ft-top{grid-template-columns:1fr;gap:28px;}
@@ -239,8 +241,8 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="loc">Jeto, Klaten — Jawa Tengah</div>
-    <h1 id="hero-h1"><span class="t1">Every Piece Has</span><br>a <em>Maker</em>.</h1>
-    <p class="sub" data-en="Not a factory. Not a brand. A person. Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours." data-id="Kami mengenal para perajin yang membuat setiap batik dan lurik yang Anda temukan di Blumbang. Bukan produk tanpa asal-usul, melainkan karya dengan nama, cerita, dan tradisi di baliknya.">Not a factory. Not a brand. A person. Discover batik and lurik crafted by artisans from our villages, and know exactly whose hands made yours.</p>
+    <h1 id="hero-h1">Somewhere in Klaten, Java,<br>someone is making <em>yours</em>.</h1>
+    <p class="sub" data-en="Most things you own were made by no one in particular. This one wasn't." data-id="Kebanyakan benda yang kamu miliki dibuat oleh orang yang tidak kamu kenal. Yang ini tidak.">Most things you own were made by no one in particular. This one wasn't.</p>
     <a href="/makers" class="cta-btn"><span data-en="Meet the makers" data-id="Kenali para perajin">Meet the makers</span> <span class="arr">→</span></a>
   </div>
 </section>
@@ -250,25 +252,19 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   <div class="trip">
     <img src="https://media.blumbang.id/1781437800410-mesin-tenun-lurik.webp" alt="Mesin tenun lurik ATBM" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl" data-en="Handcrafted" data-id="Buatan Tangan">Handcrafted</div>
-      <div class="trip-desc" data-en="Made slowly, with skill passed down for generations." data-id="Dibuat perlahan, dengan keahlian turun-temurun.">Made slowly, with skill passed down for generations.</div>
-      <div class="trip-arr">→</div>
+      <div class="trip-stmt" data-en="You will know her name." data-id="Kamu akan tahu namanya.">You will know her name.</div>
     </div>
   </div>
   <div class="trip">
     <img src="https://media.blumbang.id/1781437468858-mbatik.jpeg" alt="Pengrajin membatik" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl" data-en="Authentic" data-id="Otentik">Authentic</div>
-      <div class="trip-desc" data-en="Traditional techniques, natural materials, no machines." data-id="Teknik tradisional, bahan alami, tanpa mesin.">Traditional techniques, natural materials, no machines.</div>
-      <div class="trip-arr">→</div>
+      <div class="trip-stmt" data-en="You will know which village." data-id="Kamu akan tahu dari desa mana.">You will know which village.</div>
     </div>
   </div>
   <div class="trip">
     <img src="https://media.blumbang.id/1781439822759-foto-batik-dan-lurik.webp" alt="Batik dan lurik Blumbang" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;" />
     <div class="trip-ov">
-      <div class="trip-lbl" data-en="Timeless" data-id="Abadi">Timeless</div>
-      <div class="trip-desc" data-en="Designs that connect heritage and modern life." data-id="Motif yang menghubungkan warisan dan kehidupan kini.">Designs that connect heritage and modern life.</div>
-      <div class="trip-arr">→</div>
+      <div class="trip-stmt" data-en="You will know the week it was made." data-id="Kamu akan tahu minggu kapan ia dibuat.">You will know the week it was made.</div>
     </div>
   </div>
 </div>
@@ -276,9 +272,9 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <!-- ══ STORY BAND ══ -->
 <section class="story" id="story">
   <div class="story-txt">
-    <div class="eyebrow" data-en="From the Villages of Klaten" data-id="Dari Desa-Desa di Klaten">From the Villages of Klaten</div>
-    <h2 class="h2" data-en="Every Piece|Has a Story" data-id="Setiap Karya|Punya Cerita"><span>Every Piece</span><br><span>Has a Story</span></h2>
-    <p class="body-p" data-en="Batik and lurik are more than products. They carry the knowledge, traditions, and craftsmanship of generations of artisans from across Klaten." data-id="Batik dan lurik lebih dari sekadar produk. Keduanya membawa pengetahuan, tradisi, dan keahlian dari generasi perajin di seluruh Klaten.">Batik and lurik are more than products. They carry the knowledge, traditions, and craftsmanship of generations of artisans from across Klaten.</p>
+    
+    <h2 class="h2" data-en="Our studio shares a neighborhood with the people who make yours." data-id="Studio kami berbagi lingkungan dengan orang yang membuat milikmu.">Our studio shares a neighborhood with the people who make yours.</h2>
+    <p class="body-p" data-en="That's not a supply chain. That's a neighborhood." data-id="Itu bukan rantai pasok. Itu tetangga.">That's not a supply chain. That's a neighborhood.</p>
     <a href="/about" class="lnk"><span data-en="Read our story" data-id="Baca cerita kami">Read our story</span> &nbsp;→</a>
   </div>
   <div class="story-ph">
@@ -294,8 +290,8 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
 <section class="makers" id="makers">
   <div class="makers-txt">
     <div class="eyebrow" data-en="Meet the Makers" data-id="Kenali Para Perajin">Meet the Makers</div>
-    <h2 class="h2" data-en="The Hands Behind|Every Piece" data-id="Tangan-Tangan di Balik|Setiap Karya"><span>The Hands Behind</span><br><span>Every Piece</span></h2>
-    <p class="body-p" data-en="Real people. Real stories.|Real craft." data-id="Orang nyata. Cerita nyata.|Keahlian nyata."><span>Real people. Real stories.</span><br><span>Real craft.</span></p>
+    <h2 class="h2" data-en="These are not profiles.|These are introductions." data-id="Ini bukan profil.|Ini perkenalan."><span>These are not profiles.</span><br><span>These are introductions.</span></h2>
+    <p class="body-p" data-en="The person behind yours is one of them." data-id="Orang di balik milikmu adalah salah satu dari mereka.">The person behind yours is one of them.</p>
     <a href="/makers" class="lnk"><span data-en="Meet all the makers" data-id="Lihat semua perajin">Meet all the makers</span> &nbsp;→</a>
   </div>
   <div class="makers-grid">
@@ -327,31 +323,39 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
   </div>
 </section>
 
-<!-- ══ MAP BAND (dark — peta sudah berjalan otomatis) ══ -->
+<!-- ══ SECTION GELAP — QR batik (atas) → Living Garment peta (bawah) ══ -->
 <section class="map-band">
-  <div class="eyebrow-dk">Living Garment</div>
-  <h2 class="h2-dk" data-en="Every garment carries a story. Its code points forward — wherever you take it." data-id="Setiap kaos punya cerita. Kodenya menunjuk ke depan — ke mana pun kamu membawanya.">Every garment carries a story. Its code points forward — wherever you take it.</h2>
-  <p class="p-dk" data-en="From Klaten to the world. Each point on the map is a garment that's been scanned." data-id="Dari Klaten ke seluruh dunia. Setiap titik di peta adalah kaos yang sudah pernah di-scan.">From Klaten to the world. Each point on the map is a garment that's been scanned.</p>
-  <div class="map-stats">
-    <div class="map-stat"><span id="n-pieces">—</span><p data-en="pieces" data-id="karya">pieces</p></div>
-    <div class="map-stat"><span id="n-cities">—</span><p data-en="cities" data-id="kota">cities</p></div>
+
+  <!-- SUB 1: QR BATIK — pembuat selalu di atas, tidak boleh dibalik -->
+  <div class="qr-sub">
+    <h2 class="h2-dk" data-en="Sewn into every piece is a code." data-id="Di setiap karya ada kode.">Sewn into every piece is a code.</h2>
+    <p class="p-dk" data-en="Scan it, and you'll meet her — her name, her village, the week her hands made this." data-id="Scan, dan kamu akan bertemu dengannya — namanya, desanya, minggu tangannya membuat ini.">Scan it, and you'll meet her — her name, her village, the week her hands made this.</p>
+    <p class="qr-punch" data-en="Not a label. A door." data-id="Bukan label. Sebuah pintu.">Not a label. A door.</p>
   </div>
-  <div id="map-stage">
-    <svg id="world-map"></svg>
-    <div id="map-tip"></div>
-    <div id="map-loading">Loading map…</div>
+
+  <!-- SUB 2: LIVING GARMENT — bukti studio nyata, bukan produk utama -->
+  <div class="lg-sub">
+    <div class="eyebrow-dk">Living Garment</div>
+    <h2 class="h2-dk" data-en="Every garment has been somewhere. This is where they've been." data-id="Setiap kaos sudah pernah ke suatu tempat. Inilah jejaknya.">Every garment has been somewhere. This is where they've been.</h2>
+    <p class="p-dk" data-en="From Klaten to the world. Each point on the map is a garment that's been scanned." data-id="Dari Klaten ke seluruh dunia. Setiap titik di peta adalah kaos yang sudah pernah di-scan.">From Klaten to the world. Each point on the map is a garment that's been scanned.</p>
+    <div class="map-stats">
+      <div class="map-stat"><span id="n-pieces">—</span><p data-en="pieces" data-id="karya">pieces</p></div>
+      <div class="map-stat"><span id="n-cities">—</span><p data-en="cities" data-id="kota">cities</p></div>
+    </div>
+    <div id="map-stage">
+      <svg id="world-map"></svg>
+      <div id="map-tip"></div>
+      <div id="map-loading">Loading map…</div>
+    </div>
+    <a href="https://blumbang.id/sparks" class="map-lnk"><span data-en="See all points" data-id="Lihat semua titik">See all points</span> &nbsp;→</a>
   </div>
-  <a href="https://blumbang.id/sparks" class="map-lnk"><span data-en="See all points" data-id="Lihat semua titik">See all points</span> &nbsp;→</a>
+
 </section>
 
-<!-- ══ NEWSLETTER ══ -->
-<section class="news-band" id="tentang">
-  <h3 data-en="Join our small circle." data-id="Ikut dalam lingkaran kecil ini.">Join our small circle.</h3>
-  <p data-en="Occasional notes from the studio — new makers, new pieces, stories from the field." data-id="Kabar sesekali dari studio — perajin baru, karya baru, cerita dari lapangan.">Occasional notes from the studio — new makers, new pieces, stories from the field.</p>
-  <div class="news-form">
-    <input type="email" id="news-email" data-en-ph="your email" data-id-ph="email kamu" placeholder="your email" />
-    <button onclick="joinNews()" data-en="Join" data-id="Ikut">Join</button>
-  </div>
+<!-- ══ CTA BAND ══ -->
+<section class="cta-band">
+  <p class="cta-stmt" data-en="Each piece is made once, by one person." data-id="Setiap karya dibuat sekali, oleh satu orang.">Each piece is made once, by one person.</p>
+  <a href="/makers" class="cta-lnk"><span data-en="See who's making right now" data-id="Lihat siapa yang sedang membuat sekarang">See who's making right now</span> &nbsp;→</a>
 </section>
 
 <!-- ══ FOOTER ══ -->
@@ -382,7 +386,7 @@ footer{background:#110e09;padding:56px 48px 32px;border-top:1px solid var(--dk-l
       </div>
     </div>
     <div class="ft-bot">
-      <span class="ft-copy">© 2026 Blumbang · Made slowly in Klaten, Java</span>
+      <span class="ft-copy">Made Slowly. Felt Deeply. · Klaten, Java</span>
       <a href="https://blumbang.id" class="ft-lnk">blumbang.id →</a>
     </div>
   </div>
@@ -397,12 +401,6 @@ var hdr=document.getElementById('hdr');
 window.addEventListener('scroll',function(){
   if(window.scrollY>40)hdr.classList.add('solid');else hdr.classList.remove('solid');
 },{passive:true});
-function joinNews(){
-  var e=document.getElementById('news-email').value.trim();
-  if(!e||e.indexOf('@')<0){return;}
-  window.location.href='https://wa.me/6281234561146?text='+encodeURIComponent('Hi Blumbang — please add me to your letter: '+e);
-}
-
 /* ── LANGUAGE TOGGLE ── */
 function setLang(lang){
   try{localStorage.setItem('blmb_lang',lang);}catch(e){}
@@ -430,9 +428,9 @@ function setLang(lang){
   var h1=document.getElementById('hero-h1');
   if(h1){
     if(lang==='id'){
-      h1.innerHTML='<span class="t1">Setiap Karya Memiliki</span><br><em>Nama</em> di Baliknya';
+      h1.innerHTML='Di suatu tempat di Klaten, Jawa,<br>seseorang sedang membuat <em>milikmu</em>';
     }else{
-      h1.innerHTML='<span class="t1">Every Piece Has</span><br>a <em>Maker</em>.';
+      h1.innerHTML='Somewhere in Klaten, Java,<br>someone is making <em>yours</em>.';
     }
   }
   // tombol aktif
