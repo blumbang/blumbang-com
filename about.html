@@ -32,10 +32,10 @@
 
 <style>
 :root{
-  --bg:#15110c;--bg2:#1d1710;--bg-deep:#0c0a07;
-  --paper:#F2EBDC;--ink:#1a140d;
-  --text:#E9DFCB;--muted:#9b9079;--muted2:#6f6657;
-  --gold:#C9A84C;--gold-soft:#DCC074;--line:#2e2619;--line-cream:#d6cab0;
+  --bg:#F2EDE4;--bg2:#EAE3D6;--bg-deep:#EAE3D6;
+  --paper:#F2EBDC;--ink:#1C1712;
+  --text:#1C1712;--muted:#7A6E62;--muted2:#A89E90;
+  --gold:#B8862C;--gold-soft:#9A6F1E;--line:#D4C9B5;--line-cream:#d6cab0;
   --fd:'Fraunces',Georgia,serif;--fb:'Montserrat',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -44,11 +44,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);font-weight:30
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 ::selection{background:var(--gold);color:var(--bg);}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:linear-gradient(to bottom,rgba(21,17,12,.9),rgba(21,17,12,0));transition:.3s;border-bottom:1px solid transparent;}
-header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bottom-color:var(--line);padding:14px 40px;}
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:linear-gradient(to bottom,rgba(242,237,228,.9),rgba(242,237,228,0));transition:.3s;border-bottom:1px solid transparent;}
+header.solid{background:rgba(242,237,228,.97);backdrop-filter:blur(12px);border-bottom-color:var(--line);padding:14px 40px;}
 .wordmark{font-family:var(--fd);font-weight:600;font-size:1.4rem;letter-spacing:.04em;color:var(--text);}
 .wordmark .spark{color:var(--gold);}
 .nav{display:flex;align-items:center;gap:30px;}
@@ -67,7 +67,7 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 .about-hero{padding:26vh 40px 14vh;max-width:1100px;margin:0 auto;}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.64rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;}
 .eyebrow::before{content:'✦';}
-.about-hero h1{font-family:var(--fd);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.05;letter-spacing:-.01em;color:#fff;max-width:18ch;margin-bottom:30px;}
+.about-hero h1{font-family:var(--fd);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.05;letter-spacing:-.01em;color:var(--ink);max-width:18ch;margin-bottom:30px;}
 .about-hero h1 em{font-style:italic;color:var(--gold-soft);}
 .about-hero .lead{font-size:clamp(1.05rem,1.7vw,1.3rem);font-weight:300;line-height:1.75;color:var(--text);max-width:54ch;opacity:.92;}
 
@@ -95,9 +95,9 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:54px;}
 .member{background:var(--bg2);border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s;}
 .member:hover{transform:translateY(-4px);border-color:var(--gold);}
-.member .photo{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(140deg,#241b12,#15110c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.member .photo{aspect-ratio:4/5;overflow:hidden;background:linear-gradient(140deg,#E2D8C6,#D4C9B5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
 .member .photo img{width:100%;height:100%;object-fit:cover;}
-.member .photo .ph-mark{font-family:var(--fd);font-size:2rem;color:var(--line);}
+.member .photo .ph-mark{font-family:var(--fd);font-size:2rem;color:var(--muted2);}
 .member .photo .ph-cap{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted2);text-align:center;padding:0 20px;line-height:1.8;}
 .member .info{padding:24px 26px 28px;}
 .member .role{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
@@ -108,7 +108,7 @@ header.solid{background:rgba(21,17,12,.97);backdrop-filter:blur(12px);border-bot
 
 /* CLOSER */
 .closer{background:var(--bg-deep);border-top:1px solid var(--line);text-align:center;padding:clamp(80px,14vh,160px) 40px;}
-.closer .lamp{font-size:1.6rem;color:var(--gold);margin-bottom:30px;animation:glow 3s ease-in-out infinite;}
+.closer .lamp{font-size:1.6rem;color:var(--gold);margin-bottom:30px;}
 .closer blockquote{font-family:var(--fd);font-weight:400;font-style:italic;font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.35;color:var(--text);max-width:20ch;margin:0 auto 40px;}
 .closer blockquote em{color:var(--gold-soft);}
 .closer .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
@@ -193,18 +193,18 @@ footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:70px 4
     <div class="values-grid">
       <div class="value">
         <div class="n">01</div>
-        <h3>We pay properly</h3>
-        <p>Eleven days of work should be paid like eleven days of work. On every maker's page, the wage is shown in the open — right under the price. We built the company around that number.</p>
+        <h3>We pay what the work is worth</h3>
+        <p>Not what the market lets us get away with.</p>
       </div>
       <div class="value">
         <div class="n">02</div>
         <h3>Quality, never rushed</h3>
-        <p>We turn down work that would force a corner to be cut. Slow is not a weakness here. It's the whole point — and it's why each piece holds up.</p>
+        <p>We turn down work that would force a corner to be cut. Slow isn't a weakness here. It's the point.</p>
       </div>
       <div class="value">
         <div class="n">03</div>
         <h3>Neighbors, not brokers</h3>
-        <p>We don't scrape a marketplace for the cheapest supplier. We know these people. We sit in their homes. After you buy, we hand you their number — directly.</p>
+        <p>We don't scrape a marketplace for the cheapest supplier. We know these people. We sit in their homes. Want to reach them yourself? If they're willing, we'll connect you.</p>
       </div>
     </div>
   </div>
@@ -304,13 +304,13 @@ footer{background:var(--bg-deep);border-top:1px solid var(--line);padding:70px 4
 
       <div class="member">
         <div class="photo">
-          <img src="https://media.blumbang.id/team-betchak.webp" alt="Betchak, founder of Blumbang"
+          <img src="https://media.blumbang.id/team-betchak.webp" alt="Betchak at Blumbang"
                onerror="this.parentElement.innerHTML='<div class=&quot;ph-mark&quot;>✦</div><div class=&quot;ph-cap&quot;>Betchak</div>';" />
         </div>
         <div class="info">
           <div class="role">The Problem Maker</div>
           <div class="name">Betchak</div>
-          <div class="since">2022 — &nbsp;·&nbsp; founder</div>
+          <div class="since">2022 —</div>
           <p class="quote">"Mie ayam enak iki."</p>
           <p class="gloss">"Now this is good chicken noodle." Started the whole thing. Still happiest over a good bowl of mie ayam.</p>
         </div>
